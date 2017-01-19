@@ -1,6 +1,5 @@
 # README #
 
-We are in documents branch.
 
 Q6. 
 Modify one line of the README.md, add to the staging area and commit. Then use the command git show HEAD, and explain the output.
