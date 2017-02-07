@@ -55,6 +55,11 @@ Do you have conflicts? In case there areconflicts, explain how can you solve the
 The aim is to finish the merge successfully.
 
 Sí, diu que hi ha un conflicte en el fitxer README.md. 
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+Q11. 
+In which branch are you? What branches do you have?
+
+Fent la comanda git branch podem veure que ara només hi ha una branch, en la qual ens trobem, la master.
 
 
 
