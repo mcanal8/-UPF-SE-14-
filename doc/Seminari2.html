@@ -1,0 +1,131 @@
+<html>
+	<head>
+		<title> Seminari 2 </title>
+	</head>
+
+	<body>
+		<center> <h1> Seminari 2: Idetificació de Requeriments</h1> </center>
+
+		<h3> TASCA 1: Elaboració de casos d'ús </h3>
+
+      <b> Use case: </b> Purchase book <br>
+      <b> Context: </b>
+
+    <hr>
+
+      <b> Use case: </b>  Validate uploaded Work. <br>
+      <b> Context: </b> S'ha de validar per a poder publicar un treball que ha estat pujat. <br>
+      <b> Actors Primaris: </b> Editor <br>
+      <b> Actors de suport: </b> Layout Designer (Maquetador) <br>
+      <b> Precondició: </b> Un autor ha pujat un treball al web. <br>
+      <b> Successful postcondition: </b> La feina és validada i passa a la fase d'afegir cobertes, etc. <br>
+      <b> Unsuccessful postcondition: </b> La feina no és validada i per tant no és pubblicada al web. <br>
+      <b> Basic Flow: </b>
+      <ol>
+        <li> Una nou treball és pujat al web.
+        <li> El sistema detecta el format del treball pujat.
+        <li> Aquest format és comparat amb la llista de formats compatibles de l'editorial.
+        <li> El maquetador verifica el format (Ha de ser pdf per poder passar a la fase 5).
+        <li> L'editor verifica el treball.
+        <li> L'editor decideix si aquest treball s'afegeix a alguna de les coleccions de l'editorial.
+        <li> La feina està llesta per a que se li afegeixin les cobertes i es publiqui.
+      </ol>
+      <b> Extensions: </b> <p>
+      1.a No hi ha cap treball pujat. <br>
+      1.a.1 Esperar a que s'afegeixi un treball. <p>
+
+      2.a No es pot determinar el format <br>
+      2.a.1 Acabar el procés per a aquesta feina i enviar un missatge d'error. <p>
+
+      3.a El treball té un format que no és suportat. <br>
+      3.a.1 Acabar el procés per a aquesta feina i enviar un missatge d'error. <p>
+
+      4.a El format és suportat però no es pdf. <br>
+      4.a.1 Executar el cas d'ús: "Translate work to pdf". <p>
+
+      5.a El layout design no és vàlid. <br>
+      5.a.1 Tornar al pas 4. <p>
+
+      6.a L'editor no valida el treball. <br>
+      6.a.1 Finalitzar el procés. <p>
+
+		<hr>
+
+		<h3> TASCA 2: Implied Stackeholders </h3>
+
+      <b> USE CASE: Purchase book </b> <p>
+
+      <ul>
+        <li> Client
+        <li>Online Payment Services
+        <li> MeltingPot
+        <li> OurCode
+      </ul>
+      <p>
+
+      <b> USE CASE: Validate uploaded work </b> <p>
+
+      <ul>
+        <li> Autor
+        <li> Layout Designer
+        <li> Editor
+        <li> MelitingPot
+        <li> OurCode
+      </ul>
+
+		
+  		<hr>
+
+  		<h3> TASCA 3: Actors i casos d'ús del sistema </h3>
+
+  		
+
+  		<hr>
+
+      <h3> TASCA 4: Diagrama </h3>
+
+
+      <hr>
+
+      <h3> TASCA 5: Glossari </h3>
+
+      <ul>
+        <li> <b> MeltingPot: </b> Petita editorial que vol millorar els seus serveis web. &Eacutes la empresa  que ha demanat aquest projecte.
+        <li> <b> OurCode: </b> Petita empresa de software encarregada de desenvolupar aquest projecte.
+        <li> <b> Layout Designer: </b>  Maquetador. Encarregat d'ajustar el format dels treballs a l'est&agravendard adequat.
+        <li> <b> Online Payment Services: </b> Serveis de tipus PayPal que s'encarreguen de gestionar les  operacions de compra / donacions i tot el que involucri transaccions econ&ogravemiques  per internet.
+        <li> <b> Autor: </b> Persona que elabora els treballs que es publiquen a la p&agravegina web.
+        <li> <b> Editor: </b> Encarregat de revisar tots els treballs i decidir si es publiquen o no.
+        <li> <b> Client: </b> Persona que compra els treballs publicats per l'editorial.
+        <li> <b> Pujar un treball: </b> Acció que du a terme l'autor quan ha acabat de fer un treball i vol que la web el publiqui. Consisteix en que l'autor envia el seu treball a la web per a ser validat i publicat. 
+        <li> <b> Colecció: </b> Agrupació de diverssos treballs que fa l'editorial pel fet de tenir coses en comú (temàtica, per exemple). Els llibres d'una mateixa colecció van numerats i tenen un format de cobertes comú.
+        <li> <b> Publicar: </b> Es considera que un treball és publicat quan l'editorial li ha donat el vist i plau, li ha afegit les cobertes corresponents i està disponible perquè el client el pugui comprar.
+      </ul>
+
+      <hr>
+
+      <h3> TASCA 6: Obscure Points </h3>
+
+      <ul>
+      <li> Interf&iacutecie de la p&agravegina: disseny, organitzaci&oacute, estil gr&agravefic, est&egravetica...
+      <li> Sistema de gesti&oacute dels comptes d'usuari: M&egravetode de registre, tipus d'usuaris, 
+           permisos que tenen els usuaris, seguretat....
+        <li> No s'especifica si cal mantenir alguna de les caracter&iacutestiques de la web      actual.
+        <li> Tot el relacionat amb els &quotCreative commons license&quot. Quin tipus de documents, qui els podr&agrave pujar, qui els podr&agrave descarregar i amb quines limitacions.....
+        <li> No s'especifica b&eacute si per a fer una donaci&oacute a un autor cal haver comprat pr&egraveviament el llibre.
+        <li> No s'especifica si per a fer una valoraci&oacute (escriure una ressenya / puntuar)
+           cal haver comprat pr&egraveviament el llibre.
+        <li> No s'especifica si quan un autor puja un treball en un format no suportat d'ha d'eliminar directament el treball o si s'ha d'intentar convertir a algun dels formats suportats.
+      </ul>
+
+  		<p>
+  		<p>
+  		<p>
+  		<hr>
+  		<p>
+
+  		Seminari 2. Grup 14: Marc Canal i Adri&aacuten Matilla <p>
+  		Versi&oacute 0.2
+
+  	</body>
+</html>
