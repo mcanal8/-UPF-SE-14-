@@ -11,7 +11,7 @@
       <b> Use case: </b> Purchase book <br>
       <b> Context: </b> Un usuari vol comprar un dels treballs de la web <br>
       <b> Actors Primaris: </b> Usuari(client) <br>
-      <b> Actors de suport: </b> Online payment service/Messenger service <br>
+      <b> Actors de suport: </b> Online payment service/Messenger service (Maquetador) <br>
       <b> Precondició: </b> L'usuari pot seleccionar l'opció de comprar un treball/llibre de la web. <br>
       <b> Successful postcondition: </b> L'usuari compra el treball desitjat.  <br>
       <b> Unsuccessful postcondition: </b> L'usuari no ha pogut comprar el treball desitjat. <br>
