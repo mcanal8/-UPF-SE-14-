@@ -4,43 +4,43 @@
 	</head>
 
 	<body>
-		<center> <h1> Seminari 2: Idetificació de Requeriments</h1> </center>
+		<center> <h1> Seminari 2: IdetificaciÃ³ de Requeriments</h1> </center>
 
-		<h3> TASCA 1: Elaboració de casos d'ús </h3>
+		<h3> TASCA 1: ElaboraciÃ³ de casos d'Ãºs </h3>
 
       <b> Use case: </b> Purchase book <br>
       <b> Context: </b> Un usuari vol comprar un dels treballs de la web <br>
       <b> Actors Primaris: </b> Usuari(client) <br>
       <b> Actors de suport: </b> Online payment service/Messenger service (Maquetador) <br>
-      <b> Precondició: </b> L'usuari pot seleccionar l'opció de comprar un treball/llibre de la web. <br>
+      <b> PrecondiciÃ³: </b> L'usuari pot seleccionar l'opciÃ³ de comprar un treball/llibre de la web. <br>
       <b> Successful postcondition: </b> L'usuari compra el treball desitjat.  <br>
       <b> Unsuccessful postcondition: </b> L'usuari no ha pogut comprar el treball desitjat. <br>
       <b> Basic Flow: </b>
       <ol>
         <li> L'usuari logueja a la web
         <li> L'usuari selecciona el treball desitjat.
-        <li> L'usuari selecciona la opció de comprar el treball.
+        <li> L'usuari selecciona la opciÃ³ de comprar el treball.
         <li> El sistema obre una finestra amb la pagina del servei online de pagament.
         <li> L'usuari compra el treball.
         <li> El sistema tanca la finestra del servei de pagament online.
-        <li> L'usuari selecciona la opció de descarregar el treball comprat.
+        <li> L'usuari selecciona la opciÃ³ de descarregar el treball comprat.
 	<li> El sistema verifica la compra.
 	<li> L'usuari descarrega el treball.
       </ol>
       <b> Extensions: </b> <p>
-      1.a L'usuari no està registrat o té algun problema amb les seves dades.  <br>
-      1.a.1  Executar el cas d'ús: "Validate as user". <p>
+      1.a L'usuari no estÃ  registrat o tÃ© algun problema amb les seves dades.  <br>
+      1.a.1  Executar el cas d'Ãºs: "Validate as user". <p>
 
-      2.a L'usuari busca el treball mitjançant cerca avançada. <br>
-      2.a.1 Executar el cas d'ús "Cerca avançada d'un treball". <br>
-      2.b L'usuari selecciona un treball de la llista de col·leccions. <br>
+      2.a L'usuari busca el treball mitjanÃ§ant cerca avanÃ§ada. <br>
+      2.a.1 Executar el cas d'Ãºs "Cerca avanÃ§ada d'un treball". <br>
+      2.b L'usuari selecciona un treball de la llista de colÂ·leccions. <br>
       2.b.1 Anar al pas 3. <p>
 
       4.a No es pot obrir la finestra a la pagina del servei de pagament. <br>
       4.a.1 Enviar un missatge d'error a l'usuari i tornar al pas 3. <p>
 
-      8.a Hi ha hagut un error en la verificació. <br>
-      8.a.1 Executar el cas d'ús: "Asistencia al client".<p>   
+      8.a Hi ha hagut un error en la verificaciÃ³. <br>
+      8.a.1 Executar el cas d'Ãºs: "Asistencia al client".<p>   
 
 
     <hr>
@@ -49,37 +49,37 @@
       <b> Context: </b> S'ha de validar per a poder publicar un treball que ha estat pujat. <br>
       <b> Actors Primaris: </b> Editor <br>
       <b> Actors de suport: </b> Layout Designer (Maquetador) <br>
-      <b> Precondició: </b> Un autor ha pujat un treball al web. <br>
-      <b> Successful postcondition: </b> La feina és validada i passa a la fase d'afegir cobertes, etc. <br>
-      <b> Unsuccessful postcondition: </b> La feina no és validada i per tant no és pubblicada al web. <br>
+      <b> PrecondiciÃ³: </b> Un autor ha pujat un treball al web. <br>
+      <b> Successful postcondition: </b> La feina Ã©s validada i passa a la fase d'afegir cobertes, etc. <br>
+      <b> Unsuccessful postcondition: </b> La feina no Ã©s validada i per tant no Ã©s pubblicada al web. <br>
       <b> Basic Flow: </b>
       <ol>
-        <li> Una nou treball és pujat al web.
+        <li> Una nou treball Ã©s pujat al web.
         <li> El sistema detecta el format del treball pujat.
-        <li> Aquest format és comparat amb la llista de formats compatibles de l'editorial.
+        <li> Aquest format Ã©s comparat amb la llista de formats compatibles de l'editorial.
         <li> El maquetador verifica el format (Ha de ser pdf per poder passar a la fase 5).
         <li> L'editor verifica el treball.
         <li> L'editor decideix si aquest treball s'afegeix a alguna de les coleccions de l'editorial.
-        <li> La feina està llesta per a que se li afegeixin les cobertes i es publiqui.
+        <li> La feina estÃ  llesta per a que se li afegeixin les cobertes i es publiqui.
       </ol>
       <b> Extensions: </b> <p>
       1.a No hi ha cap treball pujat. <br>
       1.a.1 Esperar a que s'afegeixi un treball. <p>
 
       2.a No es pot determinar el format <br>
-      2.a.1 Acabar el procés per a aquesta feina i enviar un missatge d'error. <p>
+      2.a.1 Acabar el procÃ©s per a aquesta feina i enviar un missatge d'error. <p>
 
-      3.a El treball té un format que no és suportat. <br>
-      3.a.1 Acabar el procés per a aquesta feina i enviar un missatge d'error. <p>
+      3.a El treball tÃ© un format que no Ã©s suportat. <br>
+      3.a.1 Acabar el procÃ©s per a aquesta feina i enviar un missatge d'error. <p>
 
-      4.a El format és suportat però no es pdf. <br>
-      4.a.1 Executar el cas d'ús: "Translate work to pdf". <p>
+      4.a El format Ã©s suportat perÃ² no es pdf. <br>
+      4.a.1 Executar el cas d'Ãºs: "Translate work to pdf". <p>
 
-      5.a El layout design no és vàlid. <br>
+      5.a El layout design no Ã©s vÃ lid. <br>
       5.a.1 Tornar al pas 4. <p>
 
       6.a L'editor no valida el treball. <br>
-      6.a.1 Finalitzar el procés. <p>
+      6.a.1 Finalitzar el procÃ©s. <p>
 
 		<hr>
 
@@ -89,7 +89,7 @@
 
       <ul>
         <li> Client
-        <li>Online Payment Services
+        <li> Online Payment Services
         <li> MeltingPot
         <li> OurCode
       </ul>
@@ -101,16 +101,25 @@
         <li> Autor
         <li> Layout Designer
         <li> Editor
-        <li> MelitingPot
+        <li> MeltingPot
         <li> OurCode
       </ul>
 
 		
   		<hr>
 
-  		<h3> TASCA 3: Actors i casos d'ús del sistema </h3>
+  		<h3> TASCA 3: Actors i casos d'Ãºs del sistema </h3>
+			- Purchase book (Actors: Client, Online Payment Services)<br>
+			- Validate uploaded work (Actors: Autor, Layout Designer, Editor)<br>
+			- Validate as user (Actors: User)<br>
+			- Cerca avanÃ§ada d'un work (Actors: User)<br>
+			- Translate work to pdf (Actors: Autor, Layout Designer)<br>
+  			- Asistencia al client (Actors: Autor, Online Payment Services)<br>
+			- Enviar donaciÃ³ (Actors: User)<br>
+			- Rate a work (Actors: User)<br>
+			- Unlist work (Actors: Autor, Editor)<br>
+			- Browse a work in HTML version (Actors: User)<br>
 
-  		
 
   		<hr>
 
@@ -129,9 +138,9 @@
         <li> <b> Autor: </b> Persona que elabora els treballs que es publiquen a la p&agravegina web.
         <li> <b> Editor: </b> Encarregat de revisar tots els treballs i decidir si es publiquen o no.
         <li> <b> Client: </b> Persona que compra els treballs publicats per l'editorial.
-        <li> <b> Pujar un treball: </b> Acció que du a terme l'autor quan ha acabat de fer un treball i vol que la web el publiqui. Consisteix en que l'autor envia el seu treball a la web per a ser validat i publicat. 
-        <li> <b> Colecció: </b> Agrupació de diverssos treballs que fa l'editorial pel fet de tenir coses en comú (temàtica, per exemple). Els llibres d'una mateixa colecció van numerats i tenen un format de cobertes comú.
-        <li> <b> Publicar: </b> Es considera que un treball és publicat quan l'editorial li ha donat el vist i plau, li ha afegit les cobertes corresponents i està disponible perquè el client el pugui comprar.
+        <li> <b> Pujar un treball: </b> AcciÃ³ que du a terme l'autor quan ha acabat de fer un treball i vol que la web el publiqui. Consisteix en que l'autor envia el seu treball a la web per a ser validat i publicat. 
+        <li> <b> ColecciÃ³: </b> AgrupaciÃ³ de diverssos treballs que fa l'editorial pel fet de tenir coses en comÃº (temÃ tica, per exemple). Els llibres d'una mateixa colecciÃ³ van numerats i tenen un format de cobertes comÃº.
+        <li> <b> Publicar: </b> Es considera que un treball Ã©s publicat quan l'editorial li ha donat el vist i plau, li ha afegit les cobertes corresponents i estÃ  disponible perquÃ¨ el client el pugui comprar.
       </ul>
 
       <hr>
