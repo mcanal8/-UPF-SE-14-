@@ -3,7 +3,7 @@
 
 class Collection{
 	public:
-	virtual std::string title(std::string a = "-- Untitled --"){
+	virtual std::string title(std::string a = ""){
 		return a;
 	}
 };
