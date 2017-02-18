@@ -5,7 +5,7 @@ class Work
 {
 public:
 	
-	virtual std::string title(std::string a ="-- Untitled --"){
+	virtual std::string title(std::string a ="Hola"){
 			return a;
 		}
 };
