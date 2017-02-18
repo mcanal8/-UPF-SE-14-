@@ -1,9 +1,12 @@
-#include <iostream>
-#include <cstring>
 
-class Collection{
-	public:
-	virtual std::string title(std::string a = "-- Untitled --"){
+#include "Collection.hxx"
+
+	Collection::Collection(){
+		strcpy(a, "-- Untitled --");
+		strcpy(stringTitle, "   ");
+	}
+
+	char Collection::title(char stringTitle){
+		strcpy(a, (char*)stringTitle);
 		return a;
 	}
-};
