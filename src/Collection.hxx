@@ -11,6 +11,7 @@ class Collection{
 
 	//Methods
 	std::string title();
+	std::string title(std::string stringTitle);
 	
 };
 
@@ -20,4 +21,8 @@ Collection::Collection(){
 	std::string Collection::title(){
 		return a;
 	}
+	std::string Collection::title(std::string stringTitle){
+		a = stringTitle;	
+ 		return a;
+ 	}
 	

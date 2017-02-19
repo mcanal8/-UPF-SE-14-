@@ -1,17 +1,23 @@
 #include <iostream>
 #include <cstring>
-class Collection
-{
-    public:
 
-    char stringTitle[15];
-    char a[15];
-    //virtual std::string title(std::string a = ""){
-    //}
+class Collection{
+	private:
+	std::string a;
+	
+	public:
+	//constructor
+	Collection();
 
-    // constructor
-    Collection();
-
-    // Methods
-    char title(char stringTitle);
+	//Methods
+	std::string title();
+	
 };
+
+Collection::Collection(){
+		a = "-- Untitled --";		
+	}
+	std::string Collection::title(){
+		return a;
+	}
+	
