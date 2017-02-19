@@ -7,7 +7,7 @@ public:
 	TEST_FIXTURE( CollectionTests )
 	{
 	//	TEST_CASE( testTitle_byDefault );
-		TEST_CASE( testTitle_addingTitle );
+	//	TEST_CASE( testTitle_addingTitle );
 //		TEST_CASE( testPublished_byDefault );
 //		TEST_CASE( testPublished_afterPublishing );
 //		TEST_CASE( testPublished_afterWithdrawing );

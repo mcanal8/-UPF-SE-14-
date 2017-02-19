@@ -1,11 +1,25 @@
 #include <string>
 #include <iostream>
 
-class Work
-{
-public:
+class Work{
+	private:
+	std::string a;
 	
-	virtual std::string title(std::string a ="-- Untitled --"){
-			return a;
-		}
+	public:
+	//constructor
+	Work();
+
+	//Methods
+	std::string title();
+	
+	
 };
+
+Work::Work(){
+		a = "-- Untitled --";		
+	}
+	
+	std::string Work::title(){
+		return a;
+	}
+	

@@ -14,12 +14,12 @@ public:
 //		TEST_CASE( testAText_byDefault );
 //		TEST_CASE( testAText_initialized );
 	}
-	void testTitle_byDefault()
+	/*void testTitle_byDefault()
 	{
 		Work work;
 		ASSERT_EQUALS( "-- Untitled --", work.title() );
 	}
-	/*void testTitle_addingTitle()
+	void testTitle_addingTitle()
 	{
 		Work work;
 		work.title( "A Title" );
