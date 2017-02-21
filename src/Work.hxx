@@ -4,17 +4,11 @@
 class Work{
 	//Atributos
 	private:
-	std::string a;
+	std::string a, original;
 	int isbn_num;
 	
 	public:
-	virtual std::string originalFile(std::string original = ""){
-
- 		return original;
-
- 	}
-
-
+	
 	//constructor
 	Work();
 
@@ -23,11 +17,13 @@ class Work{
 	void title(std::string stringTitle);
 	int isbn();
 	void isbn(int nou_ISBN);
+	std::string originalFile();
 };
 
 Work::Work(){
 		a = "-- Untitled --";
-		isbn_num = -1;		
+		isbn_num = -1;	
+		original = "";	
 	}
 	
 	std::string Work::title(){
@@ -42,3 +38,6 @@ Work::Work(){
 	void Work::isbn(int nou_ISBN){
 		isbn_num = nou_ISBN;	
  	}
+	std::string Work::originalFile(){
+		return original;
+	}
