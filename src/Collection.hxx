@@ -40,7 +40,8 @@ Collection::Collection(){
 	} 
 	//Added in the last test
 	int Collection::withdraw(){
-
+		ispublished = false;
+		return 0;
 	}
  	
 	
