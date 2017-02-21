@@ -8,13 +8,7 @@ class Work{
 	int isbn_num;
 	
 	public:
-	virtual void isbn(int isbn_num_nou){
-
- 		isbn_num = isbn_num_nou;
-
- 	}
-
-
+	
 	//constructor
 	Work();
 
@@ -22,6 +16,7 @@ class Work{
 	std::string title();
 	std::string title(std::string stringTitle);
 	int isbn();
+	void isbn(int nou_ISBN);
 };
 
 Work::Work(){
@@ -39,3 +34,6 @@ Work::Work(){
 	int Work::isbn(){
 		return isbn_num;
 	}
+	void Work::isbn(int nou_ISBN){
+		isbn_num = nou_ISBN;	
+ 	}
