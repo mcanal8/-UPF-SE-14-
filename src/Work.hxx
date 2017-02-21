@@ -10,7 +10,7 @@ class Work{
 	public:
 	virtual void isbn(int isbn_num_nou){
 
- 		
+ 		isbn_num = isbn_num_nou;
 
  	}
 
