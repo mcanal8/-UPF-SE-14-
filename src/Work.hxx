@@ -8,7 +8,7 @@ class Work{
 	public:
 	
 	virtual void title(std::string message){
-		
+		a = message;
 	}
 
 	//constructor
