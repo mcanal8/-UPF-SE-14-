@@ -7,7 +7,7 @@ class Work{
 	
 	
 	public:
-	virtual int isbn(int isbn_num = 0){
+	virtual int isbn(int isbn_num = -1){
 		return isbn_num;
 	}
 	//constructor
