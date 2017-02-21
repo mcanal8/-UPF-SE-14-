@@ -2,24 +2,25 @@
 #include <iostream>
 
 class Work{
+	//Atributos
 	private:
 	std::string a;
-	
+	int isbn_num;
 	
 	public:
-	virtual int isbn(int isbn_num = -1){
-		return isbn_num;
-	}
+	
 	//constructor
 	Work();
 
 	//Methods
 	std::string title();
 	std::string title(std::string stringTitle);
+	int isbn();
 };
 
 Work::Work(){
-		a = "-- Untitled --";		
+		a = "-- Untitled --";
+		isbn_num = -1;		
 	}
 	
 	std::string Work::title(){
@@ -29,3 +30,6 @@ Work::Work(){
 		a = stringTitle;	
  		return a;
  	}
+	int Work::isbn(){
+		return isbn_num;
+	}
