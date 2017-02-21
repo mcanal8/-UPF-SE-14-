@@ -8,7 +8,12 @@ class Work{
 	int isbn_num;
 	
 	public:
-	
+	virtual void originalFile(std::string new_original){
+
+ 		
+
+ 	}
+
 	//constructor
 	Work();
 
