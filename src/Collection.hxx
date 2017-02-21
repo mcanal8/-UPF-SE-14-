@@ -4,7 +4,7 @@
 class Collection{
 	private:
 	std::string a;
-	
+	bool ispublished = false;
 	public:
 	
 	//constructor
@@ -31,7 +31,7 @@ Collection::Collection(){
  	}
  	//Added in third test
  	bool Collection::isPublished(){
-		return 0;
+		return ispublished;
 	}
  	
 	
