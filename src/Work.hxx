@@ -8,7 +8,13 @@ class Work{
 	int isbn_num;
 	
 	public:
-	
+	virtual void isbn(int isbn_num_nou){
+
+ 		
+
+ 	}
+
+
 	//constructor
 	Work();
 
