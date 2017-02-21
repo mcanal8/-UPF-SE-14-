@@ -14,7 +14,7 @@ class Work{
 
 	//Methods
 	std::string title();
-	std::string title(std::string stringTitle);
+	void title(std::string stringTitle);
 	int isbn();
 	void isbn(int nou_ISBN);
 };
@@ -27,9 +27,8 @@ Work::Work(){
 	std::string Work::title(){
 		return a;
 	}
-	std::string Work::title(std::string stringTitle){
+	void Work::title(std::string stringTitle){
 		a = stringTitle;	
- 		return a;
  	}
 	int Work::isbn(){
 		return isbn_num;
