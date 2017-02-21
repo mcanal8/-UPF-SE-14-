@@ -5,7 +5,11 @@ class Work{
 	private:
 	std::string a;
 	
+	
 	public:
+	virtual int isbn(int isbn_num = 0){
+		return isbn_num;
+	}
 	//constructor
 	Work();
 
