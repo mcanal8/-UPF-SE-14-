@@ -10,7 +10,7 @@ class Work{
 	public:
 	virtual void originalFile(std::string new_original){
 
- 		
+ 		original = new_original;
 
  	}
 
