@@ -6,13 +6,14 @@ class Collection{
 	std::string a;
 	
 	public:
+	
 	//constructor
 	Collection();
 
 	//Methods
 	std::string title();//Added in First test METHOD
 	std::string title(std::string stringTitle);//Added in Second test METHOD
-	std::string isPublished();//Added in Third test
+	bool isPublished();//Added in Third test
 	
 };
 
@@ -29,7 +30,7 @@ Collection::Collection(){
  		return a;
  	}
  	//Added in third test
- 	std::string Collection::isPublished(){
+ 	bool Collection::isPublished(){
 		return 0;
 	}
  	
