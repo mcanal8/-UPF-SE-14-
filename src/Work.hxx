@@ -8,12 +8,7 @@ class Work{
 	int isbn_num;
 	
 	public:
-	virtual void originalFile(std::string new_original){
-
- 		original = new_original;
-
- 	}
-
+	
 	//constructor
 	Work();
 
@@ -23,6 +18,7 @@ class Work{
 	int isbn();
 	void isbn(int nou_ISBN);
 	std::string originalFile();
+	void originalFile(std::string new_original);
 };
 
 Work::Work(){
@@ -45,4 +41,7 @@ Work::Work(){
  	}
 	std::string Work::originalFile(){
 		return original;
+	}
+	void Work::originalFile(std::string new_original){
+		original = new_original;
 	}
