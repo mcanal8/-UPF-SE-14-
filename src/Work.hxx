@@ -8,7 +8,7 @@ class Work{
 	int isbn_num;
 	
 	public:
-	virtual std::string originalFile(std::string original = "Hola"){
+	virtual std::string originalFile(std::string original = ""){
 
  		return original;
 
