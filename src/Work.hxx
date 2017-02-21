@@ -6,16 +6,12 @@ class Work{
 	std::string a;
 	
 	public:
-	
-	virtual void title(std::string message){
-		a = message;
-	}
-
 	//constructor
 	Work();
 
 	//Methods
 	std::string title();
+	std::string title(std::string stringTitle);
 };
 
 Work::Work(){
@@ -25,4 +21,7 @@ Work::Work(){
 	std::string Work::title(){
 		return a;
 	}
-	
+	std::string Work::title(std::string stringTitle){
+		a = stringTitle;	
+ 		return a;
+ 	}
