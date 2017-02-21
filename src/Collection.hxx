@@ -12,6 +12,7 @@ class Collection{
 	//Methods
 	std::string title();//Added in First test METHOD
 	std::string title(std::string stringTitle);//Added in Second test METHOD
+	std::string isPublished();//Added in Third test
 	
 };
 
@@ -27,4 +28,9 @@ Collection::Collection(){
 		a = stringTitle;	
  		return a;
  	}
+ 	//Added in third test
+ 	std::string Collection::isPublished(){
+		return 0;
+	}
+ 	
 	
