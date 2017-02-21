@@ -6,13 +6,16 @@ class Work{
 	std::string a;
 	
 	public:
+	
+	virtual void title(std::string message){
+		
+	}
+
 	//constructor
 	Work();
 
 	//Methods
 	std::string title();
-	
-	
 };
 
 Work::Work(){
