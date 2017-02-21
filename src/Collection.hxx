@@ -14,7 +14,7 @@ class Collection{
 	std::string title();//Added in First test METHOD
 	std::string title(std::string stringTitle);//Added in Second test METHOD
 	bool isPublished();//Added in Third test
-	
+	std::string publish();//Added in fourth test
 };
 
 Collection::Collection(){
@@ -33,5 +33,9 @@ Collection::Collection(){
  	bool Collection::isPublished(){
 		return ispublished;
 	}
+	//Added in fourth test
+	std::string Collection::publish(){
+		return 0;
+	} 
  	
 	
