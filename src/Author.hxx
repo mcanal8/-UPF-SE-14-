@@ -15,7 +15,7 @@ class Author{
 	std::string getName();//Added in First test
 	void setName(std::string newname);//Added in Second test
 	bool isContracted(); //Added in third test
-	std::string contract(); //Added in fourth test
+	void contract(); //Added in fourth test
 };
 
 Author::Author(){
@@ -42,8 +42,7 @@ bool Author::isContracted(){
 }
 
 //Added in fourth test
-std::string Author::contract(){
+void Author::contract(){
 	_contracted = true;
-	return _name;
 }
 
