@@ -37,6 +37,6 @@ void Author::setName(std::string newname){
 
 //Added in third test
 bool Author::isContracted(){
-	return false;
+	return _contracted;
 }
 
