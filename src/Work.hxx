@@ -56,6 +56,6 @@ Work::Work(){
 		//s is isbn string converted
 		s = out.str();
 		//texto sera el siguiente
-		texto = s+", '"+a+"',"+" '"+original+"'"; 
+		texto = s+", '"+a+"',"+" 'originals/"+original+"'"; 
 		return texto;
 	}
