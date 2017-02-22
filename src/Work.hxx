@@ -8,7 +8,7 @@ class Work{
 	int isbn_num;
 	
 	public:
-	virtual std::string aText(std::string texto = ""){
+	virtual std::string aText(std::string texto = "-1, '-- Untitled --', ''"){
 		return texto;
 	}
 
