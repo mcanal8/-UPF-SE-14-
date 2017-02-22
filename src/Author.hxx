@@ -4,21 +4,26 @@
 class Author{
 
 	private:
-		std::string catalogue = "";
+		std::string _name;
+		bool _contracted;
 
 	public:
 	//Constructor
 	Author();
 
 	//Methods
-	std::string catalogue();//Added in first Test
+	std::string getName();//Added in First test
 };
 
 Author::Author(){
-
+	_name = "--A_Name--";
+	_contracted = false;
 }
 
-//Added in first Test
-std::string Author::catalogue(){
-	return catalogue;
+//Added in First test
+std::string Author::getName(){
+	
+	return "";
+	
 }
+
