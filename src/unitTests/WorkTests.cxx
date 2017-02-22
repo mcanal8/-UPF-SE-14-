@@ -12,7 +12,7 @@ public:
 		TEST_CASE( testOriginal_byDefault );
 		TEST_CASE( testOriginal_addingOriginal );
 		TEST_CASE( testAText_byDefault );
-//		TEST_CASE( testAText_initialized );
+		TEST_CASE( testAText_initialized );
 	}
 	void testTitle_byDefault()
 	{
@@ -28,6 +28,7 @@ public:
 	void testReference_byDefault()
 	{
 		Work work;
+		
 		ASSERT_EQUALS( -1, work.isbn() );
 	}
 	void testReference_addingReference()
@@ -52,7 +53,7 @@ public:
 		Work work;
 		ASSERT_EQUALS( "-1, '-- Untitled --', ''", work.aText() );
 	}
-	/*void testAText_initialized()
+	void testAText_initialized()
 	{
 		Work work;
 		work.title( "A Work" );
@@ -60,7 +61,7 @@ public:
 		work.originalFile( "AFile.odt" );
 		ASSERT_EQUALS( "100, 'A Work', 'originals/AFile.odt'", work.aText() );
 	}
-*/
+
 };
 
 REGISTER_FIXTURE( WorkTests )
