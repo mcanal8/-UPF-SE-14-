@@ -8,17 +8,20 @@ class Work{
 	int isbn_num;
 	
 	public:
-	
+	virtual std::string aText(std::string texto = ""){
+		return texto;
+	}
+
 	//constructor
 	Work();
 
 	//Methods
-	std::string title();
-	void title(std::string stringTitle);
-	int isbn();
-	void isbn(int nou_ISBN);
-	std::string originalFile();
-	void originalFile(std::string new_original);
+	std::string title();//Added in First test
+	void title(std::string stringTitle);//Added in Second test
+	int isbn();//Added in Third test
+	void isbn(int nou_ISBN);//Added in Fourth test
+	std::string originalFile();//Added in test Five
+	void originalFile(std::string new_original);//Added in the Last test
 };
 
 Work::Work(){
