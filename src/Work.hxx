@@ -55,7 +55,10 @@ Work::Work(){
 		out << isbn();
 		//s is isbn string converted
 		s = out.str();
-		//texto sera el siguiente
-		texto = s+", '"+a+"',"+" 'originals/"+original+"'"; 
+		//texto sera el siguiente (añadimos condicional para diferenciar cuando sea por defecto)
+		if (isbn() == -1){
+			texto = s+", '"+a+"',"+" '"+original+"'";
+		}
+		else 	texto = s+", '"+a+"',"+" 'originals/"+original+"'"; 
 		return texto;
 	}
