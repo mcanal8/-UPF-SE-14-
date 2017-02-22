@@ -4,20 +4,21 @@
 class Author{
 
 	private:
-		std::string a;
+		std::string catalogue = "";
 
 	public:
 	//Constructor
 	Author();
 
 	//Methods
-	std::string catalogue();
+	std::string catalogue();//Added in first Test
 };
 
 Author::Author(){
 
 }
 
+//Added in first Test
 std::string Author::catalogue(){
-	return a;
+	return catalogue;
 }
