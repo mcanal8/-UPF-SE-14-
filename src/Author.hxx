@@ -4,8 +4,7 @@
 class Author{
 
 	private:
-		std::string _name;
-		std::string _catalogue;
+		std::string _name, _catalogue;
 		bool _contracted;
 
 	public:
@@ -13,12 +12,12 @@ class Author{
 	Author();
 
 	//Methods
-	std::string getName();//Added in First test
-	void setName(std::string newname);//Added in Second test
-	bool isContracted(); //Added in third test
-	void contract(); //Added in fourth test
+	std::string getName();//Added in First test P2
+	void setName(std::string newname);//Added in Second test P2
+	bool isContracted(); //Added in third test P2
+	void contract(); //Added in fourth test P2
 	
-	std::string catalogue();
+	std::string catalogue();//Added in P3: Test 1.
 	
 };
 

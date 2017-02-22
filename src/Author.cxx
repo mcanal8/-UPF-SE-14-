@@ -28,6 +28,6 @@ bool Author::isContracted(){
 void Author::contract(){
 	_contracted = true;
 }
-std::string Author::catalogue(){
+std::string Author::catalogue(){//Retorna el cataleg de l'Autor corresponent.
 		return _catalogue;
 	}
