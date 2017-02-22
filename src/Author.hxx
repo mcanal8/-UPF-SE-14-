@@ -30,8 +30,8 @@ std::string Author::getName(){
 
 //Added in Second test
 std::string Author::setName(std::string newname){
-	
-	return 0;
-
+		
+	_name = "Pol";
+	return _name;
 }
 
