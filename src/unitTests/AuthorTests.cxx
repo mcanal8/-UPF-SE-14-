@@ -8,6 +8,7 @@ public:
 	{
 		TEST_CASE( testAuthorName_byDefault );
 		TEST_CASE( testAuthorName_addName );
+		TEST_CASE( testContracted_byDefault );
 		
 	}
 	void testAuthorName_byDefault()
@@ -21,6 +22,12 @@ public:
 		Author author;
 		author.setName("Pol");
 		ASSERT_EQUALS( "Pol", author.getName() );
+	}
+	
+	void testContracted_byDefault()
+	{
+		Author author;
+		ASSERT_EQUALS( false, author.isContracted() );
 	}
 	
 };
