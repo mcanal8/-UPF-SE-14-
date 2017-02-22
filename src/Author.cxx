@@ -3,6 +3,7 @@
 Author::Author(){
 	_name = "--A_Name--";
 	_contracted = false;
+	_catalogue = "";
 }
 
 //Added in First test
@@ -28,5 +29,5 @@ void Author::contract(){
 	_contracted = true;
 }
 std::string Author::catalogue(){
-		return 0;
+		return _catalogue;
 	}

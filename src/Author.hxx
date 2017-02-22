@@ -5,6 +5,7 @@ class Author{
 
 	private:
 		std::string _name;
+		std::string _catalogue;
 		bool _contracted;
 
 	public:
