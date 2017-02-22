@@ -1,17 +1,15 @@
 #include <string>
 #include <iostream>
+#include <sstream>
 
 class Work{
 	//Atributos
 	private:
-	std::string a, original;
+	std::string a, original, texto;
 	int isbn_num;
 	
 	public:
-	virtual std::string aText(std::string texto = "-1, '-- Untitled --', ''"){
-		return texto;
-	}
-
+	
 	//constructor
 	Work();
 
@@ -21,13 +19,15 @@ class Work{
 	int isbn();//Added in Third test
 	void isbn(int nou_ISBN);//Added in Fourth test
 	std::string originalFile();//Added in test Five
-	void originalFile(std::string new_original);//Added in the Last test
+	void originalFile(std::string new_original);//Added in test Six
+	std::string aText();//Added in test Seven
 };
 
 Work::Work(){
 		a = "-- Untitled --";
-		isbn_num = -1;	
-		original = "";	
+		isbn_num = (-1);	
+		original = "";
+		texto = "";	
 	}
 	
 	std::string Work::title(){
@@ -47,4 +47,15 @@ Work::Work(){
 	}
 	void Work::originalFile(std::string new_original){
 		original = new_original;
+	}
+	std::string Work::aText(){
+		//convert int isbn to string isbn		
+		std::string s;
+		std::stringstream out;
+		out << isbn();
+		//s is isbn string converted
+		s = out.str();
+		//texto sera el siguiente
+		texto = s+", '"+a+"',"+" '"+original+"'"; 
+		return texto;
 	}
