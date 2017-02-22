@@ -31,24 +31,24 @@ Work::Work(){
 	}
 	
 	std::string Work::title(){
-		return a;
+		return a;	// Retorna el titol del work seleccionat
 	}
 	void Work::title(std::string stringTitle){
-		a = stringTitle;	
+		a = stringTitle;	// Modifica el titol del work seleccionat
  	}
 	int Work::isbn(){
-		return isbn_num;
+		return isbn_num;	// Retorna ISBN del work seleccionat
 	}
 	void Work::isbn(int nou_ISBN){
-		isbn_num = nou_ISBN;	
+		isbn_num = nou_ISBN;	// Modifica el ISBN del work seleccionat
  	}
 	std::string Work::originalFile(){
-		return original;
+		return original;	//Retorna l'originalFile d'un work seleccionat
 	}
 	void Work::originalFile(std::string new_original){
-		original = new_original;
+		original = new_original;	// Modifica l'originalFile del work seleccionat
 	}
-	std::string Work::aText(){
+	std::string Work::aText(){ //Mostra toda la informacio d'un work determinat
 		//convert int isbn to string isbn		
 		std::string s;
 		std::stringstream out;

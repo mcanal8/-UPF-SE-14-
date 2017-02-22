@@ -21,24 +21,24 @@ class Collection{
 Collection::Collection(){
 		a = "-- Untitled --";		
 	}
-	//Added in First test METHOD
+	//Retorna titol d'una coleccio seleccionada
 	std::string Collection::title(){
 		return a;
 	}
-	//Added in Second test METHOD
+	//Modifica titol d'una coleccio seleccionada
 	std::string Collection::title(std::string stringTitle){
 		a = stringTitle;	
  		return a;
  	}
- 	//Added in third test
+ 	//Indicador de si una coleccio ha sigut o no publicada
  	bool Collection::isPublished(){
 		return ispublished;
 	}
-	//Added in fourth test
+	//Modifiquen la condicio de publicat o no d'una coleccio seleccionada
 	void Collection::publish(){
 		ispublished = true;
 	} 
-	//Added in the last test
+		//Added in the last test
 	void Collection::withdraw(){
 		ispublished = false;
 	}
