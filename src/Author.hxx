@@ -13,6 +13,7 @@ class Author{
 
 	//Methods
 	std::string getName();//Added in First test
+	std::string setName(std::string newname);//Added in Second test
 };
 
 Author::Author(){
@@ -25,5 +26,12 @@ std::string Author::getName(){
 	
 	return _name;
 	
+}
+
+//Added in Second test
+std::string Author::setName(std::string newname){
+	
+	return 0;
+
 }
 
