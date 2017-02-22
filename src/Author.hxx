@@ -4,7 +4,7 @@
 class Author{
 
 	private:
-		
+		std::string a;
 
 	public:
 	//Constructor
@@ -19,5 +19,5 @@ Author::Author(){
 }
 
 std::string Author::catalogue(){
-	return 0;
+	return a;
 }
