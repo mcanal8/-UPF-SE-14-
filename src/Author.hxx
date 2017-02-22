@@ -23,7 +23,7 @@ Author::Author(){
 //Added in First test
 std::string Author::getName(){
 	
-	return "";
+	return "--A_Name--";
 	
 }
 
