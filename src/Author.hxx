@@ -43,6 +43,7 @@ bool Author::isContracted(){
 
 //Added in fourth test
 std::string Author::contract(){
+	_contracted = true;
 	return _name;
 }
 
