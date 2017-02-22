@@ -13,7 +13,7 @@ class Author{
 
 	//Methods
 	std::string getName();//Added in First test
-	std::string setName(std::string newname);//Added in Second test
+	void setName(std::string newname);//Added in Second test
 };
 
 Author::Author(){
@@ -29,9 +29,8 @@ std::string Author::getName(){
 }
 
 //Added in Second test
-std::string Author::setName(std::string newname){
+void Author::setName(std::string newname){
 		
-	_name = "Pol";
-	return _name;
+	_name = newname;
 }
 
