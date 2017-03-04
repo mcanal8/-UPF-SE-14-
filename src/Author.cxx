@@ -4,6 +4,7 @@ Author::Author(){
 	_name = "--A_Name--";
 	_contracted = false;
 	_catalogue = "";
+	stringnum = "";
 }
 
 //Added in First test
@@ -34,7 +35,6 @@ std::string Author::catalogue(){//Retorna el cataleg de l'Autor corresponent.
 
 //Added in P3 Test 2
 void Author::addWork(std::string workname, int worknum, std::string file){
-	_catalogue = "\t123, 'A work', 'originals/aFile.odt'\n";
-
+	_catalogue = std::toString(worknum);
 }
 
