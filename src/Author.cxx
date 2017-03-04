@@ -31,3 +31,9 @@ void Author::contract(){
 std::string Author::catalogue(){//Retorna el cataleg de l'Autor corresponent.
 		return _catalogue;
 	}
+
+//Added in P3 Test 2
+void Author::addWork(std::string workname, int worknum, std::string file){
+
+}
+

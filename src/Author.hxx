@@ -18,6 +18,7 @@ class Author{
 	void contract(); //Added in fourth test P2
 	
 	std::string catalogue();//Added in P3: Test 1.
+	void addWork(std::string workname, int worknum, std::string file);//Added in P3 Test 2
 	
 };
 
