@@ -1,10 +1,11 @@
 #include "Author.hxx"
 
+
 Author::Author(){
 	_name = "--A_Name--";
 	_contracted = false;
 	_catalogue = "";
-	stringnum = "";
+	_stringnum = "";
 }
 
 //Added in First test
@@ -35,6 +36,15 @@ std::string Author::catalogue(){//Retorna el cataleg de l'Autor corresponent.
 
 //Added in P3 Test 2
 void Author::addWork(std::string workname, int worknum, std::string file){
-	_catalogue = std::toString(worknum);
+	//COM QUE EL NOSTRE COMPILADOR NO DETECTA EL TOSTRING(), HEM DE FER SERVIR AIXO PER PASAR A STRING	
+	//convert int worknum to string worknum	
+	std::string s;	
+	std::stringstream out;
+	out << worknum;
+	//s is string worknum (converted)
+	s = out.str();
+	
+	_catalogue = "\t"+ s + ", '" + workname + "', 'originals/" + file +"'\n";
+	
 }
 

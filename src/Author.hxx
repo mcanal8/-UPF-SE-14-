@@ -1,10 +1,13 @@
 #include <iostream>
 #include <cstring>
+#include <string>
+#include <iostream>
+#include <sstream>
 
 class Author{
 
 	private:
-		std::string _name, _catalogue;
+		std::string _name, _catalogue, _stringnum;
 		bool _contracted;
 
 	public:
