@@ -44,7 +44,7 @@ void Author::addWork(std::string workname, int worknum, std::string file){
 	//s is string worknum (converted)
 	s = out.str();
 	
-	_catalogue = _catalogue.append("\t"+ s + ", '" + workname + "', 'originals/" + file +"'\n");
+	_catalogue = _catalogue.append("\t"+ s + ", '" + workname + "', 'originals/" + file +"'\n");//Amb la funció append afegim al final de l'string _catalogue el nou text
 	
 }
 
