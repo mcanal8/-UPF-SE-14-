@@ -6,6 +6,7 @@ Author::Author(){
 	_contracted = false;
 	_catalogue = "";
 	_stringnum = "";
+	work;
 }
 
 //Added in First test
@@ -46,5 +47,10 @@ void Author::addWork(std::string workname, int worknum, std::string file){
 	
 	_catalogue = _catalogue.append("\t"+ s + ", '" + workname + "', 'originals/" + file +"'\n");//Amb la funció append afegim al final de l'string _catalogue el nou text
 	
+}
+
+//Added in P3 Test 4
+Work findWork(std::string workname){
+	return work;
 }
 
