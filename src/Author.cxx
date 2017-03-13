@@ -6,7 +6,7 @@ Author::Author(){
 	_contracted = false;
 	_catalogue = "";
 	_stringnum = "";
-	work;
+	
 }
 
 //Added in First test
@@ -49,8 +49,4 @@ void Author::addWork(std::string workname, int worknum, std::string file){
 	
 }
 
-//Added in P3 Test 4
-Work findWork(std::string workname){
-	return work;
-}
 
