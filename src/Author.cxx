@@ -48,5 +48,14 @@ void Author::addWork(std::string workname, int worknum, std::string file){
 	_catalogue = _catalogue.append("\t"+ s + ", '" + workname + "', 'originals/" + file +"'\n");//Amb la funció append afegim al final de l'string _catalogue el nou text
 	
 }
+//Added in P3 test 4
+Work& Author::findWork(std::string workname){
+	Work work_random;
+	Work& to_return = work_random;
+	return to_return;
+	
+}
+
+
 
 
