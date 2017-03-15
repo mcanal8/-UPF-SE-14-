@@ -5,6 +5,7 @@ Work::Work(){
 		isbn_num = (-1);	
 		original = "";
 		texto = "";	
+		
 	}
 	
 	std::string Work::title(){
