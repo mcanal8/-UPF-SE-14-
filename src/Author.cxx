@@ -79,7 +79,7 @@ void Author::name(std::string inserted_name){
 }
 std::string Author::description(){
 	
-	return "Hola";
+	return "An author [external]\n";
 	
 }
 
