@@ -1,5 +1,5 @@
 #include "Author.hxx"
-
+#include "myexception.hxx"
 
 Author::Author(){
 	_name = "--A_Name--";
@@ -64,7 +64,9 @@ Work& Author::findWork(std::string workname){
 	for (i = 0;i<=_comptador;++i){
 		if(workname.compare(listOfWorks[i].title()) == 0)	work_selected = listOfWorks[i];	
 	}
-	
+	if(work_selected.title().compare(workname) != 0){
+		throw myexception(); 
+	}
 	Work& to_return = work_selected;
 	return to_return;
 	
