@@ -65,9 +65,9 @@ Work& Author::findWork(std::string workname){
 		if(workname.compare(listOfWorks[i].title()) == 0)	work_selected = listOfWorks[i];	
 	}
 	if(work_selected.title().compare(workname) != 0){
-		throw myexception(); 
+		throw myexception(); //myexception.hxx
 	}
-	Work& to_return = work_selected;
+	Work& to_return = work_selected; 
 	return to_return;
 	
 }

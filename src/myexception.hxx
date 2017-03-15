@@ -8,6 +8,6 @@ class myexception: public exception
 {
   virtual const char* what() const throw()
   {
-    return "The work does not exist";
+    return "The work does not exist"; 	//Missatge de l'excepció
   }
 } myex;
