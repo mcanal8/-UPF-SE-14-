@@ -1,10 +1,13 @@
 #include <iostream>
 #include <cstring>
+#include "Work.hxx"
+
 
 class Collection{
 	private:
 	std::string a;
 	bool ispublished = false;
+	Work listofWorks[100];
 	public:
 	
 	//constructor
@@ -17,6 +20,7 @@ class Collection{
 	void publish();//Added in fourth test
 	void withdraw();//Added in the last test	
 	std::string workList();
+	void addWork(Work newWork);
 };
 
 

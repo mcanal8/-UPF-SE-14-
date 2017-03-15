@@ -4,7 +4,7 @@
 #include <iostream>
 #include <sstream>
 #include <stdlib.h>
-#include "Work.hxx"
+#include "Collection.hxx"
 
 
 

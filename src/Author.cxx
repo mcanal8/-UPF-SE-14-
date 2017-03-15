@@ -1,6 +1,7 @@
 #include "Author.hxx"
 #include "myexception.hxx"
 
+
 Author::Author(){
 	_name = "--A_Name--";
 	_contracted = false;

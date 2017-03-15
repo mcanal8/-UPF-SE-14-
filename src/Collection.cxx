@@ -1,7 +1,8 @@
 #include "Collection.hxx"
 
+
 Collection::Collection(){
-		a = "-- Untitled --";		
+		a = "-- Untitled --";	
 	}
 	//Retorna titol d'una coleccio seleccionada
 	std::string Collection::title(){
@@ -27,4 +28,8 @@ Collection::Collection(){
 	std::string Collection::workList(){
 		std::string out = "";
 		return out;
+	}
+
+	void Collection::addWork(Work newWork){
+
 	}

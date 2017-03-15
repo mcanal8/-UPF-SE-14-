@@ -1,6 +1,5 @@
 #include "MiniCppUnit.hxx"
 #include "Author.hxx"
-#include "Collection.hxx"
 
 
 
@@ -17,7 +16,7 @@ public:
 		TEST_CASE( testDescription_withoutWorks );
 		TEST_CASE( testDescription_withWorks );
 		TEST_CASE( testWorkList_withoutWorks );
-//		TEST_CASE( testWorkList_withOneWork );
+		TEST_CASE( testWorkList_withOneWork );
 //		TEST_CASE( testWorkList_withTwoWorks );
 	}
 	void testCatalogue_withoutWorks()
@@ -116,7 +115,7 @@ public:
 			collection.workList()
 		)
 	}
-	/*void testWorkList_withOneWork()
+	void testWorkList_withOneWork()
 	{
 		Author author;
 		author.addWork( "A work", 111, "aFile.odt" );
@@ -130,7 +129,7 @@ public:
 			"1: 111, 'A work', 'originals/aFile.odt'\n",
 			collection.workList()
 		)
-	}
+	}/*
 	void testWorkList_withTwoWorks()
 	{
 		Author author;
