@@ -31,7 +31,7 @@ bool Author::isContracted(){
 
 //Added in fourth test
 void Author::contract(){
-	//status = " [contracted]\n";
+	status = " [contracted]\n";
 	_contracted = true;
 }
 std::string Author::catalogue(){//Retorna el cataleg de l'Autor corresponent.
@@ -80,13 +80,15 @@ void Author::name(std::string inserted_name){
 	
 }
 std::string Author::description(){
-	std::string description;
+	std::string description = "";
 	if(_contracted == true){
-		description = "An author [contracted]\n"
+		description = description.append(getName() + status + catalogue());
+
+			/*"An author [contracted]\n"
 			"\t111, 'A work', 'originals/aFile.odt'\n"
-			"\t222, 'Another work', 'originals/anotherFile.odt'\n";
+			"\t222, 'Another work', 'originals/anotherFile.odt'\n";*/
 	}
-	else	description = "An author [external]\n";
+	else	description = description.append(getName() + status);	//"An author [external]\n";
 	return description;
 	
 }
