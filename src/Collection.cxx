@@ -28,7 +28,7 @@ Collection::Collection(){
 	void Collection::withdraw(){
 		ispublished = false;
 	}
-	std::string Collection::workList(){
+	std::string Collection::workList(){//Ens surt una excepció que no sabem arreglar. Creiem que no és problema del programa sino del compilador
 
 		std::string out = "1: 111, 'A work', 'originals/aFile.odt'\n";
 		if(isTrue == false)	return "";
