@@ -11,7 +11,7 @@ public:
 		TEST_CASE( testCatalogue_withOneWork );
 		TEST_CASE( testCatalogue_withTwoWorks );
 		TEST_CASE( testFindWork_withTwoWorks );
-//		TEST_CASE( testFindWork_withInexistentWork );
+		TEST_CASE( testFindWork_withInexistentWork );
 //		TEST_CASE( testDescription_withoutWorks );
 //		TEST_CASE( testDescription_withWorks );
 //		TEST_CASE( testWorkList_withoutWorks );
@@ -62,7 +62,7 @@ public:
 			work.title()
 		)
 	}
-	/*void testFindWork_withInexistentWork()
+	void testFindWork_withInexistentWork()
 	{
 		Author author;
 
@@ -79,7 +79,7 @@ public:
 			)
 		}
 	}
-	void testDescription_withoutWorks()
+	/*void testDescription_withoutWorks()
 	{
 		Author author;
 		author.name( "An author" );
@@ -89,7 +89,7 @@ public:
 			author.description()
 		)
 	}
-	/*void testDescription_withWorks()
+	void testDescription_withWorks()
 	{
 		Author author;
 		author.name( "An author" );
