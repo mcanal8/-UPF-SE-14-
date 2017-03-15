@@ -8,6 +8,7 @@ Author::Author(){
 	_stringnum = "";
 	//listOfWorks[= (Work*) malloc(sizeof(Work));
 	_comptador = 0;
+	status = "";
 }
 
 //Added in First test
@@ -19,7 +20,7 @@ std::string Author::getName(){
 
 //Added in Second test
 void Author::setName(std::string newname){
-		
+	
 	_name = newname;
 }
 
@@ -30,6 +31,7 @@ bool Author::isContracted(){
 
 //Added in fourth test
 void Author::contract(){
+	//status = " [contracted]\n";
 	_contracted = true;
 }
 std::string Author::catalogue(){//Retorna el cataleg de l'Autor corresponent.
@@ -73,8 +75,8 @@ Work& Author::findWork(std::string workname){
 }
 //Added in P3 test 6
 void Author::name(std::string inserted_name){
-	
-	
+	setName(inserted_name);
+	status =" [external]\n";
 	
 }
 std::string Author::description(){

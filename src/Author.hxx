@@ -15,7 +15,8 @@ class Author{
 		std::string _name, _catalogue, _stringnum;
 		bool _contracted;
 		Work listOfWorks[100];
-		int _comptador;
+		int _comptador;	
+		std::string status;
 
 	public:
 	//Constructor
