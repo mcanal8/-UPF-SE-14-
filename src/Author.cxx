@@ -51,6 +51,7 @@ void Author::addWork(std::string workname, int worknum, std::string file){
 //Added in P3 test 4
 Work& Author::findWork(std::string workname){
 	Work work_random;
+	work_random.title("A work");
 	Work& to_return = work_random;
 	return to_return;
 	
