@@ -25,5 +25,6 @@ Collection::Collection(){
 		ispublished = false;
 	}
 	std::string Collection::workList(){
-		return "";
+		std::string out = "";
+		return out;
 	}
