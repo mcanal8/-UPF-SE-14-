@@ -30,6 +30,8 @@ class Author{
 	std::string catalogue();//Added in P3: Test 1.
 	void addWork(std::string workname, int worknum, std::string file);//Added in P3 Test 2
 	Work& findWork(std::string workname);//Added in P3 Test 4
+	void name(std::string inserted_name);//Added in P3 test 6
+	std::string description();//Added in P3 test 6
 	
 };
 

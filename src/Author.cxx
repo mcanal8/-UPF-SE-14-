@@ -65,13 +65,26 @@ Work& Author::findWork(std::string workname){
 		if(workname.compare(listOfWorks[i].title()) == 0)	work_selected = listOfWorks[i];	
 	}
 	if(work_selected.title().compare(workname) != 0){
-		throw myexception(); //myexception.hxx
+		throw myexception(); //myexception.hxx Added in P3 test 5
 	}
 	Work& to_return = work_selected; 
 	return to_return;
 	
 }
-//Added in P3 test 5
+//Added in P3 test 6
+void Author::name(std::string inserted_name){
+	
+	
+	
+}
+std::string Author::description(){
+	
+	return "Hola";
+	
+}
+
+
+
 
 
 
