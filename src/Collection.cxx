@@ -24,3 +24,6 @@ Collection::Collection(){
 	void Collection::withdraw(){
 		ispublished = false;
 	}
+	std::string Collection::workList(){
+		return "string";
+	}
