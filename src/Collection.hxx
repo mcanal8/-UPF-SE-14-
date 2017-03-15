@@ -1,18 +1,22 @@
 #include <iostream>
 #include <cstring>
+#include <vector>
 #include "Work.hxx"
 
 
 class Collection{
 	private:
-	std::string a;
-	bool ispublished = false, isTrue;
-	Work listofWorks[100];
+	std::string a, _worksofCollection;
+	bool ispublished, isTrue;
+	std::vector<Work*> listOfWorks;
 	int _comptador;
 	public:
 	
 	//constructor
 	Collection();
+
+	//Destructor
+	~Collection();
 
 	//Methods
 	std::string title();//Added in First test METHOD
@@ -21,7 +25,7 @@ class Collection{
 	void publish();//Added in fourth test
 	void withdraw();//Added in the last test	
 	std::string workList();
-	void addWork(Work newWork);
+	void addWork(Work &newWork);
 };
 
 

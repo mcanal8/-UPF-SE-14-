@@ -7,9 +7,17 @@ Author::Author(){
 	_contracted = false;
 	_catalogue = "";
 	_stringnum = "";
-	//listOfWorks[= (Work*) malloc(sizeof(Work));
 	_comptador = 0;
 	status = "";
+}
+
+Author::~Author(){
+	int i;
+	for(i = 0; i < listOfWorks.size(); i++){
+		if(listOfWorks[i]){
+			delete listOfWorks[i];
+		}
+	}
 }
 
 //Added in First test
@@ -49,30 +57,23 @@ void Author::addWork(std::string workname, int worknum, std::string file){
 	//s is string worknum (converted)
 	s = out.str();*/
 	
-	Work newWork = Work();
-	newWork.title(workname);
-	newWork.isbn(worknum);
-	newWork.originalFile(file);
+	Work *newWork = new Work();
+	newWork->title(workname);
+	newWork->isbn(worknum);
+	newWork->originalFile(file);
 	
-	//listOfWorks = (Work*) realloc(listOfWorks,sizeof(Work));
-	listOfWorks[_comptador]= newWork;
+	listOfWorks.push_back( newWork );
 	_comptador++;
-	_catalogue = _catalogue.append("\t"+ newWork.aText()+"\n");//Amb la funció append afegim al final de l'string _catalogue el nou text
+	_catalogue = _catalogue.append("\t"+ newWork->aText()+"\n");//Amb la funció append afegim al final de l'string _catalogue el nou text
 	
 }
 //Added in P3 test 4
-Work& Author::findWork(std::string workname){
-	int i = 0;
-	Work work_selected;
-	for (i = 0;i<=_comptador;++i){
-		if(workname.compare(listOfWorks[i].title()) == 0)	work_selected = listOfWorks[i];	
+Work& Author::findWork(const std::string &workname){
+	for (int i = 0;i < listOfWorks.size() ;++i){
+		if(workname == listOfWorks[i]->title() )	
+			return *listOfWorks[i];	
 	}
-	if(work_selected.title().compare(workname) != 0){
-		throw myexception(); //myexception.hxx Added in P3 test 5
-	}
-	Work& to_return = work_selected; 
-	return to_return;
-	
+	throw myexception(); //myexception.hxx Added in P3 test 5
 }
 //Added in P3 test 6
 void Author::name(std::string inserted_name){

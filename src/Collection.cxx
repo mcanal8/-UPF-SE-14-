@@ -5,8 +5,19 @@ Collection::Collection(){
 		a = "-- Untitled --";
 		_comptador = 0;
 		isTrue = false;	
-
+		ispublished = false;
 	}
+
+
+	Collection::~Collection(){
+		int i;
+		for(i = 0; i < listOfWorks.size(); i++){
+			if(listOfWorks[i]){
+				delete listOfWorks[i];
+			}
+		}
+	}
+
 	//Retorna titol d'una coleccio seleccionada
 	std::string Collection::title(){
 		return a;
@@ -28,17 +39,15 @@ Collection::Collection(){
 	void Collection::withdraw(){
 		ispublished = false;
 	}
-	std::string Collection::workList(){//Ens surt una excepció que no sabem arreglar. Creiem que no és problema del programa sino del compilador
-
-		std::string out = "1: 111, 'A work', 'originals/aFile.odt'\n";
-		if(isTrue == false)	return "";
+	std::string Collection::workList(){
 		
-		else return out;
+		return _worksofCollection;
 		
 	}
 
-	void Collection::addWork(Work newWork){
-		listofWorks[_comptador] = newWork;
-		isTrue = true;
+	void Collection::addWork(Work &newWork){
+	
+		listOfWorks.push_back( &newWork );
 		_comptador++;
+		_worksofCollection = _worksofCollection.append("1: " + newWork.aText()+"\n");//Amb la funció append afegim al final de l'string _catalogue el nou text
 	}

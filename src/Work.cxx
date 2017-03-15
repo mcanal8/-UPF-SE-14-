@@ -38,5 +38,6 @@ Work::Work(){
 			texto = s+", '"+a+"',"+" '"+original+"'";
 		}
 		else 	texto = s+", '"+a+"',"+" 'originals/"+original+"'"; 
+		
 		return texto;
 	}

@@ -17,7 +17,7 @@ public:
 		TEST_CASE( testDescription_withWorks );
 		TEST_CASE( testWorkList_withoutWorks );
 		TEST_CASE( testWorkList_withOneWork );
-//		TEST_CASE( testWorkList_withTwoWorks );
+		//TEST_CASE( testWorkList_withTwoWorks );
 	}
 	void testCatalogue_withoutWorks()
 	{
