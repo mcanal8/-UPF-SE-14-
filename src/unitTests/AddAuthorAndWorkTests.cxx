@@ -129,8 +129,8 @@ public:
 			"1: 111, 'A work', 'originals/aFile.odt'\n",
 			collection.workList()
 		)
-	}/*
-	void testWorkList_withTwoWorks()
+	}
+	/*void testWorkList_withTwoWorks()
 	{
 		Author author;
 		author.addWork( "A work", 111, "aFile.odt" );
@@ -147,8 +147,8 @@ public:
 			"2: 222, 'Another work', 'originals/anotherFile.odt'\n",
 			collection.workList()
 		)
-	}
-*/
+	}*/
+
 };
 
 REGISTER_FIXTURE( AddAuthorAndWorkTests )

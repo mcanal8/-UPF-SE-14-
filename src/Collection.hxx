@@ -6,8 +6,9 @@
 class Collection{
 	private:
 	std::string a;
-	bool ispublished = false;
+	bool ispublished = false, isTrue;
 	Work listofWorks[100];
+	int _comptador;
 	public:
 	
 	//constructor

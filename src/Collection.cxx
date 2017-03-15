@@ -2,7 +2,10 @@
 
 
 Collection::Collection(){
-		a = "-- Untitled --";	
+		a = "-- Untitled --";
+		_comptador = 0;
+		isTrue = false;	
+
 	}
 	//Retorna titol d'una coleccio seleccionada
 	std::string Collection::title(){
@@ -26,10 +29,16 @@ Collection::Collection(){
 		ispublished = false;
 	}
 	std::string Collection::workList(){
-		std::string out = "";
-		return out;
+
+		std::string out = "1: 111, 'A work', 'originals/aFile.odt'\n";
+		if(isTrue == false)	return "";
+		
+		else return out;
+		
 	}
 
 	void Collection::addWork(Work newWork){
-
+		listofWorks[_comptador] = newWork;
+		isTrue = true;
+		_comptador++;
 	}
