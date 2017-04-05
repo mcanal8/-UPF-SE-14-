@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include <vector>
+#include <string>
+#include <sstream>
 #include "Work.hxx"
 
 
@@ -10,6 +12,7 @@ class Collection{
 	bool ispublished, isTrue;
 	std::vector<Work*> listOfWorks;
 	int _comptador;
+
 	public:
 	
 	//constructor

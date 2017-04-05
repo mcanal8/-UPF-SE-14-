@@ -46,8 +46,12 @@ Collection::Collection(){
 	}
 
 	void Collection::addWork(Work &newWork){
-	
+		
 		listOfWorks.push_back( &newWork );
 		_comptador++;
-		_worksofCollection = _worksofCollection.append("1: " + newWork.aText()+"\n");//Amb la funció append afegim al final de l'string _catalogue el nou text
+		std::string comp;
+		std::stringstream out;
+		out << _comptador;
+		comp = out.str();
+		_worksofCollection = _worksofCollection.append(comp + ": " + newWork.aText()+"\n");//Amb la funció append afegim al final de l'string _catalogue el nou text
 	}
