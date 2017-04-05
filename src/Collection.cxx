@@ -10,12 +10,7 @@ Collection::Collection(){
 
 
 	Collection::~Collection(){
-		int i;
-		for(i = 0; i < listOfWorks.size(); i++){
-			if(listOfWorks[i]){
-				delete listOfWorks[i];
-			}
-		}
+
 	}
 
 	//Retorna titol d'una coleccio seleccionada
@@ -48,8 +43,8 @@ Collection::Collection(){
 	void Collection::addWork(Work &newWork){
 		
 		listOfWorks.push_back( &newWork );
-		_comptador++;
-		std::string comp;
+		_comptador++; 
+		std::string comp; // Codi per transformar el int del comptador en un string
 		std::stringstream out;
 		out << _comptador;
 		comp = out.str();
