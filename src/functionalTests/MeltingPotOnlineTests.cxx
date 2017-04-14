@@ -1,7 +1,7 @@
 #include "LibFileSystem.hxx"
 #include "MiniCppUnit.hxx"
 #include <fstream>
-#include "MeltingPotOnline.cxx"
+#include "MeltingPotOnline.hxx"
 
 class MeltingPotOnlineTests : public TestFixture<MeltingPotOnlineTests>
 {
