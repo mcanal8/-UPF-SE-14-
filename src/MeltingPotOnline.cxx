@@ -14,7 +14,7 @@
 
 	std::string MeltingPotOnline::catalogue(){
 
-		return " ";
+		return "";
 
 	}
 
