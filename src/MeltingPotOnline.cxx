@@ -18,3 +18,7 @@
 
 	}
 
+	void MeltingPotOnline::addAuthor(const std::string authorName, bool isContracted){
+		
+	}
+
