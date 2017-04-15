@@ -3,11 +3,15 @@
 #include <vector>
 #include <string>
 #include <sstream>
-#include "Work.hxx"
+#include "Author.hxx"
 
 
 class MeltingPotOnline{
 
+	private:
+
+		std::vector<Author*> listOfAuthors;
+		std::string _catalogue;
 
 	public:
 	
