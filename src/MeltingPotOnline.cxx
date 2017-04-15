@@ -2,12 +2,12 @@
 
 
 
-
+	//This function is the constructor of the class
 	MeltingPotOnline::MeltingPotOnline(){
 		_catalogue = "";
 	}
 
-
+	//This function is the destructor of the class
 	MeltingPotOnline::~MeltingPotOnline(){
 		int i;
 		for(i = 0; i < listOfAuthors.size(); i++){
@@ -17,12 +17,14 @@
 		}
 	}
 
+	//This function returns a string that contains the information of all the authors
 	std::string MeltingPotOnline::catalogue(){ //Added on the first functional test
 	
 		return _catalogue;
 
 	}
 
+	//This function is used to add a new author to the system
 	void MeltingPotOnline::addAuthor(const std::string authorName, bool isContracted){ //Added on the second functional test
 		Author *newAuthor = new Author();
 		newAuthor->name(authorName);
