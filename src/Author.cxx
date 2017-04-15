@@ -90,7 +90,7 @@ std::string Author::description(){
 			"\t111, 'A work', 'originals/aFile.odt'\n"
 			"\t222, 'Another work', 'originals/anotherFile.odt'\n";*/
 	}
-	else	description = description.append(getName() + status);	//"An author [external]\n";
+	else	description = description.append(getName() + status + catalogue());	//"An author [external]\n";
 	return description;
 	
 }

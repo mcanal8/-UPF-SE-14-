@@ -17,9 +17,13 @@
 		}
 	}
 
-	//This function returns a string that contains the information of all the authors
+	//This function returns a string that contains the information of all the authors and works
 	std::string MeltingPotOnline::catalogue(){ //Added on the first functional test
-	
+		
+		int i;
+		for(i = 0; i < listOfAuthors.size(); i++){
+			_catalogue = _catalogue.append(listOfAuthors[i]->description());
+		}
 		return _catalogue;
 
 	}
@@ -33,10 +37,16 @@
 		}
 	
 		listOfAuthors.push_back( newAuthor );
-		_catalogue = _catalogue.append(newAuthor->description());
+		//_catalogue = _catalogue.append(newAuthor->description());
 	}
 
 	void MeltingPotOnline::addWork(const std::string authorName, const std::string title, int worknum, std::string file){
-
+		int i;
+		for(i = 0; i < listOfAuthors.size(); i++){
+			if(listOfAuthors[i]->getName() == authorName){
+			
+				listOfAuthors[i]->addWork(title, worknum, file);
+			}
+		}
 	}
 
