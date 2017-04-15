@@ -11,7 +11,7 @@ public:
 		TEST_CASE( testCatalogue_withoutAuthors );
 		TEST_CASE( testCatalogue_withExternalAuthor );
 		TEST_CASE( testCatalogue_withContractedAuthor );
-		//TEST_CASE( testCatalogue_withTwoAuthors );
+		TEST_CASE( testCatalogue_withTwoAuthors );
 		//TEST_CASE( testCatalogue_withWork );
 		//TEST_CASE( testCatalogue_withTwoWorksBySameAuthor );
 		//TEST_CASE( testCatalogue_withManyWorks );
