@@ -12,7 +12,7 @@
 
 	}
 
-	std::string MeltingPotOnline::catalogue(){
+	std::string MeltingPotOnline::catalogue(){ //Added on the first functional test
 
 		return "";
 

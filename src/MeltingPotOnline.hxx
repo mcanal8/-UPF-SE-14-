@@ -18,7 +18,7 @@ class MeltingPotOnline{
 	~MeltingPotOnline();
 
 	//Methods
-	std::string catalogue();
+	std::string catalogue();	//Added on the first functional test
 
 };
 
