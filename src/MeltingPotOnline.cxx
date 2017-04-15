@@ -40,7 +40,7 @@
 		//_catalogue = _catalogue.append(newAuthor->description());
 	}
 
-	void MeltingPotOnline::addWork(const std::string authorName, const std::string title, int worknum, std::string file){
+	void MeltingPotOnline::addWork(const std::string authorName, const std::string title, int worknum, std::string file){ //Added on the fifth functional test 
 		int i;
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]->getName() == authorName){

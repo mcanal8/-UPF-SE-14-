@@ -83,14 +83,12 @@ void Author::name(std::string inserted_name){
 }
 std::string Author::description(){
 	std::string description = "";
-	if(_contracted == true){
-		description = description.append(getName() + status + catalogue());
+	description = description.append(getName() + status + catalogue());
 
 			/*"An author [contracted]\n"
 			"\t111, 'A work', 'originals/aFile.odt'\n"
 			"\t222, 'Another work', 'originals/anotherFile.odt'\n";*/
-	}
-	else	description = description.append(getName() + status + catalogue());	//"An author [external]\n";
+	
 	return description;
 	
 }
