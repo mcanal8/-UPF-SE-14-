@@ -9,7 +9,12 @@
 
 
 	MeltingPotOnline::~MeltingPotOnline(){
-
+		int i;
+		for(i = 0; i < listOfAuthors.size(); i++){
+			if(listOfAuthors[i]){
+				delete listOfAuthors[i];
+			}
+		}
 	}
 
 	std::string MeltingPotOnline::catalogue(){ //Added on the first functional test
@@ -18,13 +23,12 @@
 
 	}
 
-	void MeltingPotOnline::addAuthor(const std::string authorName, bool isContracted){
+	void MeltingPotOnline::addAuthor(const std::string authorName, bool isContracted){ //Added on the second functional test
 		Author *newAuthor = new Author();
 		newAuthor->name(authorName);
 		if(isContracted){
 			newAuthor->contract();
 		}
-		//newAuthor->_contracted(isContracted);
 	
 		listOfAuthors.push_back( newAuthor );
 		_catalogue = _catalogue.append(newAuthor->description());
