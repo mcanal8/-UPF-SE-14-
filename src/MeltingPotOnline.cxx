@@ -36,3 +36,7 @@
 		_catalogue = _catalogue.append(newAuthor->description());
 	}
 
+	void MeltingPotOnline::addWork(const std::string authorName, const std::string title, int worknum, std::string file){
+
+	}
+
