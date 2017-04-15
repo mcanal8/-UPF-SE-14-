@@ -40,6 +40,7 @@
 		//_catalogue = _catalogue.append(newAuthor->description());
 	}
 
+	//This function is used to add a new work to a specific author.
 	void MeltingPotOnline::addWork(const std::string authorName, const std::string title, int worknum, std::string file){ //Added on the fifth functional test 
 		int i;
 		for(i = 0; i < listOfAuthors.size(); i++){
