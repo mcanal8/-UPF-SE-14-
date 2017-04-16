@@ -1,4 +1,5 @@
 #include "MeltingPotOnline.hxx"
+#include "myexception2.hxx"
 
 
 
@@ -43,11 +44,16 @@
 	//This function is used to add a new work to a specific author.
 	void MeltingPotOnline::addWork(const std::string authorName, const std::string title, int worknum, std::string file){ //Added on the fifth functional test 
 		int i;
+		bool found = false;
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]->getName() == authorName){
 			
 				listOfAuthors[i]->addWork(title, worknum, file);
+				found = true;
 			}
+		}
+		if(found == false){
+			throw myexception2(); 
 		}
 	}
 
