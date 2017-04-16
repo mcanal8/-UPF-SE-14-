@@ -44,7 +44,7 @@
 	//This function is used to add a new work to a specific author.
 	void MeltingPotOnline::addWork(const std::string authorName, const std::string title, int worknum, std::string file){ //Added on the fifth functional test 
 		int i;
-		bool found = false;
+		bool found = false; //Added to check if function has to generate an exception
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]->getName() == authorName){
 			
@@ -52,7 +52,7 @@
 				found = true;
 			}
 		}
-		if(found == false){
+		if(found == false){ //Exception generated because we havent found any actor
 			throw myexception2(); 
 		}
 	}
