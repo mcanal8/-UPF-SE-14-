@@ -1,5 +1,5 @@
 #include "Author.hxx"
-#include "myexception.hxx"
+#include "workException.hxx"
 
 
 Author::Author(){
@@ -73,9 +73,9 @@ Work& Author::findWork(const std::string &workname){
 		if(workname == listOfWorks[i]->title() )	
 			return *listOfWorks[i];	
 	}
-	throw myexception(); //myexception.hxx Added in P3 test 5
+	throw workException(); //workException.hxx Added in P3 test 5
 }
-//Added in P3 test 6
+//Added in P3 test 6+
 void Author::name(std::string inserted_name){
 	setName(inserted_name);
 	status =" [external]\n";

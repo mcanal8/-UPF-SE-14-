@@ -1,7 +1,7 @@
 #include "MeltingPotOnline.hxx"
-#include "myexception2.hxx"
-#include "myexception3.hxx"
-#include <fstream>
+#include "authorException.hxx"
+#include "fileException.hxx"
+
 
 
 
@@ -50,7 +50,9 @@
 		int i;
 		bool found = false; //Added to check if function has to generate an exception
 		
-		std::ifstream fichero( "aFile.odt" );
+		std::string fullname( "originals/" );
+		fullname += file;
+		std::ifstream fichero( fullname.c_str() );
 				
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]->getName() == authorName){
@@ -60,13 +62,13 @@
 			}
 		}
 		if(found == false){ //Exception generated because we havent found any actor
-			throw myexception2(); 
+			throw authorException(); 
 		}
-		else{
-			if(!fichero){
-				throw myexception3();
-			}	
-		}
+		
+		if(fichero == 0){
+			throw fileException();
+		}	
+		
 		
 	}
 
