@@ -48,27 +48,38 @@
 	//This function is used to add a new work to a specific author.
 	void MeltingPotOnline::addWork(const std::string authorName, const std::string title, int worknum, std::string file){ //Added on the fifth functional test 
 		int i;
-		bool found = false; //Added to check if function has to generate an exception
+		
 		
 		std::string fullname( "originals/" ); // The file is on this folder
 		fullname += file;
 		std::ifstream fichero( fullname.c_str() ); //We usea ifstream to check if the file exists
 				
+		i = findAuthor(authorName);
+		listOfAuthors[i]->addWork(title, worknum, file);
+
+		if(fichero == 0){ //If the file does not exist (fichero is 0) we throw the file exception.
+			throw fileException();
+		}	
+		
+		
+	}
+	int MeltingPotOnline::findAuthor(std::string authorName){
+
+		int posicio, i;
+		bool found = false; //Added to check if function has to generate an exception
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]->getName() == authorName){
-			
-				listOfAuthors[i]->addWork(title, worknum, file);
+				posicio = i;
+				//listOfAuthors[i]->addWork(title, worknum, file);
 				found = true;
 			}
 		}
 		if(found == false){ //Exception generated because we haven't found any author
 			throw authorException(); 
 		}
-		
-		if(fichero == 0){ //If the file does not exist (fichero is 0) we throw the file exception.
-			throw fileException();
-		}	
-		
-		
+		return posicio;
+
+
+
 	}
 
