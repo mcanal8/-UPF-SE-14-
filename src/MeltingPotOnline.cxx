@@ -60,14 +60,17 @@
 		if(fichero == 0){ //If the file does not exist (fichero is 0) we throw the file exception.
 			throw fileException();
 		}
-
+		generateConversions();
+		
+		
+		
+	}
+	void MeltingPotOnline::generateConversions(){
 		const char* fakeGenerated[]= {"generated/An author - A work [multiple HTML files].war","generated/An author - A work [printable].pdf",
 		"generated/An author - A work [watermark].pdf",0
 		};
 		for(int i = 0; fakeGenerated[i]; ++i)
 			std::ofstream newfile(fakeGenerated[i]);
-		
-		
 	}
 	
 	
