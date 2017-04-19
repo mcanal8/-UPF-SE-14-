@@ -1,0 +1,28 @@
+Seminar 1:
+- En el ejercicio de clase solo salen stakeholders en el glosario, por otro lado se podrían haber encontrados más puntos oscuros y 
+sus correspondientes propuestas de soluciones.
+- El archivo principal se debería llamar index.html
+- Faltan datos en cada punto: stakeholders importantes, puntos oscuros y no se definen funcionalidades en el glosario
+
+Seminar 2:
+- Documento final:
+   · Debería haber un index.html que cuelgue de doc/
+   · No se habla del tipo de compra (física o digital)
+   · Ejercicio 3 falta alguna relación caso de uso y administrador
+   · El diagrama de casos de uso se debería hacer conexo
+   
+Seminar 3:
+- Relación web y pagos está al revés. Pasa lo mismo con colección y trabajos.
+- Falta todo el sistema de distribución
+
+Seminar 4:
+- Ejercicio de clase, en el diagrama de estados se debe seleccionar una clase
+- En el final, para el state-diagram, la clase no acaba de estar bien especificada
+- En el final, faltan bucles hacia atrás en los diagramas de actividad
+
+Seminar 5:
+- En el ejercicio de clae, las relaciones son incorrectas y los atributos se deberían declarar como list de punteros.
+- El seminario 5 no es accesible desde index.html
+- El diagrama no se ajusta a lo que se pedía: el Facade debería gestionar como mínimo la memoria de Author, Client, Collection; 
+la clase Editor no es necesaria; Faltan métodos de search, buy, publish, notify... todos los métodos deben ser accesibles desde 
+el Facade; los atributos que son listas se deben poner como en este ej. works:list< Work* >
