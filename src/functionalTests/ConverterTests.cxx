@@ -9,7 +9,7 @@ public:
 	TEST_FIXTURE( ConverterTests )
 	{
 		TEST_CASE( testConvertersByDefault_withoutOriginals );
-		//TEST_CASE( testConvertersByDefault_withOneOriginal );
+		TEST_CASE( testConvertersByDefault_withOneOriginal );
 		//TEST_CASE( testOptionalConverterWithFile_withOneOriginal );
 	}
 
@@ -52,7 +52,7 @@ public:
 			"", 
 			LibFileSystem::listDirectoryInOrder( "generated" )
 		);
-	}/*
+	}
 	void testConvertersByDefault_withOneOriginal()
 	{
 		MeltingPotOnline business;
@@ -66,7 +66,7 @@ public:
 			"generated/An author - A work [watermark].pdf\n",
 			LibFileSystem::listDirectoryInOrder( "generated" )
 		);
-	}
+	}/*
 	void testOptionalConverterWithFile_withOneOriginal()
 	{
 		std::ofstream config( "config/config.txt" );
