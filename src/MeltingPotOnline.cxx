@@ -59,10 +59,18 @@
 
 		if(fichero == 0){ //If the file does not exist (fichero is 0) we throw the file exception.
 			throw fileException();
-		}	
+		}
+
+		const char* fakeGenerated[]= {"generated/An author - A work [multiple HTML files].war","generated/An author - A work [printable].pdf",
+		"generated/An author - A work [watermark].pdf",0
+		};
+		for(int i = 0; fakeGenerated[i]; ++i)
+			std::ofstream newfile(fakeGenerated[i]);
 		
 		
 	}
+	
+	
 	int MeltingPotOnline::findAuthor(std::string authorName){
 
 		int posicio, i;
@@ -70,7 +78,6 @@
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]->getName() == authorName){
 				posicio = i;
-				//listOfAuthors[i]->addWork(title, worknum, file);
 				found = true;
 			}
 		}
