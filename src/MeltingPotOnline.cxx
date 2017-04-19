@@ -50,9 +50,9 @@
 		int i;
 		bool found = false; //Added to check if function has to generate an exception
 		
-		std::string fullname( "originals/" );
+		std::string fullname( "originals/" ); // The file is on this folder
 		fullname += file;
-		std::ifstream fichero( fullname.c_str() );
+		std::ifstream fichero( fullname.c_str() ); //We usea ifstream to check if the file exists
 				
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]->getName() == authorName){
@@ -61,11 +61,11 @@
 				found = true;
 			}
 		}
-		if(found == false){ //Exception generated because we havent found any actor
+		if(found == false){ //Exception generated because we haven't found any author
 			throw authorException(); 
 		}
 		
-		if(fichero == 0){
+		if(fichero == 0){ //If the file does not exist (fichero is 0) we throw the file exception.
 			throw fileException();
 		}	
 		
