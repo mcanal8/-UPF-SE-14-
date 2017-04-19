@@ -3,6 +3,7 @@
 #include "MiniCppUnit.hxx"
 #include "MeltingPotOnline.hxx"
 
+
 class ConverterTests : public TestFixture<ConverterTests>
 {
 public:

@@ -27,6 +27,7 @@ class MeltingPotOnline{
 	void addAuthor(const std::string authorName, bool isContracted); //Added on the second functional test       
 	void addWork(const std::string authorName, const std::string title, int worknum, std::string file); //Added on the 5th functional test
 	int findAuthor(std::string authorName);
+	void generateConversions();
 
 };
 
