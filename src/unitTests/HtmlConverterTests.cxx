@@ -4,13 +4,13 @@
 #include "MeltingPotOnline.hxx"
 
 
-class ConverterTests : public TestFixture<ConverterTests>
+class htmlConverterTests : public TestFixture<htmlConverterTests>
 {
 public:
-	TEST_FIXTURE( ConverterTests )
+	TEST_FIXTURE( htmlConverterTests )
 	{
 		//TEST_CASE( testConvertersByDefault_withoutOriginals );
-		TEST_CASE(testConvert_generateFile);
+		//TEST_CASE(testConvert_generateFile);
 
 	}
 
@@ -35,7 +35,7 @@ public:
 	/**
 	 * This method creates files used in tests
 	 */
-	void createOriginalFile( const std::string & name )
+	/*void createOriginalFile( const std::string & name )
 	{
 		std::string fullname( "originals/" );
 		fullname += name;
@@ -63,6 +63,6 @@ public:
 	
 };
 
-REGISTER_FIXTURE( HtmlConverterTests )
+REGISTER_FIXTURE(  htmlConverterTests )
 
 
