@@ -56,16 +56,19 @@ public:
 			LibFileSystem::listDirectoryInOrder( "generated" )
 			);
 	}
-	/*void testConvertersByDefault_withoutOriginals()
+
+	void testConvert_generateContent()
 	{
-		MeltingPotOnline business;
-		business.addAuthor( "An author", false );
+		HtmlConverter converter;
+		createOriginalFile( "Original.odt" );
+		
 
 		ASSERT_EQUALS(
-			"", 
-			LibFileSystem::listDirectoryInOrder( "generated" )
-		);
-	}*/
+
+			LibFileSystem::fileContent( "generated" )
+			);
+	}
+	
 	
 };
 
