@@ -1,7 +1,8 @@
 #include <fstream>
 #include "LibFileSystem.hxx"
 #include "MiniCppUnit.hxx"
-#include "MeltingPotOnline.hxx"
+#include "HtmlConverter.hxx"
+
 
 
 class htmlConverterTests : public TestFixture<htmlConverterTests>
@@ -9,7 +10,7 @@ class htmlConverterTests : public TestFixture<htmlConverterTests>
 public:
 	TEST_FIXTURE( htmlConverterTests )
 	{
-		//TEST_CASE( testConvertersByDefault_withoutOriginals );
+		TEST_CASE( testConvert_generateFile );
 		//TEST_CASE(testConvert_generateFile);
 
 	}
@@ -35,7 +36,7 @@ public:
 	/**
 	 * This method creates files used in tests
 	 */
-	/*void createOriginalFile( const std::string & name )
+	void createOriginalFile( const std::string & name )
 	{
 		std::string fullname( "originals/" );
 		fullname += name;
@@ -49,6 +50,11 @@ public:
 		HtmlConverter converter;
 		createOriginalFile( "Original.odt" );
 		converter.convert( "originals/Original.odt", "generated/Prefix" );
+
+		ASSERT_EQUALS(
+			"generated/Prefix [multiple HTML files].war\n",
+			LibFileSystem::listDirectoryInOrder( "generated" )
+			);
 	}
 	/*void testConvertersByDefault_withoutOriginals()
 	{
