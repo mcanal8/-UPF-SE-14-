@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
 class HtmlConverter{
 
@@ -14,6 +15,6 @@ class HtmlConverter{
 	~HtmlConverter();
 
 	//Methods
-	void convert(const std::string original, const std::string converted);
+	void convert(const std::string original, std::string converted);
 
 };
