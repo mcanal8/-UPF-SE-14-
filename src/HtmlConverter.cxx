@@ -12,5 +12,9 @@
 	}
 
 void HtmlConverter::convert(const std::string original, const std::string converted){
-
+		const char* convertedName[]= {"generated/Prefix [multiple HTML files].war", 0
+		};
+		for(int i = 0; convertedName[i]; ++i)
+			std::ofstream newfile(convertedName[i]);
+	
 }
