@@ -1,4 +1,5 @@
 #include "HtmlConverter.hxx"
+#include "libLibreOffice2Html.hxx"
 
 
 	//This function is the constructor of the class
@@ -11,7 +12,7 @@
 
 	}
 
-void HtmlConverter::convert(const std::string original, std::string converted){
+void HtmlConverter::convert(const char* original, std::string converted){
 
 		converted.append(" [multiple HTML files].war");
 		char* convertedChar = new char[converted.size() + 1];
@@ -19,15 +20,17 @@ void HtmlConverter::convert(const std::string original, std::string converted){
 		convertedChar[converted.size()] = '\0'; 
 		char* convertedName[]= {convertedChar, 0
 		};
-		std::fstream fs;
+		int conversion;
+		//std::fstream fs;
 		for(int i = 0; convertedName[i]; ++i)
 		{
 			std::ofstream newfile(convertedName[i]);
-				
-			fs.open(convertedName[i], std::ios::app);
+			conversion = OO_WarGeneration(original,convertedName[i]);	
+			/*fs.open(convertedName[i], std::ios::app);
 			fs << "War file generated from ‘originals/Original.odt’\n";
-			fs.close();
+			fs.close();*/
 		}
 		
 		delete[] convertedChar;
+		
 	}	

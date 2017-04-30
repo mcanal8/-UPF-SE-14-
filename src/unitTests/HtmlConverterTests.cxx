@@ -66,7 +66,7 @@ public:
 		converter.convert( "originals/Original.odt", "generated/Prefix" );
 
 		ASSERT_EQUALS(
-			"War file generated from ‘originals/Original.odt’\n",
+			"War file generated from 'originals/Original.odt'\n",
 			LibFileSystem::fileContent( "generated/Prefix [multiple HTML files].war" )
 			);
 	}

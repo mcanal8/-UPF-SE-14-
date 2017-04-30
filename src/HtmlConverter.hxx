@@ -15,6 +15,6 @@ class HtmlConverter{
 	~HtmlConverter();
 
 	//Methods
-	void convert(const std::string original, std::string converted);
+	void convert(const char* original, std::string converted);
 
 };
