@@ -12,7 +12,7 @@ public:
 	{
 		TEST_CASE( testConvert_generateFile );
 		TEST_CASE( testConvert_generateContent );
-		//TEST_CASE( testConvert_withInexistentOriginal );
+		TEST_CASE( testConvert_withInexistentOriginal );
 		//TEST_CASE( testConvert_polymorphicCall );
 		
 	}
@@ -71,7 +71,7 @@ public:
 			);
 	}
 	
-	/*void testConvert_withInexistentOriginal()
+	void testConvert_withInexistentOriginal()
 	{
 		HtmlConverter converter;
 		
@@ -89,7 +89,7 @@ public:
 		}	
 	}
 
-	void testConvert_polymorphicCall()
+	/*void testConvert_polymorphicCall()
 	{
 		
 	}*/
