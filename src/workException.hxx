@@ -10,4 +10,4 @@ class workException: public exception
   {
     return "The work does not exist"; 	//Missatge de l'excepció
   }
-} myex;
+};

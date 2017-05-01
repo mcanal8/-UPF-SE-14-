@@ -10,4 +10,4 @@ class authorException: public exception
   {
     return "The author does not exist"; 	//Missatge de l'excepció
   }
-} myex2;
+};

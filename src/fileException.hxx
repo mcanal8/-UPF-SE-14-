@@ -10,4 +10,4 @@ class fileException: public exception
   {
     return "The original file does not exist"; 	//Missatge de l'excepció
   }
-} myex3;
+};
