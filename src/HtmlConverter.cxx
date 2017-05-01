@@ -1,5 +1,6 @@
 #include "HtmlConverter.hxx"
 #include "libLibreOffice2Html.hxx"
+#include "fileException.hxx"
 
 
 	//This function is the constructor of the class
@@ -30,7 +31,7 @@ void HtmlConverter::convert(const char* original, std::string converted){
 			fs << "War file generated from ‘originals/Original.odt’\n";
 			fs.close();*/
 		}
-		
 		delete[] convertedChar;
-		
+		if(conversion == -1)
+			throw fileException();
 	}	

@@ -83,7 +83,7 @@ public:
 		catch ( std::exception & e )
 		{
 			ASSERT_EQUALS(
-				"The original file does not exist.",
+				"The original file does not exist",
 				e.what()
 			)
 		}	
