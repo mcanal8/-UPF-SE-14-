@@ -27,9 +27,15 @@ void PdfConverter::convert(const char* original, std::string converted){
 		char* convertedName[]= {convertedChar, 0
 		};
 
+		std::fstream fs;
  		for(int i = 0; convertedName[i]; ++i){
  			std::ofstream newfile(convertedName[i]);
+
+ 			fs.open(convertedName[i], std::ios::app);
+ 			fs << "Pdf file generated from ‘originals/Original.odt’\n";
+ 			fs.close();
  		}
+
 
 		delete[] convertedChar;
 
