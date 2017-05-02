@@ -16,23 +16,22 @@
 
 void PdfConverter::convert(const char* original, std::string converted){
 		if(watermark_state){
-			//converted.append( " [watermark].pdf" );
-			const char* convertedName[]= {"generated/Prefix [watermark].pdf", 0
-			};
-
-			for(int i = 0; convertedName[i]; ++i)
-
-				std::ofstream newfile(convertedName[i]);
-			}
-		else{
-			//converted.append("  [printable].pdf");
-
-			const char* convertedName[]= {"generated/Prefix [printable].pdf", 0
-			};
-			for(int i = 0; convertedName[i]; ++i)
-				std::ofstream newfile(convertedName[i]);
+			converted.append( " [watermark].pdf" );
 		}
+		else{
+			converted.append(" [printable].pdf");
+		}
+		char* convertedChar = new char[converted.size() + 1];
+		std::copy(converted.begin(), converted.end(), convertedChar);
+		convertedChar[converted.size()] = '\0'; 
+		char* convertedName[]= {convertedChar, 0
+		};
 
+ 		for(int i = 0; convertedName[i]; ++i){
+ 			std::ofstream newfile(convertedName[i]);
+ 		}
+
+		delete[] convertedChar;
 
 }
 void PdfConverter::activateWatermark(const std::string newWatermark){
