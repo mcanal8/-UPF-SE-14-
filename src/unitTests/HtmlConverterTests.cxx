@@ -91,7 +91,10 @@ public:
 
 	/*void testConvert_polymorphicCall()
 	{
-		
+		HtmlConverter instace;
+		Converter plymorphical;
+		polymorphical.convert()
+
 	}*/
 	
 	
