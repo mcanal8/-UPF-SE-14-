@@ -1,0 +1,26 @@
+Lab 1:
+- Falta fichero enclosure.hxx
+- El programa enclosure debería ser una clase con métodos para añadir y ver animales en vez de tener todo en el mismo archivo
+- Preguntas incompletas y/o con errores de GIT: Q5, Q6, Q10
+Lab 2:
+- En el repositorio hay archivos temporales que se deben borrar
+- Los test no se deberían modificar
+- Los parámetros complejos como string no se están pasando por referencia. Ej. "const string &s"
+- Hay un warning que se debe solucionar
+- Falta por pasar 1 test
+Lab 3:
+- Se han subido archivos temporales al repositorio que se deberían eliminar
+- El fichero myexception debería llamarse Exceptions.hxx (y la clase debería tener un nombre que expresara lo que la excepción hace)
+- Se ha creado un array de works en vez de usar contenedores dinámicos como vector, list, ...
+- No se trabaja con punteros ni gestión de memoria
+- No se estan pasando parámetros por referencia ni se hace uso del const
+- Hay warnings que se deben solucionar
+- La práctica no compila de primeras
+- Hay memory leaks que se deben solucionar
+- Hay 3 tests que no se pasan
+Lab 4:
+- MeltingPotOnline tambien debería gestionar Collections
+- Las excepciones deberían ir en un fichero Exceptions.hxx
+- Bastantes parámetros complejos como string, no se pasan por referencia ni con el uso del const
+- Se han subido archivos temporales al repositorio
+- Hay warnings que se deben solucionar
