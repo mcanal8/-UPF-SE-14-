@@ -1,6 +1,6 @@
 #include "PdfConverter.hxx"
 #include "libLibreOffice2Pdf.hxx"
-//#include "fileException.hxx"
+#include "fileException.hxx"
 
 
 	//This function is the constructor of the class
@@ -23,7 +23,16 @@ void PdfConverter::convert(const std::string &original, const std::string &conve
 		else{
 			converted2 = converted + " [printable].pdf";
 		}
-		LibreOfficeTools::convertToPdf(original,converted2,watermark);
+		
+		try{
+
+			LibreOfficeTools::convertToPdf(original,converted2,watermark);
+
+		}
+		catch (...){
+
+				throw fileException();
+		}	
 		//std::ofstream newfile;
 		
 		/*newfile.open(converted2.c_str(), std::ios::app);
