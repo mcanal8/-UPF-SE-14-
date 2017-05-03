@@ -10,8 +10,8 @@ class pdfConverterTests : public TestFixture<pdfConverterTests>
 public:
 	TEST_FIXTURE( pdfConverterTests )
 	{
-		//TEST_CASE( testConvert_generateFile );
-		//TEST_CASE( testConvert_generateContent );
+		TEST_CASE( testConvert_generateFile );
+		TEST_CASE( testConvert_generateContent );
 		//TEST_CASE( testConvert_withInexistentOriginal );
 		//TEST_CASE( testConvert_polymorphicCall );
 		
@@ -62,19 +62,18 @@ public:
 			);
 	}
 
-	/*void testConvert_generateContent()
+	void testConvert_generateContent()
 	{
 		PdfConverter converter;
 		createOriginalFile( "Original.odt" );
 		converter.convert( "originals/Original.odt", "generated/Prefix" );
-		//converter.activateWatermark( "watermark" );
-		//converter.convert( "originals/Original.odt", "generated/Prefix" );
-
-		ASSERT_EQUALS(
-			"Pdf file generated from 'originals/Original.odt'\n",
-			LibFileSystem::fileContent( "generated/Prefix [printable].pdf" )
-			);
-	}*/
+		converter.activateWatermark( "watermark" );
+		converter.convert( "originals/Original.odt", "generated/Prefix" );
+		
+		
+		ASSERT_EQUALS("", LibFileSystem::fileContent("generated/Prefix [watermark].pdf"));
+		
+	}
 	
 	/*void testConvert_withInexistentOriginal()
 	{

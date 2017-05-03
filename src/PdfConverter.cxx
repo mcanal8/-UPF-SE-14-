@@ -14,31 +14,22 @@
 
 	}
 
-void PdfConverter::convert(const char* original, std::string converted){
+void PdfConverter::convert(const std::string &original, const std::string &converted){
+		std::string converted2;
 		if(watermark_state){
-			converted.append( " [watermark].pdf" );
+
+			converted2 = converted + " [watermark].pdf";
 		}
 		else{
-			converted.append(" [printable].pdf");
+			converted2 = converted + " [printable].pdf";
 		}
-		char* convertedChar = new char[converted.size() + 1];
-		std::copy(converted.begin(), converted.end(), convertedChar);
-		convertedChar[converted.size()] = '\0'; 
-		char* convertedName[]= {convertedChar, 0
-		};
+		
 
-		std::fstream fs;
- 		for(int i = 0; convertedName[i]; ++i){
- 			std::ofstream newfile(convertedName[i]);
-
- 			fs.open(convertedName[i], std::ios::app);
- 			fs << "Pdf file generated from ‘originals/Original.odt’\n";
- 			fs.close();
- 		}
-
-
-		delete[] convertedChar;
-
+		std::ofstream newfile;
+		
+		newfile.open(converted2.c_str(), std::ios::app);
+		newfile << "";
+		newfile.close();
 }
 void PdfConverter::activateWatermark(const std::string newWatermark){
 		watermark_state = true;

@@ -17,7 +17,7 @@ class PdfConverter{
 	~PdfConverter();
 
 	//Methods
-	void convert(const char* original, std::string converted);
+	void convert(const std::string &original, const std::string &converted);
 	void activateWatermark(const std::string newWatermark);
 
 };
