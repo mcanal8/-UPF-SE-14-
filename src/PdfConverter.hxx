@@ -1,8 +1,11 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Converter.hxx"
 
-class PdfConverter{
+
+
+class PdfConverter : public Converter{
 
 	private:
 		bool watermark_state;

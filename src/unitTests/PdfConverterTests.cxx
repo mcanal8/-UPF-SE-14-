@@ -13,7 +13,7 @@ public:
 		TEST_CASE( testConvert_generateFile );
 		TEST_CASE( testConvert_generateContent );
 		TEST_CASE( testConvert_withInexistentOriginal );
-		//TEST_CASE( testConvert_polymorphicCall );
+		TEST_CASE( testConvert_polymorphicCall );
 		
 	}
 
@@ -93,13 +93,27 @@ public:
 		}	
 	}
 
-	/*void testConvert_polymorphicCall()
+	void testConvert_polymorphicCall()
 	{
-		HtmlConverter instace;
-		Converter plymorphical;
-		polymorphical.convert()
+		createOriginalFile( "Original.odt" );
+		Converter *converter1;
+		converter1 = new  PdfConverter();
 
-	}*/
+		
+		createOriginalFile( "Original.odt" );
+		converter1->convert( "originals/Original.odt", "generated/Prefix" );
+		converter1->activateWatermark( "watermark" );
+		converter1->convert( "originals/Original.odt", "generated/Prefix" );
+		
+
+		ASSERT_EQUALS(
+			"generated/Prefix [printable].pdf\n"
+			"generated/Prefix [watermark].pdf\n",
+			LibFileSystem::listDirectoryInOrder( "generated" )
+			);
+		delete (converter1);
+
+	}
 	
 	
 };

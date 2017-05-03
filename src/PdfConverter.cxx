@@ -5,7 +5,7 @@
 
 	//This function is the constructor of the class
 	PdfConverter::PdfConverter(){
-		watermark_state = false;
+		watermark_state = 0;
 
 	}
 
@@ -16,7 +16,8 @@
 
 void PdfConverter::convert(const std::string &original, const std::string &converted){
 		std::string converted2;
-		if(watermark_state){
+		printf("%d\n", watermark_state);
+		if(watermark_state == 1){
 
 			converted2 = converted + " [watermark].pdf";
 		}
@@ -36,7 +37,7 @@ void PdfConverter::convert(const std::string &original, const std::string &conve
 		
 }
 void PdfConverter::activateWatermark(const std::string newWatermark){
-		watermark_state = true;
+		watermark_state = 1;
 		watermark = newWatermark;
 
 }	

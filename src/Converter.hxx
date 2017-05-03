@@ -15,6 +15,7 @@ class Converter{
 	virtual ~Converter();
 
 	//Methods
-	virtual	void convert(const std::string &original, const std::string &converted) = 0;
+	virtual	void convert(const std::string &original, const std::string &converted){};
+	virtual void activateWatermark(const std::string newWatermark){}; //Tendremos que quitarlo;
 
 };
