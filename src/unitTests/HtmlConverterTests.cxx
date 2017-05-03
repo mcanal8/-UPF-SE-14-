@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testConvert_generateFile );
 		TEST_CASE( testConvert_generateContent );
 		TEST_CASE( testConvert_withInexistentOriginal );
-		//TEST_CASE( testConvert_polymorphicCall );
+		TEST_CASE( testConvert_polymorphicCall );
 		
 	}
 
@@ -90,22 +90,22 @@ public:
 		}	
 	}
 
-	/*void testConvert_polymorphicCall()
+	void testConvert_polymorphicCall()
 	{
 		createOriginalFile( "Original.odt" );
 		Converter *converter1;
 		converter1 = new  HtmlConverter();
 
 
-		converter1->convert( "originals/original.odt", "generated/Prefix" );
+		converter1->convert( "originals/Original.odt", "generated/Prefix" );
 
 		ASSERT_EQUALS(
-				"generated/Prefix [multiple HTML files].war\n",
-				LibFileSystem::listDirectoryInOrder( "generated")
+			"generated/Prefix [multiple HTML files].war\n",
+			LibFileSystem::listDirectoryInOrder( "generated" )
 			);
 		delete (converter1);
 
-	}*/
+	}
 	
 	
 };
