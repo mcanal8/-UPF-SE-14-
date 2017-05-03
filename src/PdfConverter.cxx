@@ -23,12 +23,12 @@ void PdfConverter::convert(const std::string &original, const std::string &conve
 		else{
 			converted2 = converted + " [printable].pdf";
 		}
+		LibreOfficeTools::convertToPdf(original,converted2,watermark);
+		//std::ofstream newfile;
 		
-		std::ofstream newfile;
-		
-		newfile.open(converted2.c_str(), std::ios::app);
+		/*newfile.open(converted2.c_str(), std::ios::app);
 		newfile << "PDF generated from 'originals/Original.odt'. Watermark: 'watermark'\n";
-		newfile.close();
+		newfile.close();*/
 }
 void PdfConverter::activateWatermark(const std::string newWatermark){
 		watermark_state = true;
