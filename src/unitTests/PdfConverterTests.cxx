@@ -71,7 +71,7 @@ public:
 		converter.convert( "originals/Original.odt", "generated/Prefix" );
 		
 		
-		ASSERT_EQUALS("Pdf file generated from 'originals/Original.odt'\n", LibFileSystem::fileContent("generated/Prefix [watermark].pdf"));
+		ASSERT_EQUALS("PDF generated from 'originals/Original.odt'. Watermark: 'watermark'\n", LibFileSystem::fileContent("generated/Prefix [watermark].pdf"));
 		
 	}
 	

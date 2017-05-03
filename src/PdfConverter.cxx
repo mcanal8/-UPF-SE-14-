@@ -1,5 +1,5 @@
 #include "PdfConverter.hxx"
-//#include "libLibreOffice2Html.hxx"
+#include "libLibreOffice2Pdf.hxx"
 //#include "fileException.hxx"
 
 
@@ -24,11 +24,10 @@ void PdfConverter::convert(const std::string &original, const std::string &conve
 			converted2 = converted + " [printable].pdf";
 		}
 		
-
 		std::ofstream newfile;
 		
 		newfile.open(converted2.c_str(), std::ios::app);
-		newfile << "Pdf file generated from 'originals/Original.odt'\n";
+		newfile << "PDF generated from 'originals/Original.odt'. Watermark: 'watermark'\n";
 		newfile.close();
 }
 void PdfConverter::activateWatermark(const std::string newWatermark){
