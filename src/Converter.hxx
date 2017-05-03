@@ -12,10 +12,9 @@ class Converter{
 	Converter();
 
 	//Destructor
-	~Converter();
+	virtual ~Converter();
 
 	//Methods
-	virtual: 
-	void convert(const char* original, std::string converted);
+	virtual	void convert(const std::string &original, const std::string &converted) = 0;
 
 };

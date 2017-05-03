@@ -1,8 +1,9 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "Converter.hxx"
 
-class HtmlConverter{
+class HtmlConverter : public Converter{
 
 	private:
 
@@ -15,6 +16,6 @@ class HtmlConverter{
 	~HtmlConverter();
 
 	//Methods
-	void convert(const char* original, std::string converted);
+	void convert(const std::string &original, const std::string &converted);
 
 };

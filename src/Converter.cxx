@@ -13,7 +13,3 @@
 
 	}
 
-void HtmlConverter::convert(const char* original, std::string converted){
-
-
-	}	

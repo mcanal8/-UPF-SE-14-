@@ -10,8 +10,8 @@ class pdfConverterTests : public TestFixture<pdfConverterTests>
 public:
 	TEST_FIXTURE( pdfConverterTests )
 	{
-		TEST_CASE( testConvert_generateFile );
-		TEST_CASE( testConvert_generateContent );
+		//TEST_CASE( testConvert_generateFile );
+		//TEST_CASE( testConvert_generateContent );
 		//TEST_CASE( testConvert_withInexistentOriginal );
 		//TEST_CASE( testConvert_polymorphicCall );
 		
@@ -62,7 +62,7 @@ public:
 			);
 	}
 
-	void testConvert_generateContent()
+	/*void testConvert_generateContent()
 	{
 		PdfConverter converter;
 		createOriginalFile( "Original.odt" );
@@ -74,7 +74,7 @@ public:
 			"Pdf file generated from 'originals/Original.odt'\n",
 			LibFileSystem::fileContent( "generated/Prefix [printable].pdf" )
 			);
-	}
+	}*/
 	
 	/*void testConvert_withInexistentOriginal()
 	{
