@@ -25,4 +25,4 @@ void HtmlConverter::convert(const std::string &original, const std::string &conv
 		if(conversion == -1)
 			throw fileException();
 	}	
-void HtmlConverter::activateWatermark(const std::string newWatermark){}
+void HtmlConverter::activateWatermark(const std::string newWatermark){}//Es para el polimorfismo
