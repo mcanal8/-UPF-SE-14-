@@ -33,11 +33,7 @@ void PdfConverter::convert(const std::string &original, const std::string &conve
 
 				throw fileException();
 		}	
-		//std::ofstream newfile;
 		
-		/*newfile.open(converted2.c_str(), std::ios::app);
-		newfile << "PDF generated from 'originals/Original.odt'. Watermark: 'watermark'\n";
-		newfile.close();*/
 }
 void PdfConverter::activateWatermark(const std::string newWatermark){
 		watermark_state = true;
