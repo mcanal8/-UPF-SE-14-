@@ -28,7 +28,7 @@ void PdfConverter::convert(const std::string &original, const std::string &conve
 		std::ofstream newfile;
 		
 		newfile.open(converted2.c_str(), std::ios::app);
-		newfile << "";
+		newfile << "Pdf file generated from 'originals/Original.odt'\n";
 		newfile.close();
 }
 void PdfConverter::activateWatermark(const std::string newWatermark){
