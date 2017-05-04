@@ -1,8 +1,10 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "Converter.hxx"
 #include <vector>
+//#include "Converter.hxx"
+#include "HtmlConverter.hxx"
+
 
 class ConverterGroup{
 

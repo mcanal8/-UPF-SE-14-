@@ -3,6 +3,7 @@
 #include <string>
 #include "Converter.hxx"
 
+
 class HtmlConverter : public Converter{
 
 	private:
