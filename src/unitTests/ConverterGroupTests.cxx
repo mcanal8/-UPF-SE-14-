@@ -11,7 +11,9 @@ public:
 	{
 		TEST_CASE( testConvert_withHtmlConverter );
 		TEST_CASE( testConvert_withoutHtmlConverter );
-		//TEST_CASE( testConvert_withInexistentOriginal );
+		//TEST_CASE( testConvert_withPrintablePdfConverter );
+		//TEST_CASE( testConvert_polymorphicCall );
+		//TEST_CASE( testConvert_polymorphicCall );
 		//TEST_CASE( testConvert_polymorphicCall );
 		
 	}
@@ -71,6 +73,23 @@ public:
 			"",
 			LibFileSystem::listDirectoryInOrder( "generated" )
 		)
+	}
+	void testConvert_withPrintablePdfConverter()
+	{
+	
+		ConverterGroup converterGroup;
+		converterGroup.add( "pdf_print" );
+
+		createOriginalFile( "Original.odt" );
+		converterGroup.convert( "originals/Original.odt", "generated/Prefix" );
+		
+
+		ASSERT_EQUALS(
+			"generated/Prefix [printable].pdf\n",
+			LibFileSystem::listDirectoryInOrder( "generated" )
+			);
+
+
 	}
 
 
