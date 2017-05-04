@@ -8,6 +8,11 @@ ConverterGroup::~ConverterGroup(){
 
 }
 
-ConverterGroup::Add(const std::string tipus){
+
+void ConverterGroup::add(const std::string tipus){
 	
+}
+
+void ConverterGroup::convert(const std::string &original, const std::string &converted){
+
 }

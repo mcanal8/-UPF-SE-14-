@@ -1,6 +1,7 @@
 #include <fstream>
 #include "LibFileSystem.hxx"
 #include "MiniCppUnit.hxx"
+#include "ConverterGroup.hxx"
 
 
 class converterGroupTests : public TestFixture<converterGroupTests>
@@ -8,7 +9,7 @@ class converterGroupTests : public TestFixture<converterGroupTests>
 public:
 	TEST_FIXTURE( converterGroupTests )
 	{
-		TEST_CASE( testConvert_withoutHtmlConverter );
+		TEST_CASE( testConvert_withHtmlConverter );
 		//TEST_CASE( testConvert_generateContent );
 		//TEST_CASE( testConvert_withInexistentOriginal );
 		//TEST_CASE( testConvert_polymorphicCall );
@@ -45,13 +46,17 @@ public:
 		os.close();
 	}
 	
-	void testConvert_withoutHtmlConverter()
+	void testConvert_withHtmlConverter()
 	{
-		Author author;
-		
+		ConverterGroup converterGroup;
+		converterGroup.add( "html" );
+
+		createOriginalFile( "Original.odt" );
+		converterGroup.convert( "originals/Original.odt", "generated/Prefix" );
+
 		ASSERT_EQUALS(
-			"",
-			author.catalogue()
+			"generated/Prefix [multiple HTML files].war\n",
+			LibFileSystem::listDirectoryInOrder( "generated" )
 		)
 	}
 

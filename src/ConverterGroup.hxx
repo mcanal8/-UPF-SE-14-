@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include "Converter.hxx"
+#include <vector>
 
 class ConverterGroup{
 
@@ -17,5 +18,6 @@ class ConverterGroup{
 
 	//Methods
 	void add(const std::string tipus);
+	void convert(const std::string &original, const std::string &converted);
 
 };
