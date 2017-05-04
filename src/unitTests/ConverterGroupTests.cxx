@@ -64,7 +64,6 @@ public:
 	{
 		ConverterGroup converterGroup;
 
-
 		createOriginalFile( "Original.odt" );
 		converterGroup.convert( "originals/Original.odt", "generated/Prefix" );
 
