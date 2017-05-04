@@ -60,7 +60,7 @@ public:
 		)
 	}
 
-		void testConvert_withoutHtmlConverter()
+	void testConvert_withoutHtmlConverter()
 	{
 		ConverterGroup converterGroup;
 
