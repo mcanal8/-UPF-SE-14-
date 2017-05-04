@@ -10,7 +10,7 @@ public:
 	TEST_FIXTURE( converterGroupTests )
 	{
 		TEST_CASE( testConvert_withHtmlConverter );
-		//TEST_CASE( testConvert_generateContent );
+		TEST_CASE( testConvert_withoutHtmlConverter );
 		//TEST_CASE( testConvert_withInexistentOriginal );
 		//TEST_CASE( testConvert_polymorphicCall );
 		
@@ -59,6 +59,21 @@ public:
 			LibFileSystem::listDirectoryInOrder( "generated" )
 		)
 	}
+
+		void testConvert_withoutHtmlConverter()
+	{
+		ConverterGroup converterGroup;
+
+
+		createOriginalFile( "Original.odt" );
+		converterGroup.convert( "originals/Original.odt", "generated/Prefix" );
+
+		ASSERT_EQUALS(
+			"",
+			LibFileSystem::listDirectoryInOrder( "generated" )
+		)
+	}
+
 
 
 	
