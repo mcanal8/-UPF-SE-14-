@@ -6,7 +6,12 @@ ConverterGroup::ConverterGroup(){
 }
 
 ConverterGroup::~ConverterGroup(){
-
+	int i;
+		for(i = 0; i < listOfConverters.size(); i++){
+			if(listOfConverters[i]){
+				delete listOfConverters[i];
+			}
+		}
 }
 
 
