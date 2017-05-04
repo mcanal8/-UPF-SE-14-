@@ -17,7 +17,7 @@ ConverterGroup::~ConverterGroup(){
 
 void ConverterGroup::add(const std::string tipus){
 	if ( tipus.compare("html") == 0){
-		Converter* converterHtml;
+		Converter *converterHtml;
 		converterHtml = new  HtmlConverter();
 		
 		listOfConverters.push_back( converterHtml );

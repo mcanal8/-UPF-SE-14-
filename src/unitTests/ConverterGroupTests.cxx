@@ -11,7 +11,7 @@ public:
 	{
 		TEST_CASE( testConvert_withHtmlConverter );
 		TEST_CASE( testConvert_withoutHtmlConverter );
-		//TEST_CASE( testConvert_withPrintablePdfConverter );
+		TEST_CASE( testConvert_withPrintablePdfConverter );
 		//TEST_CASE( testConvert_polymorphicCall );
 		//TEST_CASE( testConvert_polymorphicCall );
 		//TEST_CASE( testConvert_polymorphicCall );
