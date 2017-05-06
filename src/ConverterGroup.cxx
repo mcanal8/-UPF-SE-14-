@@ -1,11 +1,12 @@
 #include "ConverterGroup.hxx"
 
 
-
+//Constructor
 ConverterGroup::ConverterGroup(){
 
 }
 
+//Destructor
 ConverterGroup::~ConverterGroup(){
 	unsigned int i;
 		for(i = 0; i < listOfConverters.size(); i++){
@@ -15,9 +16,9 @@ ConverterGroup::~ConverterGroup(){
 		}
 }
 
-
-void ConverterGroup::add(const std::string tipus){
-	if ( tipus.compare("html") == 0){
+//Metodo para añadir una nueva conversion a la lista
+void ConverterGroup::add(const std::string tipus){ 
+	if ( tipus.compare("html") == 0){ 
 		Converter *converterHtml;
 		converterHtml = new  HtmlConverter();
 		
@@ -31,6 +32,7 @@ void ConverterGroup::add(const std::string tipus){
 	}
 }
 
+//Metodo para efectuar una conversion de la lista
 void ConverterGroup::convert(const std::string &original, const std::string &converted){
 	if (listOfConverters.size() > 0)	
 		listOfConverters[0]->convert( original, converted);
