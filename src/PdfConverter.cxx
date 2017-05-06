@@ -1,5 +1,4 @@
 #include "PdfConverter.hxx"
-#include "libLibreOffice2Pdf.hxx"
 #include "fileException.hxx"
 
 

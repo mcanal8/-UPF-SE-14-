@@ -2,9 +2,9 @@
 #include <fstream>
 #include <string>
 #include <vector>
-//#include "Converter.hxx"
 #include "HtmlConverter.hxx"
-//#include "PdfConverter.hxx"
+#include "PdfConverter.hxx"
+
 
 
 class ConverterGroup{

@@ -1,6 +1,7 @@
 #include "ConverterGroup.hxx"
 
 
+
 ConverterGroup::ConverterGroup(){
 
 }
@@ -22,17 +23,19 @@ void ConverterGroup::add(const std::string tipus){
 		
 		listOfConverters.push_back( converterHtml );
 	}
-	/*if ( tipus.compare("pdf_print") == 0){
-		Converter* converterPdf;
+	if ( tipus.compare("pdf_print") == 0){
+		Converter *converterPdf;
 		converterPdf = new  PdfConverter();
 		
 		listOfConverters.push_back( converterPdf );
-	}*/
+	}
 }
 
 void ConverterGroup::convert(const std::string &original, const std::string &converted){
 	if (listOfConverters.size() > 0)	
 		listOfConverters[0]->convert( original, converted);
 	else;
+
+
 
 }

@@ -1,8 +1,12 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "Converter.hxx"
+#include "libLibreOffice2Pdf.hxx"
 
+#ifndef Converterclass
+#define Converterclass
+	#include "Converter.hxx"
+#endif
 
 
 class PdfConverter : public Converter{
