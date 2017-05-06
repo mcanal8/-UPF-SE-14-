@@ -30,6 +30,12 @@ void ConverterGroup::add(const std::string tipus){
 		
 		listOfConverters.push_back( converterPdf );
 	}
+	if ( tipus.compare("pdf_mark") == 0){
+		Converter *converterPdf;
+		converterPdf = new  PdfConverter();
+		
+		listOfConverters.push_back( converterPdf );
+	}
 }
 
 //Metodo para efectuar una conversion de la lista
