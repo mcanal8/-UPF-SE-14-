@@ -33,7 +33,7 @@ void ConverterGroup::add(const std::string tipus){
 	if ( tipus.compare("pdf_mark") == 0){
 		Converter *converterPdf;
 		converterPdf = new  PdfConverter();
-		
+		converterPdf->activateWatermark("Watermark");
 		listOfConverters.push_back( converterPdf );
 	}
 }
