@@ -17,7 +17,7 @@ class ConverterGroup{
 	ConverterGroup();
 
 	//Destructor
-	virtual ~ConverterGroup();
+	~ConverterGroup();
 
 	//Methods
 	void add(const std::string tipus);
