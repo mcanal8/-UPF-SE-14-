@@ -13,7 +13,7 @@ public:
 		TEST_CASE( testConvert_withoutHtmlConverter );
 		TEST_CASE( testConvert_withPrintablePdfConverter );
 		TEST_CASE( testConvert_withWatermarkPdfConverter );
-		//TEST_CASE( testConvert_polymorphicCall );
+		TEST_CASE( testConvert_withHtmlAndPdfConverters );
 		//TEST_CASE( testConvert_polymorphicCall );
 		
 	}
@@ -102,6 +102,27 @@ public:
 		
 
 		ASSERT_EQUALS(
+			"generated/Prefix [watermark].pdf\n",
+			LibFileSystem::listDirectoryInOrder( "generated" )
+			);
+
+
+	}
+	void testConvert_withHtmlAndPdfConverters()
+	{
+	
+		ConverterGroup converterGroup;
+		converterGroup.add( "html" );
+		converterGroup.add( "pdf_print" );
+		converterGroup.add( "pdf_mark" );
+
+		createOriginalFile( "Original.odt" );
+		converterGroup.convert( "originals/Original.odt", "generated/Prefix" );
+		
+
+		ASSERT_EQUALS(
+			"generated/Prefix [multiple HTML files].war\n"
+			"generated/Prefix [printable].pdf\n"
 			"generated/Prefix [watermark].pdf\n",
 			LibFileSystem::listDirectoryInOrder( "generated" )
 			);
