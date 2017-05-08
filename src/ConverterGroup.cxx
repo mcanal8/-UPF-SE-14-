@@ -37,9 +37,8 @@ void ConverterGroup::add(const std::string tipus){
 		converterPdf->activateWatermark("Watermark");
 		listOfConverters.push_back( converterPdf );
 	}
-	if ( tipus.compare(".doc") == 0){
+	if ( tipus.compare(".doc") == 0){ //Si se introduce otro tipo que no es pdf o html, salta una exception
 		throw formatException();
-		printf("Exception");
 	}
 }
 
