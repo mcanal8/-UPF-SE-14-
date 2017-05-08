@@ -10,6 +10,9 @@
 	//This function is the constructor of the class
 	MeltingPotOnline::MeltingPotOnline(){
 		_catalogue = "";
+		converter.add( "html" );
+		converter.add( "pdf_print" );
+		converter.add( "pdf_mark" );
 	}
 
 	//This function is the destructor of the class
@@ -48,7 +51,7 @@
 	//This function is used to add a new work to a specific author.
 	void MeltingPotOnline::addWork(const std::string authorName, const std::string title, int worknum, std::string file){ //Added on the fifth functional test 
 		int i;
-		
+		std::string converterfile;
 		
 		std::string fullname( "originals/" ); // The file is on this folder
 		fullname += file;
@@ -60,7 +63,12 @@
 		if(fichero == 0){ //If the file does not exist (fichero is 0) we throw the file exception.
 			throw fileException();
 		}
-		generateConversions();
+		//std::cout << fullname << endl;
+		//std::cout << authorName << endl;
+		converterfile = "/generated " + authorName + " - " + title;
+		std::cout << converterfile << endl;
+		printf("\n");
+		converter.convert(fullname, converterfile);
 		
 		
 		

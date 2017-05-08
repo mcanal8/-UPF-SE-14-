@@ -5,6 +5,7 @@
 #include <sstream>
 #include <fstream>
 #include "Author.hxx"
+#include "ConverterGroup.hxx"
 
 
 class MeltingPotOnline{
@@ -13,6 +14,7 @@ class MeltingPotOnline{
 
 		std::vector<Author*> listOfAuthors;
 		std::string _catalogue;
+		ConverterGroup converter;
 
 	public:
 	
