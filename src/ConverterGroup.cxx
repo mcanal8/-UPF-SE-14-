@@ -1,4 +1,5 @@
 #include "ConverterGroup.hxx"
+#include "formatException.hxx"
 
 
 //Constructor
@@ -35,6 +36,10 @@ void ConverterGroup::add(const std::string tipus){
 		converterPdf = new  PdfConverter();
 		converterPdf->activateWatermark("Watermark");
 		listOfConverters.push_back( converterPdf );
+	}
+	if ( tipus.compare(".doc") == 0){
+		throw formatException();
+		printf("Exception");
 	}
 }
 

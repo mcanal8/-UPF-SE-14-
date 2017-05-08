@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testConvert_withPrintablePdfConverter );
 		TEST_CASE( testConvert_withWatermarkPdfConverter );
 		TEST_CASE( testConvert_withHtmlAndPdfConverters );
-		//TEST_CASE( testConvert_polymorphicCall );
+		TEST_CASE( testConvert_withUnknownConverter );
 		
 	}
 
@@ -129,6 +129,31 @@ public:
 
 
 	}
+	void testConvert_withUnknownConverter()
+	{
+	
+		ConverterGroup converterGroup;
+		converterGroup.add( ".doc" );
+
+		createOriginalFile( "Original.odt" );
+		converterGroup.convert( "originals/Original.odt", "generated/Prefix" );
+		
+
+		try
+		{
+			converterGroup.convert( "originals/Original.odt", "generated/Prefix" );
+			FAIL( "An exception should be caught!" );		
+		}
+		catch ( std::exception & e )
+		{
+			ASSERT_EQUALS(
+				"Unsupported format",
+				e.what()
+			)
+		}	
+
+	}
+
 
 
 
