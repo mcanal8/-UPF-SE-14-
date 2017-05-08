@@ -65,7 +65,7 @@
 		}
 		//std::cout << fullname << endl;
 		//std::cout << authorName << endl;
-		converterfile = "/generated " + authorName + " - " + title;
+		converterfile = "generated/" + authorName + " - " + title;
 		std::cout << converterfile << endl;
 		printf("\n");
 		converter.convert(fullname, converterfile);
@@ -73,14 +73,7 @@
 		
 		
 	}
-	void MeltingPotOnline::generateConversions(){
-		const char* fakeGenerated[]= {"generated/An author - A work [multiple HTML files].war","generated/An author - A work [printable].pdf",
-		"generated/An author - A work [watermark].pdf",0
-		};
-		for(int i = 0; fakeGenerated[i]; ++i)
-			std::ofstream newfile(fakeGenerated[i]);
-	}
-	
+
 	
 	int MeltingPotOnline::findAuthor(std::string authorName){
 
