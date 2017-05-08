@@ -132,16 +132,14 @@ public:
 	void testConvert_withUnknownConverter()
 	{
 	
-		ConverterGroup converterGroup;
+		ConverterGroup converterGroup;		
+
+		try
+		{
 		converterGroup.add( ".doc" );
 
 		createOriginalFile( "Original.odt" );
 		converterGroup.convert( "originals/Original.odt", "generated/Prefix" );
-		
-
-		try
-		{
-			converterGroup.convert( "originals/Original.odt", "generated/Prefix" );
 			FAIL( "An exception should be caught!" );		
 		}
 		catch ( std::exception & e )
