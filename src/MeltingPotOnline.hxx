@@ -33,6 +33,7 @@ class MeltingPotOnline{
 	void generateConversions();
 	void addTopic(std::string name); // Added on P6 
 	std::string listTopics(); //Added on P6
+	void associateTopicWithWork(std::string topic, std::string author, std::string work);
 
 };
 

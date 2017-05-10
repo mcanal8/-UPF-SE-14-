@@ -98,10 +98,17 @@
 		topicName = name + "\n";
 		Topics.push_back(topicName);
 	}
+
+
 	std::string MeltingPotOnline::listTopics(){
 		std::string returnString;
 		for(int i = 0; i < Topics.size(); i++){
 			returnString = returnString + Topics[i];
 		}
 		return returnString;
+	}
+
+
+	void MeltingPotOnline::associateTopicWithWork(std::string topic, std::string author, std::string work){
+
 	}
