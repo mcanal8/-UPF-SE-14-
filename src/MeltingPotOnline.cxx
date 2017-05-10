@@ -111,5 +111,7 @@
 
 
 	void MeltingPotOnline::associateTopicWithWork(std::string topic, std::string author, std::string work){
-		throw topicException();
+		if(Topics.size() < 1){
+			throw topicException();
+		}
 	}
