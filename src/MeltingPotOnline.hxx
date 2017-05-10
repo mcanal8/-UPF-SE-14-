@@ -15,6 +15,7 @@ class MeltingPotOnline{
 		std::vector<Author*> listOfAuthors;
 		std::string _catalogue;
 		ConverterGroup converter;
+		std::vector<std::string> Topics;
 
 	public:
 	

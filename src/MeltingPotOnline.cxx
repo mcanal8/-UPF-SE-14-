@@ -94,8 +94,14 @@
 
 	}
 	void MeltingPotOnline::addTopic(std::string name){
-
+		std::string topicName;
+		topicName = name + "\n";
+		Topics.push_back(topicName);
 	}
 	std::string MeltingPotOnline::listTopics(){
-		return "Computer Science\n";
+		int i;
+		for(i = 0; i < 2; i++){
+			return Topics[i];
+		}
+		//return Topics[0];
 	}
