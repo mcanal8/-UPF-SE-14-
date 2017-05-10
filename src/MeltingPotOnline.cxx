@@ -100,8 +100,9 @@
 	}
 	std::string MeltingPotOnline::listTopics(){
 		int i;
-		for(i = 0; i < 2; i++){
-			return Topics[i];
+		std::string returnString;
+		for(i = 0; i < Topics.size(); i++){
+			returnString = returnString + Topics[i];
 		}
-		//return Topics[0];
+		return returnString;
 	}
