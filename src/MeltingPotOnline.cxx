@@ -1,6 +1,7 @@
 #include "MeltingPotOnline.hxx"
 #include "authorException.hxx"
 #include "fileException.hxx"
+#include "topicException.hxx"
 
 
 
@@ -110,5 +111,5 @@
 
 
 	void MeltingPotOnline::associateTopicWithWork(std::string topic, std::string author, std::string work){
-
+		throw topicException();
 	}
