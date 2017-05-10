@@ -97,5 +97,5 @@
 
 	}
 	std::string MeltingPotOnline::listTopics(){
-		return "";
+		return "Computer Science\n";
 	}
