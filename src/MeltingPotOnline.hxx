@@ -30,6 +30,8 @@ class MeltingPotOnline{
 	void addWork(const std::string authorName, const std::string title, int worknum, std::string file); //Added on the 5th functional test
 	int findAuthor(std::string authorName);
 	void generateConversions();
+	void addTopic(std::string name);
+	std::string listTopics();
 
 };
 

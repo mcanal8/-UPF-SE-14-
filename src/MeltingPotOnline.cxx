@@ -93,4 +93,9 @@
 
 
 	}
+	void MeltingPotOnline::addTopic(std::string name){
 
+	}
+	std::string MeltingPotOnline::listTopics(){
+		return "";
+	}
