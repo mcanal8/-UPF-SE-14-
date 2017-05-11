@@ -16,9 +16,9 @@
 	}
 
 	void Topic::setName(string newName){
-
+		name = newName;
 	}
 
 	string Topic::getName(){
-		return "";
+		return name;
 	}
