@@ -5,13 +5,14 @@ Work::Work(){
 		isbn_num = (-1);	
 		original = "";
 		texto = "";	
+		//topicsOfWork = "";
 		
 	}
 	
-	std::string Work::title(){
+	string Work::title(){
 		return a;	// Retorna el titol del work seleccionat
 	}
-	void Work::title(std::string stringTitle){
+	void Work::title(string stringTitle){
 		a = stringTitle;	// Modifica el titol del work seleccionat
  	}
 	int Work::isbn(){
@@ -20,16 +21,16 @@ Work::Work(){
 	void Work::isbn(int nou_ISBN){
 		isbn_num = nou_ISBN;	// Modifica el ISBN del work seleccionat
  	}
-	std::string Work::originalFile(){
+	string Work::originalFile(){
 		return original;	//Retorna l'originalFile d'un work seleccionat
 	}
-	void Work::originalFile(std::string new_original){
+	void Work::originalFile(string new_original){
 		original = new_original;	// Modifica l'originalFile del work seleccionat
 	}
-	std::string Work::aText(){ //Mostra toda la informacio d'un work determinat
+	string Work::aText(){ //Mostra toda la informacio d'un work determinat
 		//convert int isbn to string isbn		
-		std::string s;
-		std::stringstream out;
+		string s;
+		stringstream out;
 		out << isbn();
 		//s is isbn string converted
 		s = out.str();
@@ -40,4 +41,11 @@ Work::Work(){
 		else 	texto = s+", '"+a+"',"+" 'originals/"+original+"'"; 
 		
 		return texto;
+	}
+	void Work::associateTopic(string newTopic){
+		//topicsOfWork.push_back(newTopic);
+	}
+
+	string Work::topics(){
+		return topicsOfWork;
 	}

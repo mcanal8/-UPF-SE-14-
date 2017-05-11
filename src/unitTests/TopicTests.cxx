@@ -43,6 +43,8 @@ public:
 
 		ASSERT_EQUALS( "Topic 1\n", topic.getName() );
 	}
+
+
 	
 	
 };

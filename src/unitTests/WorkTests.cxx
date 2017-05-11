@@ -13,6 +13,7 @@ public:
 		TEST_CASE( testOriginal_addingOriginal );
 		TEST_CASE( testAText_byDefault );
 		TEST_CASE( testAText_initialized );
+		TEST_CASE( testTopic_workWithTwoTopics );
 	}
 	void testTitle_byDefault()
 	{
@@ -60,6 +61,17 @@ public:
 		work.isbn( 100 );
 		work.originalFile( "AFile.odt" );
 		ASSERT_EQUALS( "100, 'A Work', 'originals/AFile.odt'", work.aText() );
+	}
+	void testTopic_workWithTwoTopics()
+	{
+		Work work;
+		work.title( "A Work" );
+		work.isbn( 100 );
+		work.originalFile( "AFile.odt" );
+		work.associateTopic( "Topic 1\n" );
+		work.associateTopic( "Topic 2\n" );
+
+		ASSERT_EQUALS( "Topic 1\nTopic 2\n", work.topics() );
 	}
 
 };
