@@ -24,6 +24,13 @@
 				delete listOfAuthors[i];
 			}
 		}
+
+
+		for(i = 0; i < Topics.size(); i++){
+			if(Topics[i]){
+				delete Topics[i];
+			}
+		}
 	}
 
 	//This function returns a string that contains the information of all the authors and works
@@ -97,14 +104,16 @@
 	void MeltingPotOnline::addTopic(std::string name){
 		std::string topicName;
 		topicName = name + "\n";
-		Topics.push_back(topicName);
+		Topic *newTopic = new Topic();
+		newTopic->setName(topicName);
+		Topics.push_back(newTopic);
 	}
 
 
 	std::string MeltingPotOnline::listTopics(){
 		std::string returnString;
 		for(int i = 0; i < Topics.size(); i++){
-			returnString = returnString + Topics[i];
+			returnString = returnString + Topics[i]->getName();
 		}
 		return returnString;
 	}

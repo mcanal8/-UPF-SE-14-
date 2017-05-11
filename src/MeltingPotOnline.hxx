@@ -6,6 +6,7 @@
 #include <fstream>
 #include "Author.hxx"
 #include "ConverterGroup.hxx"
+#include "Topic.hxx"
 
 
 class MeltingPotOnline{
@@ -15,7 +16,7 @@ class MeltingPotOnline{
 		std::vector<Author*> listOfAuthors;
 		std::string _catalogue;
 		ConverterGroup converter;
-		std::vector<std::string> Topics;
+		std::vector<Topic*> Topics;
 
 	public:
 	
