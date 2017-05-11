@@ -43,7 +43,7 @@ Work::Work(){
 		return texto;
 	}
 	void Work::associateTopic(string newTopic){
-		//topicsOfWork.push_back(newTopic);
+		topicsOfWork.append(newTopic);
 	}
 
 	string Work::topics(){
