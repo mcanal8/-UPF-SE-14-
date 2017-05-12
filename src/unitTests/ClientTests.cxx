@@ -13,7 +13,7 @@ public:
 	TEST_FIXTURE( clientTests )
 	{
 		TEST_CASE(client_withNoData);
-		//TEST_CASE(client_Description);
+		TEST_CASE(client_Description);
 		
 	}
 
