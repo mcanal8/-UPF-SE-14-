@@ -4,7 +4,7 @@
 Client::Client(){
 		name = "";
 		email = "";
-		_description = "";
+		
 		
 	}
 	//destructor
