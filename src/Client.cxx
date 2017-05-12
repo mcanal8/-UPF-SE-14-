@@ -2,9 +2,9 @@
 
 //constructor
 Client::Client(){
-		//name = "";
-		//email = "";
-		//_description = "";
+		name = "";
+		email = "";
+		_description = "";
 		
 	}
 	//destructor
@@ -16,12 +16,12 @@ Client::Client(){
 	}
 	
 	void Client::setEmail(string clientEmail){
-		//email = clientEmail;
+		//email = "<"+clientEmail+">";
 	}
 	
 	string Client::description(){
-		//string returned = "A client <a@mail.org>\n"	
-		return "";
+		_description.append(name + email);
+		return _description;
 
 	}
 	
