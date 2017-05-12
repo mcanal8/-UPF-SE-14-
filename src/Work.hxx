@@ -1,19 +1,24 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <vector>
+#include "Topic.hxx"
 
 using namespace std;
 
 class Work{
 	//Atributos
 	private:
-	string a, original, texto, topicsOfWork;
-	int isbn_num;
-	
+		string a, original, texto;
+		int isbn_num;
+		vector<Topic*> TopicsOfaWork;
 	public:
 	
 	//constructor
 	Work();
+
+	//destructor
+	~Work();
 
 	//Methods
 	string title();//Added in First test

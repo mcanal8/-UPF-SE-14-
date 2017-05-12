@@ -8,6 +8,15 @@ Work::Work(){
 		//topicsOfWork = "";
 		
 	}
+	Work::~Work(){
+		int i;
+		
+		for(i = 0; i < TopicsOfaWork.size(); i++){
+			if(TopicsOfaWork[i]){
+				delete TopicsOfaWork[i];
+			}
+		}
+	}
 	
 	string Work::title(){
 		return a;	// Retorna el titol del work seleccionat
@@ -43,9 +52,18 @@ Work::Work(){
 		return texto;
 	}
 	void Work::associateTopic(string newTopic){
-		topicsOfWork.append(newTopic);
+		std::string topicStringName;
+		topicStringName = newTopic;
+		Topic *p_newTopic = new Topic();
+		p_newTopic->setName(topicStringName);
+		TopicsOfaWork.push_back(p_newTopic);
 	}
 
 	string Work::topics(){
-		return topicsOfWork;
+		std::string returnString;
+		for(int i = 0; i < TopicsOfaWork.size(); i++){
+			returnString = returnString + TopicsOfaWork[i]->getName();
+		}
+		return returnString;
+		
 	}
