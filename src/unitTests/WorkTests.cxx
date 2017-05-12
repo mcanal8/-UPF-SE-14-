@@ -71,7 +71,9 @@ public:
 		work.associateTopic( "Topic 1\n" );
 		work.associateTopic( "Topic 2\n" );
 
-		ASSERT_EQUALS( "Topic 1\nTopic 2\n", work.topics() );
+		ASSERT_EQUALS( 
+		"Topic 1\n"
+		"Topic 2\n", work.topics() );
 	}
 
 };
