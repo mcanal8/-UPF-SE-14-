@@ -21,7 +21,7 @@ Client::Client(){
 	
 	string Client::description(){
 		//string returned = "A client <a@mail.org>\n"	
-		return "Something";
+		return "";
 
 	}
 	

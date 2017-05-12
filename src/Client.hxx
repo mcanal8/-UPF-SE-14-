@@ -20,5 +20,6 @@ class Client{
 
 	//Methods
 	void setName(string clientName);
-	void setEmail(string 
+	void setEmail(string clientEmail);
+	string description();
 };
