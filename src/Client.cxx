@@ -12,11 +12,11 @@ Client::Client(){
 		
 	}
 	void Client::setName(string clientName){
-		//name = clientName;	
+		name = clientName;	
 	}
 	
 	void Client::setEmail(string clientEmail){
-		//email = "<"+clientEmail+">";
+		email = " <"+clientEmail+">\n";
 	}
 	
 	string Client::description(){
