@@ -7,7 +7,7 @@
 
 	//This function is the constructor of the class
 	Topic::Topic(){
-
+		
 	}
 
 	//This function is the destructor of the class
@@ -21,4 +21,10 @@
 
 	string Topic::getName(){
 		return name;
+	}
+	Client Topic::getClient(){
+		return client;
+	}
+	void Topic::addClient(Client* clientSelected){
+		client = *clientSelected;	//ESTO SE CAMBIARA CUANDO CLIENT SEA UNA LISTA DE CLIENTES DEL TOPIC.
 	}

@@ -22,4 +22,5 @@ class Client{
 	void setName(string clientName);
 	void setEmail(string clientEmail);
 	string description();
+	string getName();
 };

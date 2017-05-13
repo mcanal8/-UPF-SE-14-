@@ -24,5 +24,8 @@ Client::Client(){
 		return _description;
 
 	}
+	string Client::getName(){
+		return name;
+	}
 	
 	

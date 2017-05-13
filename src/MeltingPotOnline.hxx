@@ -7,7 +7,7 @@
 #include "Author.hxx"
 #include "ConverterGroup.hxx"
 //#include "Topic.hxx"
-#include "Client.hxx"
+
 
 
 class MeltingPotOnline{

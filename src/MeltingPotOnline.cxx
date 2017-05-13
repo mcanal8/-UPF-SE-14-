@@ -2,6 +2,7 @@
 #include "authorException.hxx"
 #include "fileException.hxx"
 #include "topicException.hxx"
+#include "clientException.hxx"
 
 
 
@@ -164,8 +165,52 @@
 		return description;
 	}
 	void MeltingPotOnline::subscribeClientToTopic(std::string clientName, std::string topicName){
-		
+		bool encontrado = false;
+		bool encontrado2 = false;
+		Topic* topicSelected;
+		Client* clientSelected;
+		int i = 0;
+		//Els busquem en el nostre MeltingPotOnline
+		for(i = 0; i < Topics.size(); i++){
+			if(Topics[i]->getName() == topicName){
+				topicSelected = Topics[i];
+				encontrado = true;
+			}
+		}
+		for(i = 0; i < listOfClients.size(); i++){
+			if(listOfClients[i]->getName() == clientName){
+				clientSelected = listOfClients[i];
+				encontrado2 = true;
+			}
+		}
+		//Excepcions per si no existeixen
+		if (encontrado == false){
+			throw topicException();
+		}
+		if (encontrado2 == false){
+			throw clientException();
+		}
+				
+		//Enllacem client al topic
+		topicSelected->addClient(clientSelected);
 	}
 	std::string MeltingPotOnline::listSubscribedToTopic(std::string topicName){
-		return "A client\n";
+		bool encontrado = false;
+		Topic* topicSelected;
+		std::string textARetornar = "";
+		int i = 0;
+		//El busquem en el nostre MeltingPotOnline
+		for(i = 0; i < Topics.size(); i++){
+			if(Topics[i]->getName() == topicName){
+				topicSelected = Topics[i];
+				encontrado = true;
+			}
+		}
+		//Excepcion per si no existeix topic
+		if (encontrado == false){
+			throw topicException();
+		}
+		//Extreiem nom del client lligat al topic seleccionat
+		textARetornar = textARetornar + topicSelected->getClient().getName() + "\n"; //el client es una variable, en el seguent test sera una llista i shauran de recorrer tots els clients del topic i anar afegint al textARetornar
+		return textARetornar;
 	}
