@@ -40,7 +40,8 @@ class MeltingPotOnline{
 	void associateTopicWithWork(std::string topic, std::string author, std::string work);
 	void addClient(std::string name, std::string email);
 	string listClients();
-
+	void subscribeClientToTopic(std::string clientName, std::string topicName);
+	std::string listSubscribedToTopic(std::string topicName);
 };
 
 

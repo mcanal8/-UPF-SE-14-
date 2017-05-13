@@ -163,3 +163,9 @@
 		
 		return description;
 	}
+	void MeltingPotOnline::subscribeClientToTopic(std::string clientName, std::string topicName){
+		
+	}
+	std::string MeltingPotOnline::listSubscribedToTopic(std::string topicName){
+		return "";
+	}
