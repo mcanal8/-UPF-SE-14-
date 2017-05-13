@@ -7,6 +7,7 @@
 #include "Author.hxx"
 #include "ConverterGroup.hxx"
 //#include "Topic.hxx"
+#include "Client.hxx"
 
 
 class MeltingPotOnline{
@@ -18,6 +19,7 @@ class MeltingPotOnline{
 		ConverterGroup converter;
 		std::vector<Topic*> Topics;
 		bool associatedTopic;
+		Client client;
 
 	public:
 	

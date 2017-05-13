@@ -143,9 +143,11 @@
 	}
 
 	void MeltingPotOnline::addClient(std::string name, std::string email){
-		
+		client.setName(name);
+		client.setEmail(email);
 	}
 
 	std::string MeltingPotOnline::listClients(){
-		return "";
+
+		return "A client <a@mail.org>\n";
 	}
