@@ -167,12 +167,13 @@
 	void MeltingPotOnline::subscribeClientToTopic(std::string clientName, std::string topicName){
 		bool encontrado = false;
 		bool encontrado2 = false;
+		std::string nomDelTopic = topicName + "\n";
 		Topic* topicSelected;
 		Client* clientSelected;
 		int i = 0;
 		//Els busquem en el nostre MeltingPotOnline
 		for(i = 0; i < Topics.size(); i++){
-			if(Topics[i]->getName() == topicName){
+			if(Topics[i]->getName() == nomDelTopic){
 				topicSelected = Topics[i];
 				encontrado = true;
 			}
@@ -195,13 +196,14 @@
 		topicSelected->addClient(clientSelected);
 	}
 	std::string MeltingPotOnline::listSubscribedToTopic(std::string topicName){
+		std::string nomDelTopic = topicName + "\n";
 		bool encontrado = false;
 		Topic* topicSelected;
 		std::string textARetornar = "";
 		int i = 0;
 		//El busquem en el nostre MeltingPotOnline
 		for(i = 0; i < Topics.size(); i++){
-			if(Topics[i]->getName() == topicName){
+			if(Topics[i]->getName() == nomDelTopic){
 				topicSelected = Topics[i];
 				encontrado = true;
 			}
