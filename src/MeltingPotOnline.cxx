@@ -141,3 +141,11 @@
 				
 		}
 	}
+
+	void MeltingPotOnline::addClient(std::string name, std::string email){
+		
+	}
+
+	std::string MeltingPotOnline::listClients(){
+		return "";
+	}
