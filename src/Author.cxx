@@ -65,7 +65,7 @@ void Author::addWork(std::string workname, int worknum, std::string file){
 	listOfWorks.push_back( newWork );
 	_comptador++;
 	_catalogue = _catalogue.append("\t"+ newWork->aText()+"\n");//Amb la funció append afegim al final de l'string _catalogue el nou text
-	//_catalogue = _catalogue.append("\t"+ newWork->aText());//Para el subscripcion test
+	
 	
 }
 //Added in P3 test 4

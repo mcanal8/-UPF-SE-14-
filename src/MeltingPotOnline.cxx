@@ -135,8 +135,8 @@
 			Work linkedWork = listOfAuthors[i]->findWork(work);
 			linkedWork.associateTopic(topic);
 
-			_topicDescription = "\t\t'Topic 1'\n\t\t'Topic 2'\n";  //ESTO SIRVE PARA EL GREEN, NO PARA EL REFACTOR!!!!!!!!!!!
-			//_topicDescription = _topicDescription + linkedWork.topics(); //ESTO SERA EL REFACTOR
+			//_topicDescription = "\t\t'Topic 1'\n\t\t'Topic 2'\n";  //ESTO SIRVE PARA EL GREEN, NO PARA EL REFACTOR!!!!!!!!!!!
+			_topicDescription = _topicDescription + linkedWork.topics(); //ESTO SERA EL REFACTOR
 			associatedTopic = true;	
 				
 		}
