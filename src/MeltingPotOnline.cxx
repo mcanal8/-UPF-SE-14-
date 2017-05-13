@@ -148,6 +148,7 @@
 	}
 
 	std::string MeltingPotOnline::listClients(){
-
-		return "A client <a@mail.org>\n";
+		std::string description;
+		description = client.description();
+		return description;
 	}
