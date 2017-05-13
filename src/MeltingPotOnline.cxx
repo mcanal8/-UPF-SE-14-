@@ -148,14 +148,14 @@
 		}
 	}
 
-	void MeltingPotOnline::addClient(std::string name, std::string email){
+	void MeltingPotOnline::addClient(std::string name, std::string email){ //Creamos un nuevo cliente y lo añadimos a la lista
 		Client *newClient = new Client();
 		newClient->setName(name);
 		newClient->setEmail(email);
 		listOfClients.push_back(newClient);
 	}
 
-	std::string MeltingPotOnline::listClients(){
+	std::string MeltingPotOnline::listClients(){ // Devuelve la información de todos los clientes de la lista
 		std::string description;
 		for(int i = 0; i < listOfClients.size(); i++){
 			description = description + listOfClients[i]->description();
