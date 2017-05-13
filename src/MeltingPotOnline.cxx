@@ -33,6 +33,12 @@
 				delete Topics[i];
 			}
 		}
+
+		for(i = 0; i < listOfClients.size(); i++){
+			if(listOfClients[i]){
+				delete listOfClients[i];
+			}
+		}
 	}
 
 	//This function returns a string that contains the information of all the authors and works
@@ -143,12 +149,17 @@
 	}
 
 	void MeltingPotOnline::addClient(std::string name, std::string email){
-		client.setName(name);
-		client.setEmail(email);
+		Client *newClient = new Client();
+		newClient->setName(name);
+		newClient->setEmail(email);
+		listOfClients.push_back(newClient);
 	}
 
 	std::string MeltingPotOnline::listClients(){
 		std::string description;
-		description = client.description();
+		for(int i = 0; i < listOfClients.size(); i++){
+			description = description + listOfClients[i]->description();
+		}
+		
 		return description;
 	}

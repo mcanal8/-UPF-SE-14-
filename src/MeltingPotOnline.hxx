@@ -19,7 +19,7 @@ class MeltingPotOnline{
 		ConverterGroup converter;
 		std::vector<Topic*> Topics;
 		bool associatedTopic;
-		Client client;
+		std::vector<Client*> listOfClients;
 
 	public:
 	
