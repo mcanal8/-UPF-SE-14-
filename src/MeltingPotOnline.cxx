@@ -167,5 +167,5 @@
 		
 	}
 	std::string MeltingPotOnline::listSubscribedToTopic(std::string topicName){
-		return "";
+		return "A client\n";
 	}
