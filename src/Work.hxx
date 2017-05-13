@@ -9,7 +9,7 @@ using namespace std;
 class Work{
 	//Atributos
 	private:
-		string a, original, texto;
+		string a, original, texto, textoTopic;
 		int isbn_num;
 		vector<Topic*> TopicsOfaWork;
 	public:

@@ -12,7 +12,7 @@ public:
 		TEST_CASE( testListTopics_withOneTopic );
 		TEST_CASE( testListTopics_withTwoTopics );
 		TEST_CASE( testAssociateTopicWithWork_withInexistentTopic );
-		//TEST_CASE( testAssociateTopicWithWork_workWithTwoTopics );
+		TEST_CASE( testAssociateTopicWithWork_workWithTwoTopics );
 		//TEST_CASE( testListClients_withOneClient );
 		//TEST_CASE( testListClients_withTwoClients );
 		//TEST_CASE( testListSubscribedToTopic_withOneUser );

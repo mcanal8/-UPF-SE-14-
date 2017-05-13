@@ -5,7 +5,7 @@ Work::Work(){
 		isbn_num = (-1);	
 		original = "";
 		texto = "";	
-		//topicsOfWork = "";
+		//textoTopic = "";
 		
 	}
 	Work::~Work(){
@@ -43,11 +43,12 @@ Work::Work(){
 		out << isbn();
 		//s is isbn string converted
 		s = out.str();
+		
 		//texto sera el siguiente (añadimos condicional para diferenciar cuando sea por defecto)
 		if (isbn() == -1){
 			texto = s+", '"+a+"',"+" '"+original+"'";
 		}
-		else 	texto = s+", '"+a+"',"+" 'originals/"+original+"'"; 
+		else 	texto = s+", '"+a+"',"+" 'originals/"+original+"'"+textoTopic; 
 		
 		return texto;
 	}
@@ -61,8 +62,11 @@ Work::Work(){
 
 	string Work::topics(){
 		std::string returnString;
+		
 		for(int i = 0; i < TopicsOfaWork.size(); i++){
-			returnString = returnString + TopicsOfaWork[i]->getName();
+			if(TopicsOfaWork[i]->getName() != ""){			
+				returnString = returnString + "\t\t'" + TopicsOfaWork[i]->getName() + "'\n";
+			}
 		}
 		return returnString;
 		

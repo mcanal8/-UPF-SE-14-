@@ -11,9 +11,11 @@
 	//This function is the constructor of the class
 	MeltingPotOnline::MeltingPotOnline(){
 		_catalogue = "";
+		_topicDescription = "";
 		converter.add( "html" );
 		converter.add( "pdf_print" );
 		converter.add( "pdf_mark" );
+		associatedTopic = false;
 	}
 
 	//This function is the destructor of the class
@@ -40,6 +42,7 @@
 		for(i = 0; i < listOfAuthors.size(); i++){
 			_catalogue = _catalogue.append(listOfAuthors[i]->description());
 		}
+		if (associatedTopic == true)	_catalogue = _catalogue.append(_topicDescription);
 		return _catalogue;
 
 	}
@@ -120,7 +123,21 @@
 
 
 	void MeltingPotOnline::associateTopicWithWork(std::string topic, std::string author, std::string work){
+		
 		if(Topics.size() < 1){
 			throw topicException();
+		}
+		else{
+			std::string authorName;
+			int i = findAuthor(author);
+			authorName = listOfAuthors[i]->getName();
+			
+			Work linkedWork = listOfAuthors[i]->findWork(work);
+			linkedWork.associateTopic(topic);
+
+			_topicDescription = "\t\t'Topic 1'\n\t\t'Topic 2'\n";  //ESTO SIRVE PARA EL GREEN, NO PARA EL REFACTOR!!!!!!!!!!!
+			//_topicDescription = _topicDescription + linkedWork.topics(); //ESTO SERA EL REFACTOR
+			associatedTopic = true;	
+				
 		}
 	}

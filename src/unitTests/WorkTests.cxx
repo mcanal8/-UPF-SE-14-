@@ -68,12 +68,12 @@ public:
 		work.title( "A Work" );
 		work.isbn( 100 );
 		work.originalFile( "AFile.odt" );
-		work.associateTopic( "Topic 1\n" );
-		work.associateTopic( "Topic 2\n" );
+		work.associateTopic( "Topic 1" );
+		work.associateTopic( "Topic 2" );
 
 		ASSERT_EQUALS( 
-		"Topic 1\n"
-		"Topic 2\n", work.topics() );
+		"\t\t'Topic 1'\n"
+		"\t\t'Topic 2'\n", work.topics() );
 	}
 
 };

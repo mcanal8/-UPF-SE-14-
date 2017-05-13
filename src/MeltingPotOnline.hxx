@@ -14,9 +14,10 @@ class MeltingPotOnline{
 	private:
 
 		std::vector<Author*> listOfAuthors;
-		std::string _catalogue;
+		std::string _catalogue, _topicDescription;
 		ConverterGroup converter;
 		std::vector<Topic*> Topics;
+		bool associatedTopic;
 
 	public:
 	
