@@ -14,7 +14,7 @@ public:
 		TEST_CASE( testAssociateTopicWithWork_withInexistentTopic );
 		TEST_CASE( testAssociateTopicWithWork_workWithTwoTopics );
 		TEST_CASE( testListClients_withOneClient );
-		//TEST_CASE( testListClients_withTwoClients );
+		TEST_CASE( testListClients_withTwoClients );
 		//TEST_CASE( testListSubscribedToTopic_withOneUser );
 		//TEST_CASE( testListSubscribedToTopic_withTwoUsers );
 		//TEST_CASE( testListSubscribedToTopic_withInexistentClient );
@@ -121,7 +121,7 @@ public:
 			business.listClients()
 		);
 	}
-	/*void testListClients_withTwoClients()
+	void testListClients_withTwoClients()
 	{
 		MeltingPotOnline business;
 		business.addClient( "A client", "a@mail.org" );
@@ -132,7 +132,7 @@ public:
 			business.listClients()
 		);
 	}
-	void testListSubscribedToTopic_withOneUser()
+	/*void testListSubscribedToTopic_withOneUser()
 	{
 		MeltingPotOnline business;
 		business.addClient( "A client", "a@mail.org" );
