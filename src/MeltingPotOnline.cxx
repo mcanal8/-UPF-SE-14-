@@ -135,6 +135,8 @@
 			throw topicException();
 		}
 		else{
+
+			std::string topicName;
 			std::string authorName;
 			int i = findAuthor(author);
 			authorName = listOfAuthors[i]->getName();
@@ -146,15 +148,13 @@
 			_topicDescription = _topicDescription + linkedWork.topics(); //ESTO SERA EL REFACTOR
 			associatedTopic = true;
 
-			/*for(int i = 0; i < Topics.size(); i++){
-				if(Topics[i]->getName() == topic){
+			for(int i = 0; i < Topics.size(); i++){
+				topicName = Topics[i]->getName();
+				topicName.erase (topicName.length() - 1,2);
+				if(topicName == topic){
 					Topics[i]->notify(work, author);
-				}
-				
-			}*/
-			/*printf("*************************************\n");
-			printf("%s",Topics[0]->getName().c_str());*/
-			Topics[0]->notify(work, author);
+				}	
+			}
 		}
 
 	}
