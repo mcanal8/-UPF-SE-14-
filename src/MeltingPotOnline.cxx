@@ -142,7 +142,7 @@
 			Work linkedWork = listOfAuthors[i]->findWork(work);
 			linkedWork.associateTopic(topic);
 
-			//_topicDescription = "\t\t'Topic 1'\n\t\t'Topic 2'\n";  //ESTO SIRVE PARA EL GREEN, NO PARA EL REFACTOR!!!!!!!!!!!
+			
 			_topicDescription = _topicDescription + linkedWork.topics(); //ESTO SERA EL REFACTOR
 			associatedTopic = true;	
 				
@@ -213,6 +213,6 @@
 			throw topicException();
 		}
 		//Extreiem nom del client lligat al topic seleccionat
-		textARetornar = textARetornar + topicSelected->getClient(); //el client es una variable, en el seguent test sera una llista i shauran de recorrer tots els clients del topic i anar afegint al textARetornar
+		textARetornar = textARetornar + topicSelected->getClient(); //el metode ja retorna la llista de clients del topic
 		return textARetornar;
 	}

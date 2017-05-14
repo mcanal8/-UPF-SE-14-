@@ -10,7 +10,7 @@
 		
 	}
 
-	//This function is the destructor of the class
+	//This function is the destructor of the class, afegit vector de clients.
 	Topic::~Topic(){
 		for(int i = 0; i < listOfClients.size(); i++){
 			if(listOfClients[i]){
@@ -35,5 +35,5 @@
 		
 	}
 	void Topic::subscribeClient(Client* clientSelected){
-		listOfClients.push_back(clientSelected);	
+		listOfClients.push_back(clientSelected);	//Canviat de variable client unica a llista de clients en un sol topic
 	}
