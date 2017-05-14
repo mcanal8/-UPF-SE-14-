@@ -39,7 +39,7 @@
 	}
 
 	void Topic::notify(const string workName, const string authorName){
-		for(int i = 0; i < listOfClients.size(); i++){
+		for(int i = 0; i < listOfClients.size(); i++){ //Recorremos todo el vector de clientes suscritos y les notificamos
 			listOfClients[i]->update(workName, authorName);
 		}
 	}
