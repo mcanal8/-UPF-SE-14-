@@ -1,3 +1,6 @@
+#ifndef Topic_hxx
+#define Topic_hxx
+
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -29,3 +32,5 @@ class Topic
 	void subscribeClient(Client* clientSelected);
 	void notify(const string workName, const string authorName);
 };
+
+#endif

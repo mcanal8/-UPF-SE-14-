@@ -144,9 +144,19 @@
 
 			
 			_topicDescription = _topicDescription + linkedWork.topics(); //ESTO SERA EL REFACTOR
-			associatedTopic = true;	
+			associatedTopic = true;
+
+			/*for(int i = 0; i < Topics.size(); i++){
+				if(Topics[i]->getName() == topic){
+					Topics[i]->notify(work, author);
+				}
 				
+			}*/
+			/*printf("*************************************\n");
+			printf("%s",Topics[0]->getName().c_str());*/
+			Topics[0]->notify(work, author);
 		}
+
 	}
 
 	void MeltingPotOnline::addClient(std::string name, std::string email){ //Creamos un nuevo cliente y lo añadimos a la lista
