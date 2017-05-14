@@ -19,7 +19,7 @@ public:
 		TEST_CASE( testListSubscribedToTopic_withTwoUsers );
 		TEST_CASE( testListSubscribedToTopic_withInexistentClient );
 		TEST_CASE( testListSubscribedToTopic_withInexistentTopic );
-		//TEST_CASE( testAssociateTopicWithWork_notifySubscribedClient );
+		TEST_CASE( testAssociateTopicWithWork_notifySubscribedClient );
 		//TEST_CASE( testAssociateTopicWithWork_notifyTwoClientsSubscribedToTwoTopics );
 	}
 
@@ -192,7 +192,7 @@ public:
 		}
 
 	}
-	/*void testAssociateTopicWithWork_notifySubscribedClient()
+	void testAssociateTopicWithWork_notifySubscribedClient()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );
@@ -212,7 +212,7 @@ public:
 			MailStub::theInstance().sentMails()
 		);
 	}
-	void testAssociateTopicWithWork_notifyTwoClientsSubscribedToTwoTopics()
+	/*void testAssociateTopicWithWork_notifyTwoClientsSubscribedToTwoTopics()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "An author", false );
