@@ -12,7 +12,11 @@
 
 	//This function is the destructor of the class
 	Topic::~Topic(){
-
+		for(int i = 0; i < listOfClients.size(); i++){
+			if(listOfClients[i]){
+				delete listOfClients[i];
+			}
+		}
 	}
 
 	void Topic::setName(string newName){
@@ -22,9 +26,14 @@
 	string Topic::getName(){
 		return name;
 	}
-	Client Topic::getClient(){
-		return client;
+	string Topic::getClient(){
+		string returnString;
+		for(int i = 0; i < listOfClients.size(); i++){
+			returnString = returnString + listOfClients[i]->getName() + "\n";
+		}
+		return returnString;
+		
 	}
 	void Topic::subscribeClient(Client* clientSelected){
-		client = *clientSelected;	//ESTO SE CAMBIARA CUANDO CLIENT SEA UNA LISTA DE CLIENTES DEL TOPIC.
+		listOfClients.push_back(clientSelected);	
 	}

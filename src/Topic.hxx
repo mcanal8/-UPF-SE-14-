@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 #include "Client.hxx"
 
 
@@ -11,7 +12,7 @@ class Topic
 
 	private:
 		string name;
-		Client client;
+		vector<Client*> listOfClients;
 	public:
 	
 	//constructor
@@ -23,6 +24,6 @@ class Topic
 	//Methods
 	void setName(string newName);
 	string getName();
-	Client getClient();
+	string getClient();
 	void subscribeClient(Client* clientSelected);
 };

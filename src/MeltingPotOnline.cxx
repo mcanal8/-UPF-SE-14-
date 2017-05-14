@@ -213,6 +213,6 @@
 			throw topicException();
 		}
 		//Extreiem nom del client lligat al topic seleccionat
-		textARetornar = textARetornar + topicSelected->getClient().getName() + "\n"; //el client es una variable, en el seguent test sera una llista i shauran de recorrer tots els clients del topic i anar afegint al textARetornar
+		textARetornar = textARetornar + topicSelected->getClient(); //el client es una variable, en el seguent test sera una llista i shauran de recorrer tots els clients del topic i anar afegint al textARetornar
 		return textARetornar;
 	}
