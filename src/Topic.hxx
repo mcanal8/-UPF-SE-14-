@@ -24,5 +24,5 @@ class Topic
 	void setName(string newName);
 	string getName();
 	Client getClient();
-	void addClient(Client* clientSelected);
+	void subscribeClient(Client* clientSelected);
 };

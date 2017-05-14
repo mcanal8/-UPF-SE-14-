@@ -193,7 +193,7 @@
 		}
 				
 		//Enllacem client al topic
-		topicSelected->addClient(clientSelected);
+		topicSelected->subscribeClient(clientSelected);
 	}
 	std::string MeltingPotOnline::listSubscribedToTopic(std::string topicName){
 		std::string nomDelTopic = topicName + "\n";
