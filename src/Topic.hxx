@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "Client.hxx"
+#include "MailStub.hxx"
 
 
 using namespace std;
@@ -26,4 +27,5 @@ class Topic
 	string getName();
 	string getClient();
 	void subscribeClient(Client* clientSelected);
+	void notify(const string workName, const string authorName);
 };

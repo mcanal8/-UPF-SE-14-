@@ -37,3 +37,9 @@
 	void Topic::subscribeClient(Client* clientSelected){
 		listOfClients.push_back(clientSelected);	//Canviat de variable client unica a llista de clients en un sol topic
 	}
+
+	void Topic::notify(const string workName, const string authorName){
+		for(int i = 0; i < listOfClients.size(); i++){
+			listOfClients[i]->update(workName, authorName);
+		}
+	}
