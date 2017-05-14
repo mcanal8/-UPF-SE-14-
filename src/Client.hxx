@@ -1,6 +1,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include "MailStub.hxx"
 
 
 using namespace std;
