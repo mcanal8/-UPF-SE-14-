@@ -23,4 +23,5 @@ class Client{
 	void setEmail(string clientEmail);
 	string description();
 	string getName();
+	void update(const string workName, const string authorName);
 };

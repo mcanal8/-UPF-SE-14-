@@ -2,8 +2,7 @@
 #include "LibFileSystem.hxx"
 #include "MiniCppUnit.hxx"
 #include "Client.hxx"
-
-
+#include "MailStub.hxx"
 
 
 
@@ -14,6 +13,7 @@ public:
 	{
 		TEST_CASE(client_withNoData);
 		TEST_CASE(client_Description);
+		TEST_CASE(client_update);
 		
 	}
 
@@ -51,6 +51,22 @@ public:
 		client.setEmail("a@mail.org");
 
 		ASSERT_EQUALS( "A client <a@mail.org>\n", client.description() );
+
+	}
+	void client_update()
+	{
+		Client client;
+		client.setName("A client");
+		client.setEmail("a@mail.org");
+
+		client.update("A work", "An author");
+
+		ASSERT_EQUALS(
+			"To: A client <a@mail.org>\n"
+			"Subject: new work A work by An author\n"
+			"\n",
+			MailStub::theInstance().sentMails()
+		);
 
 	}
 	

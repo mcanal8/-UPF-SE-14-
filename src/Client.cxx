@@ -27,5 +27,8 @@ Client::Client(){
 	string Client::getName(){
 		return name;
 	}
+	void Client::update(string workName, string authorName){
+
+	}
 	
 	
