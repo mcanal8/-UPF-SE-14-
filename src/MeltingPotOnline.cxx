@@ -184,7 +184,7 @@
 				encontrado2 = true;
 			}
 		}
-		//Excepcions per si no existeixen
+		//Excepcions per si no existeixen	//Ja disenyat en refactors anteriors, serveix pel  test sense client
 		if (encontrado == false){
 			throw topicException();
 		}
