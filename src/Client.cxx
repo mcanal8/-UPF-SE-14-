@@ -31,7 +31,7 @@ Client::Client(){
 		string to;
 		string subject;
 		email.erase (email.length() - 1,2); //Para eliminar un salto de linea de sobras
-		to = "A client" + email;
+		to = name + email;
 		subject = "new work " + workName + " by " + authorName;
 		MailStub::theInstance().sendMail(to, subject);
 	}
