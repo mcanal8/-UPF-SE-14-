@@ -184,7 +184,7 @@
 				encontrado2 = true;
 			}
 		}
-		//Excepcions per si no existeixen	//Ja disenyat en refactors anteriors, serveix pel  test sense client
+		//Excepcions per si no existeixen	//Ja disenyat en refactors anteriors als  tests sense client/topic, per aixo aquests donen green.
 		if (encontrado == false){
 			throw topicException();
 		}
