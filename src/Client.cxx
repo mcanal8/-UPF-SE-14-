@@ -11,7 +11,7 @@ Client::Client(){
 	Client::~Client(){
 		
 	}
-	void Client::setName(string clientName){
+	void Client::setName(const string &clientName){
 		name = clientName;	
 	}
 	

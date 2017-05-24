@@ -20,7 +20,7 @@ class Client{
 	~Client();
 
 	//Methods
-	void setName(string clientName);
+	void setName(const string &clientName);
 	void setEmail(string clientEmail);
 	string description();
 	string getName();

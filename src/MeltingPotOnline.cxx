@@ -21,7 +21,7 @@
 
 	//This function is the destructor of the class
 	MeltingPotOnline::~MeltingPotOnline(){
-		int i;
+		unsigned int i;
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]){
 				delete listOfAuthors[i];
@@ -45,7 +45,7 @@
 	//This function returns a string that contains the information of all the authors and works
 	string MeltingPotOnline::catalogue(){ //Added on the first functional test
 		
-		int i;
+		unsigned int i;
 		for(i = 0; i < listOfAuthors.size(); i++){
 			_catalogue = _catalogue.append(listOfAuthors[i]->description());
 		}
@@ -63,7 +63,7 @@
 		}
 	
 		listOfAuthors.push_back( newAuthor );
-		//_catalogue = _catalogue.append(newAuthor->description());
+
 	}
 
 	//This function is used to add a new work to a specific author.
@@ -81,11 +81,7 @@
 		if(fichero == 0){ //If the file does not exist (fichero is 0) we throw the file exception.
 			throw fileException();
 		}
-		//cout << fullname << endl;
-		//cout << authorName << endl;
 		converterfile = "generated/" + authorName + " - " + title;
-		cout << converterfile << endl;
-		printf("\n");
 		converter.convert(fullname, converterfile);
 		
 		
@@ -95,7 +91,8 @@
 	
 	int MeltingPotOnline::findAuthor(string authorName){
 
-		int posicio, i;
+		int posicio; 
+		unsigned int i;
 		bool found = false; //Added to check if function has to generate an exception
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]->getName() == authorName){
@@ -122,7 +119,7 @@
 
 	string MeltingPotOnline::listTopics(){
 		string returnString;
-		for(int i = 0; i < Topics.size(); i++){
+		for(unsigned int i = 0; i < Topics.size(); i++){
 			returnString = returnString + Topics[i]->getName();
 		}
 		return returnString;
@@ -148,7 +145,7 @@
 			_topicDescription = _topicDescription + linkedWork.topics(); //ESTO SERA EL REFACTOR
 			associatedTopic = true;
 
-			for(int i = 0; i < Topics.size(); i++){
+			for(unsigned int i = 0; i < Topics.size(); i++){
 				topicName = Topics[i]->getName();
 				topicName.erase (topicName.length() - 1,2);
 				if(topicName == topic){
@@ -168,7 +165,7 @@
 
 	string MeltingPotOnline::listClients(){ // Devuelve la información de todos los clientes de la lista
 		string description;
-		for(int i = 0; i < listOfClients.size(); i++){
+		for(unsigned int i = 0; i < listOfClients.size(); i++){
 			description = description + listOfClients[i]->description();
 		}
 		
@@ -180,7 +177,7 @@
 		string nomDelTopic = topicName + "\n";
 		Topic* topicSelected;
 		Client* clientSelected;
-		int i = 0;
+		unsigned int i = 0;
 		//Els busquem en el nostre MeltingPotOnline
 		for(i = 0; i < Topics.size(); i++){
 			if(Topics[i]->getName() == nomDelTopic){
@@ -204,13 +201,16 @@
 				
 		//Enllacem client al topic
 		topicSelected->subscribeClient(clientSelected);
+
+		delete topicSelected;
+		delete clientSelected;
 	}
 	string MeltingPotOnline::listSubscribedToTopic(string topicName){
 		string nomDelTopic = topicName + "\n";
 		bool encontrado = false;
 		Topic* topicSelected;
 		string textARetornar = "";
-		int i = 0;
+		unsigned int i = 0;
 		//El busquem en el nostre MeltingPotOnline
 		for(i = 0; i < Topics.size(); i++){
 			if(Topics[i]->getName() == nomDelTopic){

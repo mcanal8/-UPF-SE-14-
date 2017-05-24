@@ -15,7 +15,6 @@
 
 void PdfConverter::convert(const std::string &original, const std::string &converted){
 		std::string converted2;
-		printf("%d\n", watermark_state);
 		if(watermark_state == 1){
 
 			converted2 = converted + " [watermark].pdf";
