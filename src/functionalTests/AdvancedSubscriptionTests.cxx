@@ -10,7 +10,7 @@ public:
 	TEST_FIXTURE( AdvancedSubscriptionTests )
 	{
 		TEST_CASE( testAddWork_notifyClientSubscribedToAuthor );
-		//TEST_CASE( testAddWork_notifyTwoClientsSubscribedToTwoAuthors );
+		TEST_CASE( testAddWork_notifyTwoClientsSubscribedToTwoAuthors );
 		//TEST_CASE( testListThematicChannels );
 		//TEST_CASE( testRssByChannel_withoutNotification );
 		//TEST_CASE( testRssByChannel_withInexistentChannel );
@@ -65,7 +65,7 @@ public:
 			MailStub::theInstance().sentMails()
 		);
 	}
-	/*void testAddWork_notifyTwoClientsSubscribedToTwoAuthors()
+	void testAddWork_notifyTwoClientsSubscribedToTwoAuthors()
 	{
 		MeltingPotOnline business;
 		business.addAuthor( "Saramago", false );
@@ -90,7 +90,7 @@ public:
 			"\n",
 			MailStub::theInstance().sentMails()
 		)
-	}
+	}/*
 	void testListThematicChannels()
 	{
 		MeltingPotOnline business;
