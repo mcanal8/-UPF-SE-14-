@@ -241,26 +241,28 @@
 		bool clientencontrado = false;
 		unsigned int i = 0;
 
+		//Buscamos el autor seleccionado entre la lista de autores
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]->getName() == authorName){
 				authorSelected= listOfAuthors[i];
 				autorencontrado = true;
 			}
 		}
+		//Buscamos el cliente seleccionado entre la lista de clientes
 		for(i = 0; i < listOfClients.size(); i++){
 			if(listOfClients[i]->getName() == clientName){
 				clientSelected = listOfClients[i];
 				clientencontrado = true;
 			}
 		}
-
+		//Si no encontramos cliente o autor lanzamos exception
 		if (autorencontrado == false){
 			throw authorException();
 		}
 		if (clientencontrado == false){
 			throw clientException();
 		}
-				
+		//Suscribimos el cliente al autor
 		authorSelected->subscribeClient(clientSelected);
 
 
