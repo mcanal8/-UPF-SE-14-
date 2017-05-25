@@ -267,3 +267,11 @@
 
 
 	}
+
+	void MeltingPotOnline::addChannel(string name, string description){
+
+	}
+
+	string MeltingPotOnline::listThematicChannels(){
+		return "";
+	}
