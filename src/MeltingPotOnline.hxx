@@ -45,7 +45,6 @@ class MeltingPotOnline{
 	void subscribeClientToAuthor(string clientName, string authorName);
 	void addChannel(string name, string description);
 	string listThematicChannels();
-	//REFACTOR DESTRUCTOR AUTHOR
 };
 
 

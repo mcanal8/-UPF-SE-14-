@@ -18,6 +18,11 @@ Author::~Author(){
 			delete listOfWorks[i];
 		}
 	}
+	for(i = 0; i < listOfClients.size(); i++){
+		if(listOfClients[i]){
+			delete listOfClients[i];
+			}
+		}
 }
 
 //Added in First test
