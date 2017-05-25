@@ -12,7 +12,7 @@ Author::Author(){
 }
 
 Author::~Author(){
-	int i;
+	unsigned int i;
 	for(i = 0; i < listOfWorks.size(); i++){
 		if(listOfWorks[i]){
 			delete listOfWorks[i];
@@ -70,7 +70,7 @@ void Author::addWork(std::string workname, int worknum, std::string file){
 }
 //Added in P3 test 4
 Work& Author::findWork(const std::string &workname){
-	for (int i = 0;i < listOfWorks.size() ;++i){
+	for (unsigned int i = 0;i < listOfWorks.size() ;++i){
 		if(workname == listOfWorks[i]->title() )	
 			return *listOfWorks[i];	
 	}
@@ -92,6 +92,17 @@ std::string Author::description(){
 	
 	return description;
 	
+}
+
+void Author::subscribeClient(Client* clientSelected){
+
+	listOfClients.push_back(clientSelected);	//Canviat de variable client unica a llista de clients en un sol topic
+}
+
+void Author::notify(const std::string workName, const std::string authorName){
+	for(int i = 0; i < listOfClients.size(); i++){ //Recorremos todo el vector de clientes suscritos y les notificamos
+		listOfClients[i]->update(workName, authorName);
+	}
 }
 
 

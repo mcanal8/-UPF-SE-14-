@@ -16,6 +16,7 @@ class Author{
 		std::vector<Work*> listOfWorks;
 		int _comptador;	
 		std::string status;
+		std::vector<Client*> listOfClients;
 
 	public:
 	//Constructor
@@ -35,6 +36,8 @@ class Author{
 	Work& findWork(const std::string& workname);//Added in P3 Test 4
 	void name(std::string inserted_name);//Added in P3 test 6
 	std::string description();//Added in P3 test 6
+	void subscribeClient(Client* clientSelected);
+	void notify(const std::string workName, const std::string authorName);
 	
 };
 

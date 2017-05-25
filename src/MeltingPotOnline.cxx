@@ -68,8 +68,9 @@
 
 	//This function is used to add a new work to a specific author.
 	void MeltingPotOnline::addWork(const string authorName, const string title, int worknum, string file){ //Added on the fifth functional test 
-		int i;
+		unsigned int i;
 		string converterfile;
+		Author* authorSelected;
 		
 		string fullname( "originals/" ); // The file is on this folder
 		fullname += file;
@@ -83,8 +84,14 @@
 		}
 		converterfile = "generated/" + authorName + " - " + title;
 		converter.convert(fullname, converterfile);
-		
-		
+
+		for(i = 0; i < listOfAuthors.size(); i++){
+			if(listOfAuthors[i]->getName() == authorName){
+				authorSelected= listOfAuthors[i];
+				//autorencontrado = true;
+			}
+		}
+		authorSelected->notify(title, authorName);
 		
 	}
 
@@ -228,5 +235,34 @@
 	}
 
 	void MeltingPotOnline::subscribeClientToAuthor(string clientName, string authorName){
-		
+		Author* authorSelected;
+		Client* clientSelected;
+		//bool autorencontrado = false;
+		//bool clientencontrado = false;
+		unsigned int i = 0;
+		//Els busquem en el nostre MeltingPotOnline
+		for(i = 0; i < listOfAuthors.size(); i++){
+			if(listOfAuthors[i]->getName() == authorName){
+				authorSelected= listOfAuthors[i];
+				//autorencontrado = true;
+			}
+		}
+		for(i = 0; i < listOfClients.size(); i++){
+			if(listOfClients[i]->getName() == clientName){
+				clientSelected = listOfClients[i];
+				//clientencontrado = true;
+			}
+		}
+
+		/*if (autorencontrado == false){
+			throw authorException();
+		}
+		if (clientencontrado == false){
+			throw clientException();
+		}*/
+				
+		//Enllacem client al topic
+		authorSelected->subscribeClient(clientSelected);
+
+
 	}
