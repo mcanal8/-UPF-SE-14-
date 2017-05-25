@@ -226,3 +226,7 @@
 		textARetornar = textARetornar + topicSelected->getClient(); //el metode ja retorna la llista de clients del topic
 		return textARetornar;
 	}
+
+	void MeltingPotOnline::subscribeClientToAuthor(string clientName, string authorName){
+		
+	}
