@@ -275,13 +275,14 @@
 	}
 
 	void MeltingPotOnline::addChannel(const string name, const string description){
+		//Creamos un nuevo channel y lo ponemos a la lista de channels
 		Channel *newChannel = new Channel();
 		newChannel->addChannel(name, description);
 		Channels.push_back(newChannel);
 	}
 
 	string MeltingPotOnline::listThematicChannels(){
-
+		//Retornamos una string con toda la información de todos los channels creados
 		string textARetornar = "";
 		unsigned int i = 0;
 
