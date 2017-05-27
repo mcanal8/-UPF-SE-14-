@@ -6,6 +6,7 @@
 #include <fstream>
 #include "Author.hxx"
 #include "ConverterGroup.hxx"
+#include "Channel.hxx"
 
 
 using namespace std;
@@ -20,6 +21,7 @@ class MeltingPotOnline{
 		vector<Topic*> Topics;
 		bool associatedTopic;
 		vector<Client*> listOfClients;
+		vector<Channel*> Channels;
 
 	public:
 	
@@ -43,7 +45,7 @@ class MeltingPotOnline{
 	void subscribeClientToTopic(string clientName, string topicName);
 	string listSubscribedToTopic(string topicName);
 	void subscribeClientToAuthor(string clientName, string authorName);
-	void addChannel(string name, string description);
+	void addChannel(const string name, const string description);
 	string listThematicChannels();
 };
 

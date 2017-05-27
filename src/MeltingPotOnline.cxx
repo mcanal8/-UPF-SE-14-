@@ -40,6 +40,12 @@
 				delete listOfClients[i];
 			}
 		}
+
+		for(i = 0; i < Channels.size(); i++){
+			if(Channels[i]){
+				delete Channels[i];
+			}
+		}
 	}
 
 	//This function returns a string that contains the information of all the authors and works
@@ -268,10 +274,26 @@
 
 	}
 
-	void MeltingPotOnline::addChannel(string name, string description){
-
+	void MeltingPotOnline::addChannel(const string name, const string description){
+		Channel *newChannel = new Channel();
+		newChannel->addChannel(name, description);
+		Channels.push_back(newChannel);
 	}
 
 	string MeltingPotOnline::listThematicChannels(){
-		return "";
+
+		string textARetornar = "";
+		unsigned int i = 0;
+
+		//Exception por si no existe ningun channel
+		/*if(Channels.size() < 1){
+			throw channelException();
+		}*/
+		//El busquem en el nostre MeltingPotOnline
+		//else{
+			for(i = 0; i < Channels.size(); i++){
+				textARetornar = textARetornar + Channels[i]->getChannel();
+			}
+		//}
+		return textARetornar;
 	}

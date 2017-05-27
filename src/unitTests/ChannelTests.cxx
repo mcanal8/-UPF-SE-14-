@@ -12,7 +12,6 @@ public:
 	TEST_FIXTURE( channelTests )
 	{
 		TEST_CASE( testChannel_withOneChannel );
-		//TEST_CASE( testChannel_withInexistentChannel );
 		
 	}
 
@@ -48,21 +47,6 @@ public:
 			channel.getChannel()
 		)
 	}
-
-	/*void testNotify_topic()
-	{
-		Topic topic;
-
-		topic.setName("Topic 1\n");
-		topic.notify("A work", "An author");
-
-		ASSERT_EQUALS(
-			"To: A client <a@mail.org>\n"
-			"Subject: new work A work by An author\n"
-			"\n",
-			MailStub::theInstance().sentMails()
-		);
-	}*/
 
 
 	
