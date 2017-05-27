@@ -298,3 +298,7 @@
 		//}
 		return textARetornar;
 	}
+
+	string MeltingPotOnline::rssByChannel(const string title){
+		return "";
+	}

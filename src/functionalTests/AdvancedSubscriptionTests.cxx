@@ -12,7 +12,7 @@ public:
 		TEST_CASE( testAddWork_notifyClientSubscribedToAuthor );
 		TEST_CASE( testAddWork_notifyTwoClientsSubscribedToTwoAuthors );
 		TEST_CASE( testListThematicChannels );
-		//TEST_CASE( testRssByChannel_withoutNotification );
+		TEST_CASE( testRssByChannel_withoutNotification );
 		//TEST_CASE( testRssByChannel_withInexistentChannel );
 		//TEST_CASE( testRssByChannel_withNotifiedWork );
 		//TEST_CASE( testRssByChannel_subscribedToAuthorAndTopic );
@@ -104,7 +104,7 @@ public:
 			"\tEconomy for the professional\n",
 			business.listThematicChannels()
 		)
-	}/*
+	}
 	void testRssByChannel_withoutNotification()
 	{
 		MeltingPotOnline business;
@@ -122,7 +122,7 @@ public:
 			"</rss>\n",
 			business.rssByChannel( "Rivendel" )
 		)
-	}
+	}/*
 	void testRssByChannel_withInexistentChannel()
 	{
 		MeltingPotOnline business;

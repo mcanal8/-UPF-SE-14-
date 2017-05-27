@@ -47,6 +47,7 @@ class MeltingPotOnline{
 	void subscribeClientToAuthor(string clientName, string authorName);
 	void addChannel(const string name, const string description);
 	string listThematicChannels();
+	string rssByChannel(const string title);
 };
 
 
