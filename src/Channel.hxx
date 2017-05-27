@@ -5,8 +5,8 @@ using namespace std;
 class Channel{
 
 	private:
-		string name;
-		string description;
+		string _name;
+		string _description;
 
 	public:
 	//Constructor
@@ -16,8 +16,8 @@ class Channel{
 	~Channel();
 
 	//Methods
-
-	
+	void addChannel(const string name, const string description);
+	string getChannel();
 };
 
 
