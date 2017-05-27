@@ -14,5 +14,6 @@ void Channel::addChannel(const string name, const string description){
 }
 
 string Channel::getChannel(){
-	return "";
+	return 			"Rivendel\n"
+			"\tRivendel: The MeltingPot fantasy channel\n";
 }
