@@ -18,7 +18,7 @@ class Channel{
 
 	//Methods
 	void addChannel(const string name, const string description);
-	string getChannel();
+	string getDescription();
 	string getName();
 	string getLink();
 };

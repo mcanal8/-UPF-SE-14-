@@ -293,7 +293,9 @@
 		//El busquem en el nostre MeltingPotOnline
 		//else{
 			for(i = 0; i < Channels.size(); i++){
-				textARetornar = textARetornar + Channels[i]->getChannel();
+				string channelText = "";
+				channelText = Channels[i]->getName() + "\n" + "\t" + Channels[i]->getDescription() + "\n";
+				textARetornar = textARetornar + channelText;
 			}
 		//}
 		return textARetornar;
@@ -303,16 +305,19 @@
 		/*Channel* channelSelected;
 		//Buscamos el channel seleccionado entre la lista de autores
 		for(unsigned int i = 0; i < Channels.size(); i++){
-			if(Channels[i].getName() == title){
+			if(Channels[i]->getName() == title){
 				channelSelected = Channels[i];
 			}
 		}
 		string returnString;
-		returnString = "<?xml version='1.0' encoding='UTF-8' ?>\n" + "<rss version='2.0'>\n";
+		returnString = "<?xml version='1.0' encoding='UTF-8' ?>\n"  "<rss version='2.0'>\n";
 		returnString = returnString + "<channel>\n";
-		returnString = returnString + "<title> MeltingPotOnline: " + channelSelected.getName() + "<title>";*/
+		returnString = returnString + "<title>MeltingPotOnline: " + channelSelected->getName() + "</title>\n";
+		returnString = returnString + "<link>" + channelSelected->getLink() + "</link>\n";
+		returnString = returnString + "<description>" + channelSelected->getDescription() + "</description>\n";
+		returnString = returnString + "</channel>\n" + "</rss>\n";*/
 
-		return "<?xml version='1.0' encoding='UTF-8' ?>\n"
+		return 	"<?xml version='1.0' encoding='UTF-8' ?>\n"
 			"<rss version='2.0'>\n"
 			"<channel>\n"
 			"<title>MeltingPotOnline: Rivendel</title>\n"

@@ -11,8 +11,9 @@ class channelTests : public TestFixture<channelTests>
 public:
 	TEST_FIXTURE( channelTests )
 	{
-		TEST_CASE( testChannel_withOneChannel );
+		TEST_CASE( testDescription );
 		TEST_CASE( testName );
+		TEST_CASE( testLink );
 		
 	}
 
@@ -36,16 +37,15 @@ public:
 	}
 
 	
-	void testChannel_withOneChannel()
+	void testDescription()
 	{
 		Channel channel;
 
 		channel.addChannel("Rivendel", "Rivendel: The MeltingPot fantasy channel");
 
 		ASSERT_EQUALS(
-			"Rivendel\n"
-			"\tRivendel: The MeltingPot fantasy channel\n",
-			channel.getChannel()
+			"Rivendel: The MeltingPot fantasy channel",
+			channel.getDescription()
 		)
 	}
 
@@ -58,6 +58,18 @@ public:
 		ASSERT_EQUALS(
 			"Rivendel",
 			channel.getName()
+		)
+	}
+
+	void testLink()
+	{
+		Channel channel;
+
+		channel.addChannel("Rivendel", "Rivendel: The MeltingPot fantasy channel");
+
+		ASSERT_EQUALS(
+			"http://www.meltingpotonline.com/Rivendel",
+			channel.getLink()
 		)
 	}
 
