@@ -300,5 +300,12 @@
 	}
 
 	string MeltingPotOnline::rssByChannel(const string title){
-		return "";
+		return "<?xml version='1.0' encoding='UTF-8' ?>\n"
+			"<rss version='2.0'>\n"
+			"<channel>\n"
+			"<title>MeltingPotOnline: Rivendel</title>\n"
+			"<link>http://www.meltingpotonline.com/Rivendel</link>\n"
+			"<description>Rivendel: The MeltingPot fantasy channel</description>\n"
+			"</channel>\n"
+			"</rss>\n";
 	}
