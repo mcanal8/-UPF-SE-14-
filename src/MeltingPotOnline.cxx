@@ -303,7 +303,7 @@
 
 	string MeltingPotOnline::rssByChannel(const string title){
 		//Code for the refactor
-		/*Channel* channelSelected;
+		Channel* channelSelected;
 		//Buscamos el channel seleccionado entre la lista de autores
 		for(unsigned int i = 0; i < Channels.size(); i++){
 			if(Channels[i]->getName() == title){
@@ -316,15 +316,7 @@
 		returnString = returnString + "<title>MeltingPotOnline: " + channelSelected->getName() + "</title>\n";
 		returnString = returnString + "<link>" + channelSelected->getLink() + "</link>\n";
 		returnString = returnString + "<description>" + channelSelected->getDescription() + "</description>\n";
-		returnString = returnString + "</channel>\n" + "</rss>\n";*/
+		returnString = returnString + "</channel>\n" + "</rss>\n";
 
-		//Code for the green
-		return 	"<?xml version='1.0' encoding='UTF-8' ?>\n"
-			"<rss version='2.0'>\n"
-			"<channel>\n"
-			"<title>MeltingPotOnline: Rivendel</title>\n"
-			"<link>http://www.meltingpotonline.com/Rivendel</link>\n"
-			"<description>Rivendel: The MeltingPot fantasy channel</description>\n"
-			"</channel>\n"
-			"</rss>\n";
+		return 	returnString;
 	}
