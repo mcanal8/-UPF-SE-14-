@@ -327,3 +327,7 @@
 
 		return 	returnString;
 	}
+
+	void MeltingPotOnline::subscribeChannelToAuthor(const string channelName, const string authorName){
+		
+	}
