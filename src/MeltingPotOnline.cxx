@@ -302,6 +302,7 @@
 	}
 
 	string MeltingPotOnline::rssByChannel(const string title){
+		//Code for the refactor
 		/*Channel* channelSelected;
 		//Buscamos el channel seleccionado entre la lista de autores
 		for(unsigned int i = 0; i < Channels.size(); i++){
@@ -317,6 +318,7 @@
 		returnString = returnString + "<description>" + channelSelected->getDescription() + "</description>\n";
 		returnString = returnString + "</channel>\n" + "</rss>\n";*/
 
+		//Code for the green
 		return 	"<?xml version='1.0' encoding='UTF-8' ?>\n"
 			"<rss version='2.0'>\n"
 			"<channel>\n"
