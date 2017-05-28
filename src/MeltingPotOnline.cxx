@@ -3,6 +3,7 @@
 #include "fileException.hxx"
 #include "topicException.hxx"
 #include "clientException.hxx"
+#include "channelException.hxx"
 
 
 
@@ -287,28 +288,33 @@
 		unsigned int i = 0;
 
 		//Exception por si no existe ningun channel
-		/*if(Channels.size() < 1){
+		if(Channels.size() < 1){
 			throw channelException();
-		}*/
+		}
 		//El busquem en el nostre MeltingPotOnline
-		//else{
+		else{
 			for(i = 0; i < Channels.size(); i++){
 				string channelText = "";
 				channelText = Channels[i]->getName() + "\n" + "\t" + Channels[i]->getDescription() + "\n";
 				textARetornar = textARetornar + channelText;
 			}
-		//}
+		}
 		return textARetornar;
 	}
 
 	string MeltingPotOnline::rssByChannel(const string title){
 		//Code for the refactor
 		Channel* channelSelected;
+		bool encontrado = false;
 		//Buscamos el channel seleccionado entre la lista de autores
 		for(unsigned int i = 0; i < Channels.size(); i++){
 			if(Channels[i]->getName() == title){
 				channelSelected = Channels[i];
+				encontrado = true;
 			}
+		}
+		if(encontrado == false){
+			throw channelException();
 		}
 		string returnString;
 		returnString = "<?xml version='1.0' encoding='UTF-8' ?>\n"  "<rss version='2.0'>\n";
