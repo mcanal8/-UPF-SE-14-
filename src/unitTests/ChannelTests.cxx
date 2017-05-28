@@ -12,6 +12,7 @@ public:
 	TEST_FIXTURE( channelTests )
 	{
 		TEST_CASE( testChannel_withOneChannel );
+		TEST_CASE( testName );
 		
 	}
 
@@ -47,6 +48,19 @@ public:
 			channel.getChannel()
 		)
 	}
+
+	void testName()
+	{
+		Channel channel;
+
+		channel.addChannel("Rivendel", "Rivendel: The MeltingPot fantasy channel");
+
+		ASSERT_EQUALS(
+			"Rivendel",
+			channel.getName()
+		)
+	}
+
 
 
 	

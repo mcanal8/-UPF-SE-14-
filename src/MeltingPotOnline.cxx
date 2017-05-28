@@ -300,6 +300,18 @@
 	}
 
 	string MeltingPotOnline::rssByChannel(const string title){
+		/*Channel* channelSelected;
+		//Buscamos el channel seleccionado entre la lista de autores
+		for(unsigned int i = 0; i < Channels.size(); i++){
+			if(Channels[i].getName() == title){
+				channelSelected = Channels[i];
+			}
+		}
+		string returnString;
+		returnString = "<?xml version='1.0' encoding='UTF-8' ?>\n" + "<rss version='2.0'>\n";
+		returnString = returnString + "<channel>\n";
+		returnString = returnString + "<title> MeltingPotOnline: " + channelSelected.getName() + "<title>";*/
+
 		return "<?xml version='1.0' encoding='UTF-8' ?>\n"
 			"<rss version='2.0'>\n"
 			"<channel>\n"
