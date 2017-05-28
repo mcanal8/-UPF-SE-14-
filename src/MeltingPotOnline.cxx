@@ -313,6 +313,7 @@
 				encontrado = true;
 			}
 		}
+		//Si no se ha encontrado el canal -> exception
 		if(encontrado == false){
 			throw channelException();
 		}
