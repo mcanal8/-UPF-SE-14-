@@ -26,3 +26,7 @@ Seminar 5:
 - El diagrama no se ajusta a lo que se pedía: el Facade debería gestionar como mínimo la memoria de Author, Client, Collection; 
 la clase Editor no es necesaria; Faltan métodos de search, buy, publish, notify... todos los métodos deben ser accesibles desde 
 el Facade; los atributos que son listas se deben poner como en este ej. works:list< Work* >
+
+Seminar 6: 
+- Include the improtant menthods in the classes belonging to dapter pattern (like in the example of the seminar)
+- Cardinalitties are missing between the Facade and the adpater pattern
