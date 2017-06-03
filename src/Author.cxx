@@ -23,6 +23,11 @@ Author::~Author(){
 			delete listOfClients[i];
 			}
 		}
+	for(i = 0; i < listOfChannels.size(); i++){
+		if(listOfChannels[i]){
+			delete listOfChannels[i];
+			}
+		}	
 }
 
 //Added in First test
@@ -104,9 +109,17 @@ void Author::subscribeClient(Client* clientSelected){
 	listOfClients.push_back(clientSelected);	//Canviat de variable client unica a llista de clients en un sol topic
 }
 
+void Author::subscribeChannel(Channel* channelSelected){
+
+	listOfChannels.push_back(channelSelected);
+}
+
 void Author::notify(const std::string workName, const std::string authorName){
-	for(int i = 0; i < listOfClients.size(); i++){ //Recorremos todo el vector de clientes suscritos y les notificamos
+	for(unsigned int i = 0; i < listOfClients.size(); i++){ //Recorremos todo el vector de clientes suscritos y les notificamos
 		listOfClients[i]->update(workName, authorName);
+	}
+	for(unsigned int i = 0; i < listOfChannels.size(); i++){
+		listOfChannels[i]->update(workName, authorName);
 	}
 }
 

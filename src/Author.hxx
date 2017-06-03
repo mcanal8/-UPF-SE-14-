@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <vector>
 #include "Collection.hxx"
+#include "Channel.hxx"
+
 
 
 
@@ -17,6 +19,8 @@ class Author{
 		int _comptador;	
 		std::string status;
 		std::vector<Client*> listOfClients;
+		std::vector<Channel*> listOfChannels;
+		
 
 	public:
 	//Constructor
@@ -37,6 +41,7 @@ class Author{
 	void name(std::string inserted_name);//Added in P3 test 6
 	std::string description();//Added in P3 test 6
 	void subscribeClient(Client* clientSelected);
+	void subscribeChannel(Channel* channelSelected);
 	void notify(const std::string workName, const std::string authorName);
 	
 };

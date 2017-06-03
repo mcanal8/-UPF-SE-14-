@@ -323,11 +323,48 @@
 		returnString = returnString + "<title>MeltingPotOnline: " + channelSelected->getName() + "</title>\n";
 		returnString = returnString + "<link>" + channelSelected->getLink() + "</link>\n";
 		returnString = returnString + "<description>" + channelSelected->getDescription() + "</description>\n";
+		printf("FORA\n");
+		
+		if(channelSelected->itemsBool()){
+			printf("DINS\n DINS\n");
+			returnString = returnString + "<item>\n";
+			returnString = returnString + "<title>Novelty: " + channelSelected->getItemName() + " by " + channelSelected->getItemAuthor() + "</title>\n";
+			returnString = returnString + "<link>" + channelSelected->getItemLink() + "</link>\n";
+			returnString = returnString + "</item>\n";
+		}
 		returnString = returnString + "</channel>\n" + "</rss>\n";
 
 		return 	returnString;
 	}
 
 	void MeltingPotOnline::subscribeChannelToAuthor(const string channelName, const string authorName){
-		
+		Author* authorSelected;
+		Channel* channelSelected;
+		//bool autorencontrado = false;
+		//bool clientencontrado = false;
+		unsigned int i = 0;
+
+		//Buscamos el autor seleccionado entre la lista de autores
+		for(i = 0; i < listOfAuthors.size(); i++){
+			if(listOfAuthors[i]->getName() == authorName){
+				authorSelected= listOfAuthors[i];
+				//autorencontrado = true;
+			}
+		}
+		//Buscamos el cliente seleccionado entre la lista de clientes
+		for(i = 0; i < Channels.size(); i++){
+			if(Channels[i]->getName() == channelName){
+				channelSelected = Channels[i];
+				//clientencontrado = true;
+			}
+		}
+		//Si no encontramos cliente o autor lanzamos exception
+		/*if (autorencontrado == false){
+			throw authorException();
+		}
+		if (clientencontrado == false){
+			throw clientException();
+		}*/
+		//Suscribimos el cliente al autor
+		authorSelected->subscribeChannel(channelSelected);
 	}
