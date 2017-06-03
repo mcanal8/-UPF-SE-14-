@@ -368,3 +368,7 @@
 		//Suscribimos el cliente al autor
 		authorSelected->subscribeChannel(channelSelected);
 	}
+
+	void MeltingPotOnline::subscribeChannelToTopic(const string channelName, const string topicName){
+
+	}
