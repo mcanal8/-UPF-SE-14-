@@ -340,31 +340,31 @@
 	void MeltingPotOnline::subscribeChannelToAuthor(const string channelName, const string authorName){
 		Author* authorSelected;
 		Channel* channelSelected;
-		//bool autorencontrado = false;
-		//bool clientencontrado = false;
+		bool autorencontrado = false;
+		bool canalencontrado = false;
 		unsigned int i = 0;
 
 		//Buscamos el autor seleccionado entre la lista de autores
 		for(i = 0; i < listOfAuthors.size(); i++){
 			if(listOfAuthors[i]->getName() == authorName){
 				authorSelected= listOfAuthors[i];
-				//autorencontrado = true;
+				autorencontrado = true;
 			}
 		}
 		//Buscamos el cliente seleccionado entre la lista de clientes
 		for(i = 0; i < Channels.size(); i++){
 			if(Channels[i]->getName() == channelName){
 				channelSelected = Channels[i];
-				//clientencontrado = true;
+				canalencontrado = true;
 			}
 		}
-		//Si no encontramos cliente o autor lanzamos exception
-		/*if (autorencontrado == false){
+		//Si no encontramos canal o autor lanzamos exception
+		if (autorencontrado == false){
 			throw authorException();
 		}
-		if (clientencontrado == false){
-			throw clientException();
-		}*/
+		if (canalencontrado == false){
+			throw channelException();
+		}
 		//Suscribimos el cliente al autor
 		authorSelected->subscribeChannel(channelSelected);
 	}
