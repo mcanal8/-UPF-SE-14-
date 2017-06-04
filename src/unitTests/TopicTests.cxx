@@ -33,6 +33,7 @@ public:
 		LibFileSystem::cleanupDirectory( "config" );
 		LibFileSystem::cleanupDirectory( "generated" );
 		LibFileSystem::cleanupDirectory( "originals" );
+		MailStub::theInstance().removeSent();
 	}
 
 	
@@ -47,9 +48,14 @@ public:
 
 	void testNotify_topic()
 	{
+		Client* client = new Client();
+		client->setName("A client");
+		client->setEmail("a@mail.org");
+		
 		Topic topic;
-
 		topic.setName("Topic 1\n");
+		
+		topic.subscribeClient(client);
 		topic.notify("A work", "An author");
 
 		ASSERT_EQUALS(

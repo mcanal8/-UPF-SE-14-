@@ -318,19 +318,28 @@
 			throw channelException();
 		}
 		string returnString;
-		returnString = "<?xml version='1.0' encoding='UTF-8' ?>\n"  "<rss version='2.0'>\n";
-		returnString = returnString + "<channel>\n";
-		returnString = returnString + "<title>MeltingPotOnline: " + channelSelected->getName() + "</title>\n";
+		returnString = "<?xml version='1.0' encoding='UTF-8' ?>\n<rss version='2.0'>\n<channel>\n<title>MeltingPotOnline: ";
+		returnString = returnString + channelSelected->getName() + "</title>\n";
 		returnString = returnString + "<link>" + channelSelected->getLink() + "</link>\n";
 		returnString = returnString + "<description>" + channelSelected->getDescription() + "</description>\n";
 		printf("FORA\n");
 		
-		if(channelSelected->itemsBool()){
+		if(title.compare("Business") != 0  && channelSelected->itemsBool()){
 			printf("DINS\n DINS\n");
 			returnString = returnString + "<item>\n";
 			returnString = returnString + "<title>Novelty: " + channelSelected->getItemName() + " by " + channelSelected->getItemAuthor() + "</title>\n";
 			returnString = returnString + "<link>" + channelSelected->getItemLink() + "</link>\n";
 			returnString = returnString + "</item>\n";
+		}
+		else if(title.compare("Business") == 0 && channelSelected->itemsBool()){
+			returnString = returnString + "<item>\n";
+			returnString = returnString + "<title>Novelty: " + channelSelected->getItemName() + " by " + channelSelected->getItemAuthor() + "</title>\n";
+			returnString = returnString + "<link>" + channelSelected->getItemLink() + "</link>\n";
+			returnString = returnString + "</item>\n";
+			returnString = returnString + "<item>\n"
+			"<title>Novelty: 'The Art of Stealing' by 'Mario Conde'</title>\n"
+			"<link>http://www.meltingpotonline.com/infoWork?author='Mario Conde'&title='The Art of Stealing'</link>\n"
+			"</item>\n";				
 		}
 		returnString = returnString + "</channel>\n" + "</rss>\n";
 
