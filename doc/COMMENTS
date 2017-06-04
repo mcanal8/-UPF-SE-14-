@@ -30,3 +30,11 @@ el Facade; los atributos que son listas se deben poner como en este ej. works:li
 Seminar 6: 
 - Include the improtant menthods in the classes belonging to dapter pattern (like in the example of the seminar)
 - Cardinalitties are missing between the Facade and the adpater pattern
+
+Seminar 7:
+- One observer can be notified about many subjects. Check the cardinality between subject and observer
+- When providing the complete class diagram, don't remove methods, attributes from previous semianrs or from previous patterns
+- The upcoming news should be displayed in the webpage. This requirement has not been designed.
+
+Seminar 8:
+- 
