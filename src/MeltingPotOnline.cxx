@@ -407,3 +407,12 @@
 		//Suscribimos el channel al autor
 		topicSelected->subscribeChannel(channelSelected);
 	}
+	
+	void MeltingPotOnline::clientPrefersSms(const string nombreCliente, const string numeroDeCliente){}
+	void MeltingPotOnline::clientPrefersWhatsapp(const string nombreCliente, const string numeroDeCliente){}
+
+
+
+
+
+

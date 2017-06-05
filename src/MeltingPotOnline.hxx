@@ -50,6 +50,8 @@ class MeltingPotOnline{
 	string rssByChannel(const string title);
 	void subscribeChannelToAuthor(const string channelName, const string authorName);
 	void subscribeChannelToTopic(const string channelName, const string topicName);
+	void clientPrefersSms(const string nombreCliente, const string numeroDeCliente);
+	void clientPrefersWhatsapp(const string nombreCliente, const string numeroDeCliente);
 };
 
 
