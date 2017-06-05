@@ -17,15 +17,8 @@ class Channel{
 		string _name;
 		string _description;
 		string _link;
-		//string _itemName;
-		//string _itemAuthor;
-		//string _itemLink;
-		/*typedef struct{
-			string name;
-			string author;
-			string link;
-		}item;*/
-		vector<string> _itemName;	//Amb vector<string*> donava segmentation fault.
+		
+		vector<string> _itemName;	//Amb vector<string*> donavan segmentation faults.
 		vector<string> _itemAuthor;
 		vector<string> _itemLink;
 		
@@ -50,8 +43,7 @@ class Channel{
 	string getItemAuthor(int i);
 	string getItemLink(int i);
 	int getArraySizeOfChannelArrays();
-	//svector<item*> getListOfItems();
-	//item getItem();
+	
 };
 #endif
 

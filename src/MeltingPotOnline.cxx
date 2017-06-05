@@ -18,6 +18,8 @@
 		converter.add( "pdf_print" );
 		converter.add( "pdf_mark" );
 		associatedTopic = false;
+		//clientPreferSms = false;
+		//clientPreferWhatsapp = false;
 	}
 
 	//This function is the destructor of the class
@@ -332,10 +334,7 @@
 				returnString = returnString + "<title>Novelty: " + channelSelected->getItemName(i) + " by " + channelSelected->getItemAuthor(i) + "</title>\n";
 				returnString = returnString + "<link>" + channelSelected->getItemLink(i) + "</link>\n";
 				returnString = returnString + "</item>\n";
-				/*cout << returnString << returnString << "<item>\n";
-				cout << returnString << returnString << "<title>Novelty: " << channelSelected->getItemName(i) << " by " << channelSelected->getItemAuthor(i) << "</title>\n";
-				cout << returnString << returnString << "<link>" << channelSelected->getItemLink(i) << "</link>\n";
-				cout << returnString << returnString << "</item>\n";*/
+				
 			}
 						
 		}
@@ -407,3 +406,38 @@
 		//Suscribimos el channel al autor
 		topicSelected->subscribeChannel(channelSelected);
 	}
+	
+	void MeltingPotOnline::clientPrefersSms(const string nombreCliente, const string numeroDeCliente){
+		unsigned int i;
+		bool clientencontrado = false;
+		for(i = 0; i < listOfClients.size(); i++){
+			if(listOfClients[i]->getName() == nombreCliente){
+				listOfClients[i]->setSmsnum(numeroDeCliente);
+				clientencontrado = true;
+			}
+		}
+		if (clientencontrado == false){
+			throw clientException();
+		}
+						
+	}
+	void MeltingPotOnline::clientPrefersWhatsapp(const string nombreCliente, const string numeroDeCliente){
+		unsigned int i;		
+		bool clientencontrado = false;
+		for(i = 0; i < listOfClients.size(); i++){
+			if(listOfClients[i]->getName() == nombreCliente){
+				listOfClients[i]->setWhatsappnum(numeroDeCliente);
+				clientencontrado = true;
+			}
+		}
+		if (clientencontrado == false){
+			throw clientException();
+		}
+		
+	}
+
+
+
+
+
+

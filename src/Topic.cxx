@@ -1,10 +1,6 @@
 #include "Topic.hxx"
 
 
-
-
-
-
 	//This function is the constructor of the class
 	Topic::Topic(){
 		

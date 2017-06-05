@@ -4,37 +4,16 @@ Channel::Channel(){
 	_name = "";
 	_description = "";
 	_link = "";
-	//_itemName = "";
-	//_itemAuthor = "";
-	//_itemLink = "";
+
 	items = false;
 }
 
 Channel::~Channel(){
-	/*for(unsigned int i = 0; i < _itemName.size(); i++){
-			//if(_itemName[i]){
-				_itemName[i].clear();
-			//}
-	}
-	for(unsigned int i = 0; i < _itemAuthor.size(); i++){
-			//if(_itemAuthor[i]){
-				_itemAuthor[i].clear;
-			//}
-	}
-	for(unsigned int i = 0; i < _itemLink.size(); i++){
-			//if(_itemLink[i]){
-				_itemLink[i].clear;
-			//}
-	}*/
-	/*int i = getArraySizeOfChannelArrays();
-	_itemName.erase(_itemName.begin(),_itemName.begin() + i);
-	_itemAuthor.erase(_itemAuthor.begin(),_itemAuthor.begin() + i);
-	_itemLink.erase(_itemLink.begin(),_itemLink.begin() + i);*/
+	
 	_itemName.clear();
 	_itemAuthor.clear();
 	_itemLink.clear();
-	// NO ESTIC SEGUR D'AIXO
-	
+		
 }
 
 void Channel::addChannel(const string name, const string description){
@@ -84,9 +63,4 @@ int Channel::getArraySizeOfChannelArrays(){
 	return _itemName.size();
 }
 
-/*item Channel::getItem(){
-	return newItem;
-}*/
-/*vector<item*> Channel::getListOfItems(){
-	return listOfItems;
-}*/
+
