@@ -34,6 +34,7 @@ Client::Client(){
 		to = name + email;
 		subject = "new work " + workName + " by " + authorName;
 		MailStub::theInstance().sendMail(to, subject);
+		
 	}
 	
 	

@@ -4,13 +4,36 @@ Channel::Channel(){
 	_name = "";
 	_description = "";
 	_link = "";
-	_itemName = "";
-	_itemAuthor = "";
-	_itemLink = "";
+	//_itemName = "";
+	//_itemAuthor = "";
+	//_itemLink = "";
 	items = false;
 }
 
 Channel::~Channel(){
+	/*for(unsigned int i = 0; i < _itemName.size(); i++){
+			//if(_itemName[i]){
+				_itemName[i].clear();
+			//}
+	}
+	for(unsigned int i = 0; i < _itemAuthor.size(); i++){
+			//if(_itemAuthor[i]){
+				_itemAuthor[i].clear;
+			//}
+	}
+	for(unsigned int i = 0; i < _itemLink.size(); i++){
+			//if(_itemLink[i]){
+				_itemLink[i].clear;
+			//}
+	}*/
+	/*int i = getArraySizeOfChannelArrays();
+	_itemName.erase(_itemName.begin(),_itemName.begin() + i);
+	_itemAuthor.erase(_itemAuthor.begin(),_itemAuthor.begin() + i);
+	_itemLink.erase(_itemLink.begin(),_itemLink.begin() + i);*/
+	_itemName.clear();
+	_itemAuthor.clear();
+	_itemLink.clear();
+	// NO ESTIC SEGUR D'AIXO
 	
 }
 
@@ -35,29 +58,30 @@ string Channel::getLink(){
 }
 
 void Channel::update(const string workName, const string authorName){
-	string link;
-	_itemName = "'" + workName + "'";
-	_itemAuthor = "'" + authorName + "'";
-	link = "http://www.meltingpotonline.com/infoWork?author=" + _itemAuthor + "&title=" + _itemName + "";
-	_itemLink = link;
+	
+	_itemName.push_back("'" + workName + "'");
+	_itemAuthor.push_back( "'" + authorName + "'" );
+	_itemLink.push_back("http://www.meltingpotonline.com/infoWork?author='" + authorName + "'&title='" + workName + "'");
 	items = true;
-	//listOfItems.push_back(newItem);
 }
 
 bool Channel::itemsBool(){
 	return items;
 }
 
-string Channel::getItemName(){
-	return _itemName;
+string Channel::getItemName(int i){
+	return _itemName[i];
 }
 
-string Channel::getItemAuthor(){
-	return _itemAuthor;
+string Channel::getItemAuthor(int i){
+	return _itemAuthor[i];
 }
 
-string Channel::getItemLink(){
-	return _itemLink;
+string Channel::getItemLink(int i){
+	return _itemLink[i];
+}
+int Channel::getArraySizeOfChannelArrays(){
+	return _itemName.size();
 }
 
 /*item Channel::getItem(){

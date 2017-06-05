@@ -7,6 +7,7 @@
 #include <vector>
 #include "Client.hxx"
 #include "MailStub.hxx"
+#include "Channel.hxx"
 
 
 using namespace std;
@@ -17,6 +18,7 @@ class Topic
 	private:
 		string name;
 		vector<Client*> listOfClients;
+		vector<Channel*> listOfChannels;
 	public:
 	
 	//constructor
@@ -30,6 +32,7 @@ class Topic
 	string getName();
 	string getClient();
 	void subscribeClient(Client* clientSelected);
+	void subscribeChannel(Channel* channelSelected);
 	void notify(const string workName, const string authorName);
 };
 

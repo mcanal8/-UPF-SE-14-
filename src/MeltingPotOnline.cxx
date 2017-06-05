@@ -324,22 +324,20 @@
 		returnString = returnString + "<description>" + channelSelected->getDescription() + "</description>\n";
 		printf("FORA\n");
 		
-		if(title.compare("Business") != 0  && channelSelected->itemsBool()){
+		if(channelSelected->itemsBool()){
 			printf("DINS\n DINS\n");
-			returnString = returnString + "<item>\n";
-			returnString = returnString + "<title>Novelty: " + channelSelected->getItemName() + " by " + channelSelected->getItemAuthor() + "</title>\n";
-			returnString = returnString + "<link>" + channelSelected->getItemLink() + "</link>\n";
-			returnString = returnString + "</item>\n";
-		}
-		else if(title.compare("Business") == 0 && channelSelected->itemsBool()){
-			returnString = returnString + "<item>\n";
-			returnString = returnString + "<title>Novelty: " + channelSelected->getItemName() + " by " + channelSelected->getItemAuthor() + "</title>\n";
-			returnString = returnString + "<link>" + channelSelected->getItemLink() + "</link>\n";
-			returnString = returnString + "</item>\n";
-			returnString = returnString + "<item>\n"
-			"<title>Novelty: 'The Art of Stealing' by 'Mario Conde'</title>\n"
-			"<link>http://www.meltingpotonline.com/infoWork?author='Mario Conde'&title='The Art of Stealing'</link>\n"
-			"</item>\n";				
+			for(int i = 0; i < channelSelected->getArraySizeOfChannelArrays(); i++){
+				
+				returnString = returnString + "<item>\n";
+				returnString = returnString + "<title>Novelty: " + channelSelected->getItemName(i) + " by " + channelSelected->getItemAuthor(i) + "</title>\n";
+				returnString = returnString + "<link>" + channelSelected->getItemLink(i) + "</link>\n";
+				returnString = returnString + "</item>\n";
+				/*cout << returnString << returnString << "<item>\n";
+				cout << returnString << returnString << "<title>Novelty: " << channelSelected->getItemName(i) << " by " << channelSelected->getItemAuthor(i) << "</title>\n";
+				cout << returnString << returnString << "<link>" << channelSelected->getItemLink(i) << "</link>\n";
+				cout << returnString << returnString << "</item>\n";*/
+			}
+						
 		}
 		returnString = returnString + "</channel>\n" + "</rss>\n";
 
@@ -374,10 +372,38 @@
 		if (canalencontrado == false){
 			throw channelException();
 		}
-		//Suscribimos el cliente al autor
+		//Suscribimos el channel al autor
 		authorSelected->subscribeChannel(channelSelected);
 	}
 
 	void MeltingPotOnline::subscribeChannelToTopic(const string channelName, const string topicName){
-
+		Topic* topicSelected;
+		Channel* channelSelected;
+		bool topicencontrado = false;
+		bool canalencontrado = false;
+		unsigned int i = 0;
+		//Buscamos el autor seleccionado entre la lista de autores
+		for(i = 0; i < Topics.size(); i++){
+		/*RECORDAR QUE ELS NOMS DE TOPICS ES GUARDEN AMB UN \n AL FINAL (mirar metode addTopic de MeltingPotOnline.cxx)*/
+			if(Topics[i]->getName() == (topicName + "\n")){	
+				topicSelected = Topics[i];
+				topicencontrado = true;
+			}
+		}
+		//Buscamos el cliente seleccionado entre la lista de clientes
+		for(i = 0; i < Channels.size(); i++){
+			if(Channels[i]->getName() == channelName){
+				channelSelected = Channels[i];
+				canalencontrado = true;
+			}
+		}
+		//Si no encontramos canal o autor lanzamos exception
+		if (topicencontrado == false){
+			throw topicException();
+		}
+		if (canalencontrado == false){
+			throw channelException();
+		}
+		//Suscribimos el channel al autor
+		topicSelected->subscribeChannel(channelSelected);
 	}

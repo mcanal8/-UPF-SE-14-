@@ -1,8 +1,13 @@
 #ifndef Channel_hxx
 #define Channel_hxx
 
+#include <iostream>
+#include <cstring>
+#include <iostream>
+#include <cstring>
 #include <string>
 #include <vector>
+
 
 using namespace std;
 
@@ -12,15 +17,18 @@ class Channel{
 		string _name;
 		string _description;
 		string _link;
-		string _itemName;
-		string _itemAuthor;
-		string _itemLink;
+		//string _itemName;
+		//string _itemAuthor;
+		//string _itemLink;
 		/*typedef struct{
 			string name;
 			string author;
 			string link;
 		}item;*/
-		//vector<item*> listOfItems;
+		vector<string> _itemName;	//Amb vector<string*> donava segmentation fault.
+		vector<string> _itemAuthor;
+		vector<string> _itemLink;
+		
 		bool items;
 
 
@@ -38,9 +46,10 @@ class Channel{
 	string getLink();
 	void update(const string workName, const string authorName);
 	bool itemsBool();
-	string getItemName();
-	string getItemAuthor();
-	string getItemLink();
+	string getItemName(int i);
+	string getItemAuthor(int i);
+	string getItemLink(int i);
+	int getArraySizeOfChannelArrays();
 	//svector<item*> getListOfItems();
 	//item getItem();
 };
