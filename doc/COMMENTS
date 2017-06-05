@@ -37,4 +37,8 @@ Seminar 7:
 - The upcoming news should be displayed in the webpage. This requirement has not been designed.
 
 Seminar 8:
+- Client should manage memory of SendNotification objects
+- Use more meaningful method names (eg: FactoryMethod(), AlgorithmInterface())
+
+Seminar 9:
 - 
