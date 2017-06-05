@@ -20,8 +20,6 @@ class MeltingPotOnline{
 		ConverterGroup converter;
 		vector<Topic*> Topics;
 		bool associatedTopic;
-		//bool clientPreferSms;
-		//bool clientPreferWhatsapp;
 		vector<Client*> listOfClients;
 		vector<Channel*> Channels;
 

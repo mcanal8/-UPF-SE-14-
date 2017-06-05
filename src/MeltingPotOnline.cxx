@@ -334,10 +334,7 @@
 				returnString = returnString + "<title>Novelty: " + channelSelected->getItemName(i) + " by " + channelSelected->getItemAuthor(i) + "</title>\n";
 				returnString = returnString + "<link>" + channelSelected->getItemLink(i) + "</link>\n";
 				returnString = returnString + "</item>\n";
-				/*cout << returnString << returnString << "<item>\n";
-				cout << returnString << returnString << "<title>Novelty: " << channelSelected->getItemName(i) << " by " << channelSelected->getItemAuthor(i) << "</title>\n";
-				cout << returnString << returnString << "<link>" << channelSelected->getItemLink(i) << "</link>\n";
-				cout << returnString << returnString << "</item>\n";*/
+				
 			}
 						
 		}
@@ -422,8 +419,7 @@
 		if (clientencontrado == false){
 			throw clientException();
 		}
-		//clientPreferSms = true;
-				
+						
 	}
 	void MeltingPotOnline::clientPrefersWhatsapp(const string nombreCliente, const string numeroDeCliente){
 		unsigned int i;		
@@ -437,7 +433,7 @@
 		if (clientencontrado == false){
 			throw clientException();
 		}
-		//clientPreferWhatsapp = true;
+		
 	}
 
 
