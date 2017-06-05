@@ -18,6 +18,8 @@
 		converter.add( "pdf_print" );
 		converter.add( "pdf_mark" );
 		associatedTopic = false;
+		//clientPreferSms = false;
+		//clientPreferWhatsapp = false;
 	}
 
 	//This function is the destructor of the class
@@ -408,8 +410,35 @@
 		topicSelected->subscribeChannel(channelSelected);
 	}
 	
-	void MeltingPotOnline::clientPrefersSms(const string nombreCliente, const string numeroDeCliente){}
-	void MeltingPotOnline::clientPrefersWhatsapp(const string nombreCliente, const string numeroDeCliente){}
+	void MeltingPotOnline::clientPrefersSms(const string nombreCliente, const string numeroDeCliente){
+		unsigned int i;
+		bool clientencontrado = false;
+		for(i = 0; i < listOfClients.size(); i++){
+			if(listOfClients[i]->getName() == nombreCliente){
+				listOfClients[i]->setSmsnum(numeroDeCliente);
+				clientencontrado = true;
+			}
+		}
+		if (clientencontrado == false){
+			throw clientException();
+		}
+		//clientPreferSms = true;
+				
+	}
+	void MeltingPotOnline::clientPrefersWhatsapp(const string nombreCliente, const string numeroDeCliente){
+		unsigned int i;		
+		bool clientencontrado = false;
+		for(i = 0; i < listOfClients.size(); i++){
+			if(listOfClients[i]->getName() == nombreCliente){
+				listOfClients[i]->setWhatsappnum(numeroDeCliente);
+				clientencontrado = true;
+			}
+		}
+		if (clientencontrado == false){
+			throw clientException();
+		}
+		//clientPreferWhatsapp = true;
+	}
 
 
 
