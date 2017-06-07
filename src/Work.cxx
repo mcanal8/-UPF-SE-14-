@@ -9,7 +9,7 @@ Work::Work(){
 		
 	}
 	Work::~Work(){
-		int i;
+		unsigned int i;
 		
 		for(i = 0; i < TopicsOfaWork.size(); i++){
 			if(TopicsOfaWork[i]){
@@ -21,19 +21,19 @@ Work::Work(){
 	string Work::title(){
 		return a;	// Retorna el titol del work seleccionat
 	}
-	void Work::title(string stringTitle){
+	void Work::title(const string & stringTitle){
 		a = stringTitle;	// Modifica el titol del work seleccionat
  	}
-	int Work::isbn(){
+	int Work::isbn() const{
 		return isbn_num;	// Retorna ISBN del work seleccionat
 	}
-	void Work::isbn(int nou_ISBN){
+	void Work::isbn(const int nou_ISBN){
 		isbn_num = nou_ISBN;	// Modifica el ISBN del work seleccionat
  	}
 	string Work::originalFile(){
 		return original;	//Retorna l'originalFile d'un work seleccionat
 	}
-	void Work::originalFile(string new_original){
+	void Work::originalFile(const string  & new_original){
 		original = new_original;	// Modifica l'originalFile del work seleccionat
 	}
 	string Work::aText(){ //Mostra toda la informacio d'un work determinat
@@ -63,7 +63,7 @@ Work::Work(){
 	string Work::topics(){
 		std::string returnString;
 		
-		for(int i = 0; i < TopicsOfaWork.size(); i++){
+		for(unsigned int i = 0; i < TopicsOfaWork.size(); i++){
 			if(TopicsOfaWork[i]->getName() != ""){			
 				returnString = returnString + "\t\t'" + TopicsOfaWork[i]->getName() + "'\n";
 			}

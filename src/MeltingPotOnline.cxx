@@ -228,10 +228,12 @@
 		string textARetornar = "";
 		unsigned int i = 0;
 		//El busquem en el nostre MeltingPotOnline
-		for(i = 0; i < Topics.size(); i++){
-			if(Topics[i]->getName() == nomDelTopic){
-				topicSelected = Topics[i];
-				encontrado = true;
+		if(Topics.size() > 0){
+			for(i = 0; i < Topics.size(); i++){
+				if(Topics[i]->getName() == nomDelTopic){
+					topicSelected = Topics[i];
+					encontrado = true;
+				}
 			}
 		}
 		//Excepcion per si no existeix topic

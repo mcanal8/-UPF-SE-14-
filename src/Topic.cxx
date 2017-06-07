@@ -3,7 +3,7 @@
 
 	//This function is the constructor of the class
 	Topic::Topic(){
-		
+		_name = "";
 	}
 
 	//This function is the destructor of the class, afegit vector de clients.
@@ -11,7 +11,7 @@
 		unsigned int i;
 		for(i = 0; i < listOfClients.size(); i++){
 			if(listOfClients[i]){
-				delete listOfClients[i];
+				//delete listOfClients[i];
 			}
 		}
 		for(i = 0; i < listOfChannels.size(); i++){
@@ -21,16 +21,16 @@
 		}
 	}
 
-	void Topic::setName(string newName){
-		name = newName;
+	void Topic::setName(const string & newName){
+		_name = newName;
 	}
 
 	string Topic::getName(){
-		return name;
+		return _name;
 	}
-	string Topic::getClient(){
+	string Topic::getClient() const{
 		string returnString;
-		for(int i = 0; i < listOfClients.size(); i++){
+		for(unsigned int i = 0; i < listOfClients.size(); i++){
 			returnString = returnString + listOfClients[i]->getName() + "\n";
 		}
 		return returnString;
@@ -46,8 +46,8 @@
 		listOfChannels.push_back(channelSelected);
 	}
 
-	void Topic::notify(const string workName, const string authorName){
-		for(int i = 0; i < listOfClients.size(); i++){ //Recorremos todo el vector de clientes suscritos y les notificamos
+	void Topic::notify(const string & workName, const string & authorName){
+		for(unsigned int i = 0; i < listOfClients.size(); i++){ //Recorremos todo el vector de clientes suscritos y les notificamos
 			listOfClients[i]->update(workName, authorName);
 		}
 		for(unsigned int i = 0; i < listOfChannels.size(); i++){

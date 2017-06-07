@@ -1,8 +1,6 @@
 #ifndef Topic_hxx
 #define Topic_hxx
 
-#include <iostream>
-#include <fstream>
 #include <string>
 #include <vector>
 #include "Client.hxx"
@@ -16,7 +14,7 @@ class Topic
 {
 
 	private:
-		string name;
+		string _name;
 		vector<Client*> listOfClients;
 		vector<Channel*> listOfChannels;
 	public:
@@ -28,12 +26,12 @@ class Topic
 	~Topic();
 
 	//Methods
-	void setName(string newName);
+	void setName(const string & newName);
 	string getName();
-	string getClient();
+	string getClient() const;
 	void subscribeClient(Client* clientSelected);
 	void subscribeChannel(Channel* channelSelected);
-	void notify(const string workName, const string authorName);
+	void notify(const string & workName, const string & authorName);
 };
 
 #endif
