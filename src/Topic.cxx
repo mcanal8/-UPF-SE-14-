@@ -11,7 +11,7 @@
 		unsigned int i;
 		for(i = 0; i < listOfClients.size(); i++){
 			if(listOfClients[i]){
-				//delete listOfClients[i];
+				delete listOfClients[i];
 			}
 		}
 		for(i = 0; i < listOfChannels.size(); i++){

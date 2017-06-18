@@ -45,7 +45,7 @@ void ConverterGroup::add(const std::string tipus){
 //Metodo para efectuar una conversion de la lista
 void ConverterGroup::convert(const std::string &original, const std::string &converted){
 	if (listOfConverters.size() > 0) //Antes de empezar la conversión miramos si hay elementos en la lista
-		for(int i = 0; i < listOfConverters.size(); i++){
+		for(unsigned int i = 0; i < listOfConverters.size(); i++){
 			listOfConverters[i]->convert( original, converted);
 		}
 

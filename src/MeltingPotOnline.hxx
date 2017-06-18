@@ -7,11 +7,12 @@
 #include "Author.hxx"
 #include "ConverterGroup.hxx"
 #include "Channel.hxx"
+#include "gui/Model.hxx"
 
 
 using namespace std;
 
-class MeltingPotOnline{
+class MeltingPotOnline : public Model{
 
 	private:
 
