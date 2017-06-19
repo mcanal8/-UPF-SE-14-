@@ -2,8 +2,8 @@
 #ifndef Model_hxx
 #define Model_hxx
 
-//#include <QObject>
-#include "/usr/include/qt5/QtCore/QObject"
+#include <QObject>
+
 #include <fstream>
 #include <iostream>
 

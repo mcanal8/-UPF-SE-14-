@@ -52,7 +52,7 @@
 	}
 
 	//This function returns a string that contains the information of all the authors and works
-	string MeltingPotOnline::catalogue(){ //Added on the first functional test
+	string MeltingPotOnline::catalogue() const{ //Added on the first functional test
 		
 		unsigned int i;
 		for(i = 0; i < listOfAuthors.size(); i++){
@@ -64,7 +64,7 @@
 	}
 
 	//This function is used to add a new author to the system
-	void MeltingPotOnline::addAuthor(const string authorName, bool isContracted){ //Added on the second functional test
+	void MeltingPotOnline::addAuthor(const string & name, bool contracted){ //Added on the second functional test
 		Author *newAuthor = new Author();
 		newAuthor->name(authorName);
 		if(isContracted){
@@ -76,7 +76,7 @@
 	}
 
 	//This function is used to add a new work to a specific author.
-	void MeltingPotOnline::addWork(const string authorName, const string title, int worknum, string file){ //Added on the fifth functional test 
+	void MeltingPotOnline::addWork(const string & authorName, const string & title, int isbn, const string & original){ //Added on the fifth functional test 
 		unsigned int i;
 		string converterfile;
 		Author* authorSelected;
@@ -124,7 +124,7 @@
 
 
 	}
-	void MeltingPotOnline::addTopic(string name){
+	void MeltingPotOnline::addTopic(string & name){
 		string topicName;
 		topicName = name + "\n";
 		Topic *newTopic = new Topic();
@@ -133,7 +133,7 @@
 	}
 
 
-	string MeltingPotOnline::listTopics(){
+	string MeltingPotOnline::listTopics() const{
 		string returnString;
 		for(unsigned int i = 0; i < Topics.size(); i++){
 			returnString = returnString + Topics[i]->getName();
@@ -142,7 +142,7 @@
 	}
 
 
-	void MeltingPotOnline::associateTopicWithWork(string topic, string author, string work){
+	void MeltingPotOnline::associateTopicWithWork(const string & topicName, const string & authorName, const string & workTitle){
 		
 		if(Topics.size() < 1){
 			throw topicException();
