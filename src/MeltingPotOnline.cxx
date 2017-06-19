@@ -66,8 +66,8 @@
 	//This function is used to add a new author to the system
 	void MeltingPotOnline::addAuthor(const string & name, bool contracted){ //Added on the second functional test
 		Author *newAuthor = new Author();
-		newAuthor->name(authorName);
-		if(isContracted){
+		newAuthor->name(name);
+		if(contracted){
 			newAuthor->contract();
 		}
 	
@@ -82,11 +82,11 @@
 		Author* authorSelected;
 		
 		string fullname( "originals/" ); // The file is on this folder
-		fullname += file;
+		fullname += original;
 		ifstream fichero( fullname.c_str() ); //We usea ifstream to check if the file exists
 				
 		i = findAuthor(authorName);
-		listOfAuthors[i]->addWork(title, worknum, file);
+		listOfAuthors[i]->addWork(title, isbn, original);
 
 		if(fichero == 0){ //If the file does not exist (fichero is 0) we throw the file exception.
 			throw fileException();
@@ -149,23 +149,23 @@
 		}
 		else{
 
-			string topicName;
-			string authorName;
-			int i = findAuthor(author);
-			authorName = listOfAuthors[i]->getName();
+			string topic_Name;
+			string author_Name;
+			int i = findAuthor(authorName);
+			author_Name = listOfAuthors[i]->getName();
 			
-			Work linkedWork = listOfAuthors[i]->findWork(work);
-			linkedWork.associateTopic(topic);
+			Work linkedWork = listOfAuthors[i]->findWork(workTitle);
+			linkedWork.associateTopic(topicName);
 
 			
 			_topicDescription = _topicDescription + linkedWork.topics(); //ESTO SERA EL REFACTOR
 			associatedTopic = true;
 
 			for(unsigned int i = 0; i < Topics.size(); i++){
-				topicName = Topics[i]->getName();
-				topicName.erase (topicName.length() - 1,2);
-				if(topicName == topic){
-					Topics[i]->notify(work, author);
+				topic_Name = Topics[i]->getName();
+				topic_Name.erase (topic_Name.length() - 1,2);
+				if(topic_Name == topicName){
+					Topics[i]->notify(workName, authorName);
 				}	
 			}
 		}
