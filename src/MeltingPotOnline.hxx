@@ -9,7 +9,6 @@
 #include "Channel.hxx"
 #include "gui/Model.hxx"
 
-
 using namespace std;
 
 class MeltingPotOnline : public Model{
@@ -33,14 +32,14 @@ class MeltingPotOnline : public Model{
 	~MeltingPotOnline();
 
 	//Methods
-	string catalogue() const;	//Added on the first functional test
-	void addAuthor(const string & name, bool contracted); //Added on the second functional test       
-	void addWork(const string & authorName, const string & title, int isbn, const string & original); //Added on the 5th functional test
+	string catalogue();	//Added on the first functional test
+	void addAuthor(const string authorName, bool isContracted); //Added on the second functional test       
+	void addWork(const string authorName, const string title, int worknum, string file); //Added on the 5th functional test
 	int findAuthor(string authorName);
 	void generateConversions();
-	void addTopic(string & name); // Added on P6 
-	string listTopics() const; //Added on P6
-	void associateTopicWithWork(const string & topicName, const string & authorName, const string & workTitle);
+	void addTopic(std::string name); // Added on P6 
+	string listTopics(); //Added on P6
+	void associateTopicWithWork(string topic, string author, string work);
 	void addClient(string name, string email);
 	string listClients();
 	void subscribeClientToTopic(string clientName, string topicName);

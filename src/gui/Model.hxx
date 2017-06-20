@@ -3,7 +3,6 @@
 #define Model_hxx
 
 #include <QObject>
-
 #include <fstream>
 #include <iostream>
 
@@ -17,14 +16,14 @@ Q_OBJECT
 public:
 
 	virtual ~Model() {}
-	virtual std::string catalogue() const = 0;
-	virtual std::string listTopics() const = 0;
-	virtual void addAuthor( const std::string & name, bool contracted ) = 0;
-	virtual void addWork( const std::string & authorName, const std::string & title, int isbn, const std::string & original ) = 0;
-	virtual void addTopic( const std::string & name ) = 0;
-	virtual void associateTopicWithWork( const std::string & topicName,
-	                                     const std::string & authorName,
-	                                     const std::string & workTitle ) = 0;
+	virtual std::string catalogue() = 0;
+	virtual std::string listTopics() = 0;
+	virtual void addAuthor( const std::string name, bool isContracted ) = 0;
+	virtual void addWork( const std::string  authorName, const std::string  title, int workNum, std::string  file ) = 0;
+	virtual void addTopic( std::string  name ) = 0;
+	virtual void associateTopicWithWork( std::string  topic,
+	                                     std::string  author,
+	                                     std::string  work) = 0;
 
 public slots:
 

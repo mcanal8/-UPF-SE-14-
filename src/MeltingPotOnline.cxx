@@ -52,7 +52,7 @@
 	}
 
 	//This function returns a string that contains the information of all the authors and works
-	string MeltingPotOnline::catalogue() const{ //Added on the first functional test
+	string MeltingPotOnline::catalogue(){ //Added on the first functional test
 		
 		unsigned int i;
 		for(i = 0; i < listOfAuthors.size(); i++){
@@ -64,10 +64,10 @@
 	}
 
 	//This function is used to add a new author to the system
-	void MeltingPotOnline::addAuthor(const string & name, bool contracted){ //Added on the second functional test
+	void MeltingPotOnline::addAuthor(const string authorName, bool isContracted){ //Added on the second functional test
 		Author *newAuthor = new Author();
-		newAuthor->name(name);
-		if(contracted){
+		newAuthor->name(authorName);
+		if(isContracted){
 			newAuthor->contract();
 		}
 	
@@ -76,17 +76,17 @@
 	}
 
 	//This function is used to add a new work to a specific author.
-	void MeltingPotOnline::addWork(const string & authorName, const string & title, int isbn, const string & original){ //Added on the fifth functional test 
+	void MeltingPotOnline::addWork(const string authorName, const string title, int worknum, string file){ //Added on the fifth functional test 
 		unsigned int i;
 		string converterfile;
 		Author* authorSelected;
 		
 		string fullname( "originals/" ); // The file is on this folder
-		fullname += original;
+		fullname += file;
 		ifstream fichero( fullname.c_str() ); //We usea ifstream to check if the file exists
 				
 		i = findAuthor(authorName);
-		listOfAuthors[i]->addWork(title, isbn, original);
+		listOfAuthors[i]->addWork(title, worknum, file);
 
 		if(fichero == 0){ //If the file does not exist (fichero is 0) we throw the file exception.
 			throw fileException();
@@ -124,7 +124,7 @@
 
 
 	}
-	void MeltingPotOnline::addTopic(string & name){
+	void MeltingPotOnline::addTopic(string name){
 		string topicName;
 		topicName = name + "\n";
 		Topic *newTopic = new Topic();
@@ -133,7 +133,7 @@
 	}
 
 
-	string MeltingPotOnline::listTopics() const{
+	string MeltingPotOnline::listTopics(){
 		string returnString;
 		for(unsigned int i = 0; i < Topics.size(); i++){
 			returnString = returnString + Topics[i]->getName();
@@ -142,30 +142,30 @@
 	}
 
 
-	void MeltingPotOnline::associateTopicWithWork(const string & topicName, const string & authorName, const string & workTitle){
+	void MeltingPotOnline::associateTopicWithWork(string topic, string author, string work){
 		
 		if(Topics.size() < 1){
 			throw topicException();
 		}
 		else{
 
-			string topic_Name;
-			string author_Name;
-			int i = findAuthor(authorName);
-			author_Name = listOfAuthors[i]->getName();
+			string topicName;
+			string authorName;
+			int i = findAuthor(author);
+			authorName = listOfAuthors[i]->getName();
 			
-			Work linkedWork = listOfAuthors[i]->findWork(workTitle);
-			linkedWork.associateTopic(topicName);
+			Work linkedWork = listOfAuthors[i]->findWork(work);
+			linkedWork.associateTopic(topic);
 
 			
 			_topicDescription = _topicDescription + linkedWork.topics(); //ESTO SERA EL REFACTOR
 			associatedTopic = true;
 
 			for(unsigned int i = 0; i < Topics.size(); i++){
-				topic_Name = Topics[i]->getName();
-				topic_Name.erase (topic_Name.length() - 1,2);
-				if(topic_Name == topicName){
-					Topics[i]->notify(workName, authorName);
+				topicName = Topics[i]->getName();
+				topicName.erase (topicName.length() - 1,2);
+				if(topicName == topic){
+					Topics[i]->notify(work, author);
 				}	
 			}
 		}

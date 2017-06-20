@@ -1,17 +1,23 @@
 import os, glob, sys
 
+QTDIR = "/usr/include/qt4"
+
 pkgpath = os.environ.get("PKG_CONFIG_PATH", "")
+pkgpath += ":%s/lib/pkgconfig" % QTDIR
 os.environ["PKG_CONFIG_PATH"] = pkgpath
+os.environ["QTDIR"] = QTDIR
 
 paths = [
 	"./",
 	"unitTests/",
 	"functionalTests/",
 	"externalLibs/",
+	"gui/",
 ]
 
 mains = [
 	"externalLibs/TestsRunner.cxx",
+	"gui/GUI.cxx",
 ]
 
 sources = []
@@ -22,7 +28,8 @@ for path in paths :
 		if item not in mains
 	]
 
-env = Environment(tools=["default"], toolpath=["externalLibs"])
+env = Environment(tools=["default", "qt4"], toolpath=["externalLibs"])
+env.EnableQt4Modules(["QtGui"])
 
 def print_cmd_line(commandline, target, source, env) :
 	sys.stdout.write("\033[33m%s\033[0m\n"%commandline)
@@ -42,10 +49,15 @@ env.AppendUnique(
 alltests = env.Program("AllTests",
 	sources + ["externalLibs/TestsRunner.cxx"]
 )
+gui = env.Program("GUI",
+	sources + ["gui/GUI.cxx"],
+)
 
 runTest = env.Command("AllTests.passed",alltests,"valgrind -q --leak-check=yes ./AllTests")
 
 env.Default(runTest)
+env.Depends(gui, runTest)
+env.Alias('gui', gui)
 env.AlwaysBuild(runTest)
 
 
