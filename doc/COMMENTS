@@ -41,4 +41,9 @@ Seminar 8:
 - Use more meaningful method names (eg: FactoryMethod(), AlgorithmInterface())
 
 Seminar 9:
+- Fraction <Type> is the better way to refer Fraction objects types
+- When passing object arguments into methods,better to use pass by reference with const to avoid copy and null values of objects 
+- It's better if you have tested with more types of values too
+
+Seminar 10:
 - 
