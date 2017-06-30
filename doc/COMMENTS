@@ -46,4 +46,6 @@ Seminar 9:
 - It's better if you have tested with more types of values too
 
 Seminar 10:
-- 
+- The web class (view) should also have GUI components like text box, lables, etc.
+- It's better to include all the methods and attributes in the Model class (Facade)
+
